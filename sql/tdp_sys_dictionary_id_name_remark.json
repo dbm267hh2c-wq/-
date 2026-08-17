@@ -1,0 +1,2162 @@
+[
+  {
+    "id": "DICT_SYS_ROOT",
+    "name": "字典导航",
+    "remark": null
+  },
+  {
+    "id": "TJ013d8638a88c4c6da7f1942810aa57",
+    "name": "政策解读",
+    "remark": ""
+  },
+  {
+    "id": "TJ014321c6e0ea4a6fa3235fde313a92",
+    "name": "and",
+    "remark": ""
+  },
+  {
+    "id": "TJ0155fbf77a68425cae2ca588079226",
+    "name": "亮色",
+    "remark": ""
+  },
+  {
+    "id": "TJ02a496d5721541ca82c488103cd20a",
+    "name": "文件",
+    "remark": ""
+  },
+  {
+    "id": "TJ0328e84fc9694a3b8f93b8e3bcf349",
+    "name": "中级",
+    "remark": null
+  },
+  {
+    "id": "TJ039fa8798e6a49dc8b40c0c0bd423b",
+    "name": "客户端应用",
+    "remark": null
+  },
+  {
+    "id": "TJ03e06731d5a14d1b9aaec375e18875",
+    "name": "数据资源",
+    "remark": ""
+  },
+  {
+    "id": "TJ046dfdd639ee4d0aa51348f8f54ef4",
+    "name": "client credentials模式",
+    "remark": null
+  },
+  {
+    "id": "TJ04f8f261928a4802bb18c28f3ddc8a",
+    "name": "WMV",
+    "remark": ""
+  },
+  {
+    "id": "TJ08d24e7593ef4849bc88584ab8bcd3",
+    "name": "每KB",
+    "remark": ""
+  },
+  {
+    "id": "TJ093af926fdc84a659c3ff7f1b5777e",
+    "name": "is empty",
+    "remark": ""
+  },
+  {
+    "id": "TJ09a3a868b3174927871bd8dac2885a",
+    "name": "数据集",
+    "remark": ""
+  },
+  {
+    "id": "TJ09d15c52a9bd484999f10993689765",
+    "name": "数据读取频率",
+    "remark": ""
+  },
+  {
+    "id": "TJ0a2d83dc5ed5407885b40fbe63e254",
+    "name": "政务领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ0c1293e544874bf387df3383dd74e3",
+    "name": "区划类型",
+    "remark": null
+  },
+  {
+    "id": "TJ0df262bac1d84bfebcd6ce432d068a",
+    "name": "is null",
+    "remark": ""
+  },
+  {
+    "id": "TJ0e54878487e743c1b1b8897656a486",
+    "name": "响应式",
+    "remark": ""
+  },
+  {
+    "id": "TJ0e81b4651b804c78a4ad50c37279f7",
+    "name": "API",
+    "remark": ""
+  },
+  {
+    "id": "TJ0fd45bcc140d4e8085fdbd6de8ff66",
+    "name": "数据包",
+    "remark": ""
+  },
+  {
+    "id": "TJ1019331061904665875121d1452910",
+    "name": "MP4",
+    "remark": ""
+  },
+  {
+    "id": "TJ10477180f1024b7fb87ab5abf450c6",
+    "name": "包年",
+    "remark": ""
+  },
+  {
+    "id": "TJ109d04349dee4c1794b348a9c54624",
+    "name": "包月",
+    "remark": ""
+  },
+  {
+    "id": "TJ133d2836122849179cf754171ebd13",
+    "name": "个人隐私数据",
+    "remark": ""
+  },
+  {
+    "id": "TJ13626afc6ea747b6a4156f49548df1",
+    "name": "100-299人",
+    "remark": ""
+  },
+  {
+    "id": "TJ136ed7bd397e4e9080b9469ba270dd",
+    "name": "or",
+    "remark": ""
+  },
+  {
+    "id": "TJ13923ec1d9af47e18c7cf6ab1b3b2e",
+    "name": "规模",
+    "remark": ""
+  },
+  {
+    "id": "TJ1470c33355154c3a86e1bb11a69739",
+    "name": "高级",
+    "remark": null
+  },
+  {
+    "id": "TJ147c28b570324dd7a8740ed4f0f5f4",
+    "name": "科技创新",
+    "remark": ""
+  },
+  {
+    "id": "TJ14e0b0bd1a754154847d879ff23990",
+    "name": "数据应用",
+    "remark": ""
+  },
+  {
+    "id": "TJ155b29c442424e40afb649a5f4069d",
+    "name": "其他",
+    "remark": ""
+  },
+  {
+    "id": "TJ15c97ba07546443f8b77e97533e53e",
+    "name": "系统管理员",
+    "remark": null
+  },
+  {
+    "id": "TJ16263962d1b54651b23b66d9f99d17",
+    "name": "数据服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ1ad9e2ea6394483da3310dda949a60",
+    "name": "随机填充",
+    "remark": ""
+  },
+  {
+    "id": "TJ1b7d23b72e7e42eeac1e79991e79e4",
+    "name": "每条",
+    "remark": ""
+  },
+  {
+    "id": "TJ1b82b98888b04e6bb677b47d38b5f8",
+    "name": "is less than",
+    "remark": ""
+  },
+  {
+    "id": "TJ1bb4eed4030c4ddc927ac1e7fe2596",
+    "name": "天",
+    "remark": ""
+  },
+  {
+    "id": "TJ1c6c7d577aa949919eae61732214e3",
+    "name": "不限",
+    "remark": ""
+  },
+  {
+    "id": "TJ1cd12faa74e64f26a5e4833c0e6a11",
+    "name": "房地产业",
+    "remark": ""
+  },
+  {
+    "id": "TJ1d0d57adb7154a1cb648da5eb4cf61",
+    "name": "项目周期",
+    "remark": ""
+  },
+  {
+    "id": "TJ1e85b82fda2c4f309bf7161647311c",
+    "name": "季度",
+    "remark": ""
+  },
+  {
+    "id": "TJ1edc3ecb574c498d81250044e18bf5",
+    "name": "交易方式",
+    "remark": ""
+  },
+  {
+    "id": "TJ1f076eaa364e40afafcabae574197f",
+    "name": "is greater than or equal to",
+    "remark": ""
+  },
+  {
+    "id": "TJ1f6994c7f6bc4edb997525c0a9fab5",
+    "name": "脚本命名规范",
+    "remark": ""
+  },
+  {
+    "id": "TJ2003a7df84784a31b99b29fff20960",
+    "name": "POST",
+    "remark": null
+  },
+  {
+    "id": "TJ20435671ef3f4f1789763ba9baa791",
+    "name": "公共数据，企业数据",
+    "remark": ""
+  },
+  {
+    "id": "TJ21cac6bf56b04618991a193dde6724",
+    "name": "身份证",
+    "remark": null
+  },
+  {
+    "id": "TJ21db73d371724b3691a95aa855295c",
+    "name": "产品类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ22f83b9ee5364340a051e287aeae86",
+    "name": "每年",
+    "remark": ""
+  },
+  {
+    "id": "TJ23c39f33e0f246b587e76ced5316a8",
+    "name": "数据提供方统一社会信用代码",
+    "remark": ""
+  },
+  {
+    "id": "TJ23c88e97a576453bbceea1a54d5f4a",
+    "name": "SHA256",
+    "remark": null
+  },
+  {
+    "id": "TJ2589412f3e8944a3bc9721274f6eee",
+    "name": "行业",
+    "remark": ""
+  },
+  {
+    "id": "TJ265eec2488e54be3bc9be23c8c9174",
+    "name": "更新周期",
+    "remark": ""
+  },
+  {
+    "id": "TJ2676a29e10c14a6986a8de5aafd878",
+    "name": "所属领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ26fe8d43a723491999ac242dc7e6e4",
+    "name": "500-999人",
+    "remark": ""
+  },
+  {
+    "id": "TJ274ccbe3d49a4ed5bca03c5ffeb894",
+    "name": "农、林、牧、渔业",
+    "remark": ""
+  },
+  {
+    "id": "TJ27b5dbba65d14fe48ac49c409f4f47",
+    "name": "数据库表",
+    "remark": ""
+  },
+  {
+    "id": "TJ27e012530de84fb895b767ad140c9b",
+    "name": "职务级别",
+    "remark": null
+  },
+  {
+    "id": "TJ27ffa6e4c641449e91ffbb04291d51",
+    "name": "交通",
+    "remark": ""
+  },
+  {
+    "id": "TJ29663484e79146aa9239e1907fa1f9",
+    "name": "安全问题",
+    "remark": ""
+  },
+  {
+    "id": "TJ297e27dd5a244fbd9ac17bc114cc7b",
+    "name": "行业类别",
+    "remark": ""
+  },
+  {
+    "id": "TJ2981da0bfd6944caa0f7daf27fd098",
+    "name": "数据报告",
+    "remark": ""
+  },
+  {
+    "id": "TJ29db0e1c5030472998052ae43fb557",
+    "name": "区域类型",
+    "remark": null
+  },
+  {
+    "id": "TJ2aec2a34aa9943b58ae7a11f1073d6",
+    "name": "替换字符",
+    "remark": ""
+  },
+  {
+    "id": "TJ2aec871b628f4ac69d5f4f53864d36",
+    "name": "数据集",
+    "remark": ""
+  },
+  {
+    "id": "TJ2af8b636f01d4bcc846b368048af4e",
+    "name": "每KB",
+    "remark": ""
+  },
+  {
+    "id": "TJ2b8429b4c7cd476599a5d274eed603",
+    "name": "API产品",
+    "remark": ""
+  },
+  {
+    "id": "TJ2bf19e1baadf4fa5b36a75dc2acb0c",
+    "name": "WEB资源",
+    "remark": null
+  },
+  {
+    "id": "TJ2c632d1c7ce74f7292b32237e7af1d",
+    "name": "竞争性谈判",
+    "remark": ""
+  },
+  {
+    "id": "TJ2fc1339d1c1642458db457b5af4ea1",
+    "name": "is not empty",
+    "remark": ""
+  },
+  {
+    "id": "TJ2fdaa9fdd0c54128a611adf9ef286e",
+    "name": "管理系",
+    "remark": null
+  },
+  {
+    "id": "TJ2ffafb088fd0403594e47ad1bc6046",
+    "name": "每MB",
+    "remark": ""
+  },
+  {
+    "id": "TJ304ba98f3d134973a4049679bd3a19",
+    "name": "次/季度",
+    "remark": ""
+  },
+  {
+    "id": "TJ30e2e265c7604eb3ae709d0dbee5ca",
+    "name": "批发和零售业",
+    "remark": ""
+  },
+  {
+    "id": "TJ30e505c4287f429e878a21d41b25fc",
+    "name": "其他",
+    "remark": ""
+  },
+  {
+    "id": "TJ311bbfc4aa144d97b233183f9e6df6",
+    "name": "数据格式",
+    "remark": ""
+  },
+  {
+    "id": "TJ311c4c7df7c64cfaa7b18dedad026d",
+    "name": "数据服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ336311016090448489badf9637e1eb",
+    "name": "固定值替换",
+    "remark": ""
+  },
+  {
+    "id": "TJ3388df4fe16a480080c1e153697bc5",
+    "name": "主管部门",
+    "remark": ""
+  },
+  {
+    "id": "TJ34dff2c19a4047e784af38c7e663f8",
+    "name": "能源领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ34e6330069bb434cb041e21bd580fd",
+    "name": "授权获得(授权关系证明材料)",
+    "remark": ""
+  },
+  {
+    "id": "TJ35342ae12b314088b8cd3e531a808c",
+    "name": "维度值",
+    "remark": ""
+  },
+  {
+    "id": "TJ354c981daf454ba5bfab154b8fab72",
+    "name": "建筑业",
+    "remark": ""
+  },
+  {
+    "id": "TJ365fb25faae048ba82e3ac20c993ad",
+    "name": "技术系",
+    "remark": null
+  },
+  {
+    "id": "TJ36c77639295c49e2b454147d3e14fd",
+    "name": "标准型接入连接器",
+    "remark": ""
+  },
+  {
+    "id": "TJ381125fe646d47d2b79055d7bf0cd0",
+    "name": "模糊化",
+    "remark": ""
+  },
+  {
+    "id": "TJ38c66eb5bb2b421293383798b969f3",
+    "name": "隐式模式",
+    "remark": null
+  },
+  {
+    "id": "TJ39557340f429474198cb5ebff8a1db",
+    "name": "SQL条件连接符",
+    "remark": ""
+  },
+  {
+    "id": "TJ396e5f83b1934bbba086d7bbd15eed",
+    "name": "用户注销原因",
+    "remark": ""
+  },
+  {
+    "id": "TJ3a41ab4b5966462e8e535356bd785b",
+    "name": "已完结",
+    "remark": ""
+  },
+  {
+    "id": "TJ3a796ddc09f04adb9b5fbe7b93946d",
+    "name": "脱敏方式",
+    "remark": ""
+  },
+  {
+    "id": "TJ3aae4779aef44437961f628b79110e",
+    "name": "10000人以上",
+    "remark": ""
+  },
+  {
+    "id": "TJ3abd1b42713a433595d27f74327dbc",
+    "name": "自主采购",
+    "remark": ""
+  },
+  {
+    "id": "TJ3ae59f19f9f84ebc88ef9c0304df36",
+    "name": "每次",
+    "remark": ""
+  },
+  {
+    "id": "TJ3b24a38361c64b949b553172ff504e",
+    "name": "非政府需求",
+    "remark": ""
+  },
+  {
+    "id": "TJ3bcc2b54832a4ce1bb27e2453e420c",
+    "name": "每季度",
+    "remark": ""
+  },
+  {
+    "id": "TJ3c4f1e8f270643629abe0ecfcbcc7b",
+    "name": "刷新令牌",
+    "remark": ""
+  },
+  {
+    "id": "TJ3c7e4f0278004d30ae3491337a6dba",
+    "name": "注册用户",
+    "remark": ""
+  },
+  {
+    "id": "TJ3cd4d90b5f7a4c1aac123677ef49a6",
+    "name": "企业活动",
+    "remark": ""
+  },
+  {
+    "id": "TJ3d6933ab37c34c3183b1a2f1f792c8",
+    "name": "暗色",
+    "remark": ""
+  },
+  {
+    "id": "TJ3d763cb4c64d42f0ad56049719777f",
+    "name": "需求发布",
+    "remark": ""
+  },
+  {
+    "id": "TJ3dd01d6b0efc4ee6b1bf0f583198e1",
+    "name": "单一来源",
+    "remark": ""
+  },
+  {
+    "id": "TJ3e056ce6442241f58790fd741cb794",
+    "name": "其他",
+    "remark": ""
+  },
+  {
+    "id": "TJ3e10ded8d2d546dba7e44ee1ebc9ce",
+    "name": "逻辑空间",
+    "remark": ""
+  },
+  {
+    "id": "TJ3ec98ae9cbca4e4896d86c9fb012qw",
+    "name": "库表",
+    "remark": null
+  },
+  {
+    "id": "TJ3ec98ae9cbca4e4896d86c9fb03efc",
+    "name": "个人数据",
+    "remark": ""
+  },
+  {
+    "id": "TJ3f00177eca4b4ba995b420e10f26b4",
+    "name": "更新频率",
+    "remark": ""
+  },
+  {
+    "id": "TJ40dac7f17d4b476a98e7bbd8e8d013",
+    "name": "标识码类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ40f5a6039efc43a2a3b6a4ce9f840e",
+    "name": "订单状态",
+    "remark": ""
+  },
+  {
+    "id": "TJ42678c079b09417480deff4599fff7",
+    "name": "政策资讯栏目",
+    "remark": ""
+  },
+  {
+    "id": "TJ431cf4b35fac45419745230398004a",
+    "name": "IP白名单访问控制",
+    "remark": ""
+  },
+  {
+    "id": "TJ43563ae9b14946c3a02ec849bd4cdd",
+    "name": "S2",
+    "remark": ""
+  },
+  {
+    "id": "TJ43a9a71de6c34d4f98f982ff80b0c4",
+    "name": "经营平台产品类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ44c5fd8d9718415ea958ccd70aa053",
+    "name": "养老领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ457d44b5e9d4458298bb08dc3ab3f3",
+    "name": "一次性",
+    "remark": ""
+  },
+  {
+    "id": "TJ464dc68898494517b41f99f6da2af1",
+    "name": "水务领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ46fc8437ee3e4cd29d6f16be762d7c",
+    "name": "数据单次查询量控制",
+    "remark": ""
+  },
+  {
+    "id": "TJ4744545b7cf541cfb8b5300d3c20cb",
+    "name": "第一类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ4755d58eef1f4074864eedb50cf7b7",
+    "name": "主题",
+    "remark": ""
+  },
+  {
+    "id": "TJ47af96dd18924213af8539b86a9967",
+    "name": "认证授权",
+    "remark": null
+  },
+  {
+    "id": "TJ480e0b093c574d8e9222b4d78f0f9d",
+    "name": "项目来源",
+    "remark": ""
+  },
+  {
+    "id": "TJ4929a6227e4d4169bb1a20a73de129",
+    "name": "公开招标",
+    "remark": ""
+  },
+  {
+    "id": "TJ497c1d83ef8647fda271ef68a6d38f",
+    "name": "筛选条件",
+    "remark": ""
+  },
+  {
+    "id": "TJ4a27a7aa7ae846f5b42f375631ef22",
+    "name": "信息传输、软件和信息技术服务业",
+    "remark": ""
+  },
+  {
+    "id": "TJ4aeebc7fcebe418aa20932cea18875",
+    "name": "GET",
+    "remark": null
+  },
+  {
+    "id": "TJ4b09adb682d94424a6daa9fc8e7861",
+    "name": "开放平台类型",
+    "remark": "开放平台类型"
+  },
+  {
+    "id": "TJ4b1a3691beb44d3baa8d720145eeb6",
+    "name": "is not null",
+    "remark": ""
+  },
+  {
+    "id": "TJ4c48b237687b4d65a0f7e8a2892658",
+    "name": "每天",
+    "remark": ""
+  },
+  {
+    "id": "TJ4d9a9e56ccad4a3bb9b292d835b433",
+    "name": "管理岗",
+    "remark": null
+  },
+  {
+    "id": "TJ4f516b4f93084dd0b147bbcf6c66e8",
+    "name": "kafka",
+    "remark": ""
+  },
+  {
+    "id": "TJ4faec76fec3647b18298db2ded3239",
+    "name": "卫生和社会工作",
+    "remark": ""
+  },
+  {
+    "id": "TJ5016c38edda74f14930174143dd7bc",
+    "name": "待支付",
+    "remark": ""
+  },
+  {
+    "id": "TJ50773f93d00b444487c8833aaa5aec",
+    "name": "智能服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ50bff474021e464a8456c353ab85c0",
+    "name": "医疗健康",
+    "remark": ""
+  },
+  {
+    "id": "TJ516bd0a917eb46a5968b7ac1d604cf",
+    "name": "安全审计员",
+    "remark": null
+  },
+  {
+    "id": "TJ52ce3512d7bc4764bbe4d12ff88b46",
+    "name": "时长单位",
+    "remark": ""
+  },
+  {
+    "id": "TJ52f7c57ffd0e4a3da11cee29917f4b",
+    "name": "sqlserver",
+    "remark": ""
+  },
+  {
+    "id": "TJ530c6212d41d4d869b028f93eeccf3",
+    "name": "次/每天",
+    "remark": ""
+  },
+  {
+    "id": "TJ53867e58885e4b7aa70b54bf1e4088",
+    "name": "产品登记",
+    "remark": ""
+  },
+  {
+    "id": "TJ53c7f09d754b4174833e4234cc7490",
+    "name": "DELETE",
+    "remark": null
+  },
+  {
+    "id": "TJ55a582ec1ce248c3b226f202dade7b",
+    "name": "电力、热力、燃气及水生产及供应商",
+    "remark": ""
+  },
+  {
+    "id": "TJ55cace7e1a24406ab40b39408b9a34",
+    "name": "数据类型代码",
+    "remark": ""
+  },
+  {
+    "id": "TJ56a93ffd5c9c4343ae2baaa8a662b9",
+    "name": "#",
+    "remark": ""
+  },
+  {
+    "id": "TJ5880f8fff77442e490ebd4fca34125",
+    "name": "医疗",
+    "remark": ""
+  },
+  {
+    "id": "TJ590d96dbc1ea49c0a47910df451ae1",
+    "name": "10条/次",
+    "remark": ""
+  },
+  {
+    "id": "TJ592b8787816d4deb94d24ba8264beb",
+    "name": "采矿业",
+    "remark": ""
+  },
+  {
+    "id": "TJ594aa55189a6478cb05b89b2ce7e85",
+    "name": "不限",
+    "remark": ""
+  },
+  {
+    "id": "TJ59acbb03d0904b65aa299e3eb7ef2c",
+    "name": "每天",
+    "remark": ""
+  },
+  {
+    "id": "TJ5a52c978601e4b6182ab48593fe725",
+    "name": "电子商务",
+    "remark": ""
+  },
+  {
+    "id": "TJ5b99f3105c1c44e4b3abf5e25ecca3",
+    "name": "职务职级",
+    "remark": null
+  },
+  {
+    "id": "TJ5c248471661d421b899b723d68805d",
+    "name": "智能制造",
+    "remark": ""
+  },
+  {
+    "id": "TJ5cc26cacb3ba40aaa6980074b8d990",
+    "name": "is not between",
+    "remark": ""
+  },
+  {
+    "id": "TJ5cd1f35f395f4d57bd5e9fafda7a9d",
+    "name": "系统用户",
+    "remark": ""
+  },
+  {
+    "id": "TJ5cd3c82e4856486e9935407e414e28",
+    "name": "end with",
+    "remark": ""
+  },
+  {
+    "id": "TJ5cd70572e4284fd2b0782703297349",
+    "name": "前后缀增补",
+    "remark": ""
+  },
+  {
+    "id": "TJ5d5617695bb24886b767be6425fcba",
+    "name": "已下架",
+    "remark": ""
+  },
+  {
+    "id": "TJ606f1c9afda543a3aa13ce06b18aa2",
+    "name": "提供方组织机构代码",
+    "remark": ""
+  },
+  {
+    "id": "TJ609027cfa52046499bdfb3a44aef3b",
+    "name": "每周",
+    "remark": ""
+  },
+  {
+    "id": "TJ60909e0662a746f686999aba5435e2",
+    "name": "公共数据,个人隐私数据,企业数据",
+    "remark": ""
+  },
+  {
+    "id": "TJ61fbe617a2674bf9aecf5af7d391bc",
+    "name": "已发布",
+    "remark": ""
+  },
+  {
+    "id": "TJ6211d63d623e4f348f215f60aed0a9",
+    "name": "询价",
+    "remark": ""
+  },
+  {
+    "id": "TJ6221e9d29c0c4fb19b07f3c3bf1827",
+    "name": "机构",
+    "remark": null
+  },
+  {
+    "id": "TJ627d30b8a33e424babf14023676c02",
+    "name": "*",
+    "remark": ""
+  },
+  {
+    "id": "TJ62c21b409e9a497eb5e52f396fbb03",
+    "name": "数据产品经营平台",
+    "remark": ""
+  },
+  {
+    "id": "TJ63a07c56b97d4237b9d945c2865121",
+    "name": "数据应用",
+    "remark": ""
+  },
+  {
+    "id": "TJ646192260fe24316a723bed4b706f6",
+    "name": "数据报告",
+    "remark": ""
+  },
+  {
+    "id": "TJ6468a248d24f4fbf9eb2baf63627ea",
+    "name": "自定义",
+    "remark": ""
+  },
+  {
+    "id": "TJ6472fe3a165e4f82b52cba80496978",
+    "name": "产品登记",
+    "remark": ""
+  },
+  {
+    "id": "TJ64c8115f9fb54c148d31df8669c135",
+    "name": "连接器接入方式",
+    "remark": ""
+  },
+  {
+    "id": "TJ658ce42a10d249df9228cfbd9f8999",
+    "name": "标识构成",
+    "remark": ""
+  },
+  {
+    "id": "TJ66c25bf9620a4eb2ae11ac1832ef8d",
+    "name": "免费",
+    "remark": ""
+  },
+  {
+    "id": "TJ68bcdbde61464846bb03c91256ac86",
+    "name": "按次",
+    "remark": ""
+  },
+  {
+    "id": "TJ6a92dbfeffb748abaeb26ffcd85616",
+    "name": "居民服务、修理和其他服务业",
+    "remark": ""
+  },
+  {
+    "id": "TJ6b496ca0864a49428de023d725037b",
+    "name": "数据工具",
+    "remark": ""
+  },
+  {
+    "id": "TJ6bdb7d2e8f694f1da78702320c8ad0",
+    "name": "图片",
+    "remark": ""
+  },
+  {
+    "id": "TJ6bf318c1512549fc91a53b6d6e900f",
+    "name": "审核中",
+    "remark": ""
+  },
+  {
+    "id": "TJ6c64309efe7f4fa6a02c8ab319b07d",
+    "name": "月",
+    "remark": ""
+  },
+  {
+    "id": "TJ6e7ead814dd94171bf98e0b8dd8c9c",
+    "name": "clickhouse",
+    "remark": ""
+  },
+  {
+    "id": "TJ6ea1c006283e4cb182cd61ae24c64f",
+    "name": "hive",
+    "remark": ""
+  },
+  {
+    "id": "TJ6f1ffba1e0d6448bb82223122ae801",
+    "name": "领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ6f4b0d00e6e441c3bacece736f3186",
+    "name": "does not contain",
+    "remark": ""
+  },
+  {
+    "id": "TJ6ff3bd5066984127be011316a575d1",
+    "name": "按时间",
+    "remark": ""
+  },
+  {
+    "id": "TJ7201796ae4d4455f84d6f327ba1d72",
+    "name": "任意",
+    "remark": ""
+  },
+  {
+    "id": "TJ744430e8f30048afacdabc3a8af20c",
+    "name": "数据关联性",
+    "remark": ""
+  },
+  {
+    "id": "TJ7497453be84a4e23aa06615b700116",
+    "name": "1000-9999人",
+    "remark": ""
+  },
+  {
+    "id": "TJ74eea26ccca0414faa3fb778310d35",
+    "name": "绿色低碳",
+    "remark": ""
+  },
+  {
+    "id": "TJ74ffef562d48484989e25a227fc7f5",
+    "name": "用户目录",
+    "remark": null
+  },
+  {
+    "id": "TJ761f0597932e49d7b2063652a87ecc",
+    "name": "暂时不需要",
+    "remark": ""
+  },
+  {
+    "id": "TJ762962f68a3e45eda99307e7a04020",
+    "name": "资源广场",
+    "remark": ""
+  },
+  {
+    "id": "TJ7633a1c98d34494d8a492356b06e5f",
+    "name": "应用领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ7699e40b955646b69a593c1ddc5589",
+    "name": "证件类型",
+    "remark": null
+  },
+  {
+    "id": "TJ773c905f92464745b4d2d6b0d80e8b",
+    "name": "高速数据网",
+    "remark": ""
+  },
+  {
+    "id": "TJ7780d4c823804265a9ab1c1017acf2",
+    "name": "数据应用",
+    "remark": ""
+  },
+  {
+    "id": "TJ77bb30393ec647fa86625a851ab9e1",
+    "name": "16:9",
+    "remark": ""
+  },
+  {
+    "id": "TJ77c608af4595493b8dca8fb42e89bf",
+    "name": "数据获取方式",
+    "remark": ""
+  },
+  {
+    "id": "TJ7965a08d543c4a36842f18561c587a",
+    "name": "is equal to",
+    "remark": ""
+  },
+  {
+    "id": "TJ7a00b4b3c97447a1bf68aabe6ec318",
+    "name": "制造业",
+    "remark": ""
+  },
+  {
+    "id": "TJ7a025ae194a6464bb8f9459d3d7a18",
+    "name": "数据域",
+    "remark": ""
+  },
+  {
+    "id": "TJ7a69e068ce494dc2a296f77569ca94",
+    "name": "公共数据",
+    "remark": ""
+  },
+  {
+    "id": "TJ7a69e068ce494dc2a296f77569xz21",
+    "name": "API",
+    "remark": null
+  },
+  {
+    "id": "TJ7b7580f2576243e6961d0d88d9901d",
+    "name": "实时",
+    "remark": ""
+  },
+  {
+    "id": "TJ7c17ccb8c8634f22abf6acd0dc7dfe",
+    "name": "有效期",
+    "remark": ""
+  },
+  {
+    "id": "TJ7c7f744ea8d64ed98467580b79f150",
+    "name": "次/天",
+    "remark": ""
+  },
+  {
+    "id": "TJ7c94c31e410643759fa663005a4907",
+    "name": "待提交",
+    "remark": ""
+  },
+  {
+    "id": "TJ7d6c5fcef3224371a43fce894236ab",
+    "name": "销售系",
+    "remark": null
+  },
+  {
+    "id": "TJ7e14c5c152994d1a9fbc66d5a7e62c",
+    "name": "数据集",
+    "remark": ""
+  },
+  {
+    "id": "TJ7e9736cef1de4ff1895012e2cddef8",
+    "name": "个人隐私数据,企业数据",
+    "remark": ""
+  },
+  {
+    "id": "TJ7f04c69031774b0ab760d95acf8f1b",
+    "name": "S3",
+    "remark": ""
+  },
+  {
+    "id": "TJ7f9fcf3a046e4c99b413d3fbb068fa",
+    "name": "教育领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ7fb393336c324ad195b853b9cc1914",
+    "name": "PBKDF2",
+    "remark": null
+  },
+  {
+    "id": "TJ803b9ed7325f42e2b0f5def7cb7e04",
+    "name": "接口",
+    "remark": ""
+  },
+  {
+    "id": "TJ803d8e31372f456095d24ba74f80c1",
+    "name": "数据编目",
+    "remark": ""
+  },
+  {
+    "id": "TJ804a9f39965a42ca8e1d61f17725c2",
+    "name": "岗位类别",
+    "remark": null
+  },
+  {
+    "id": "TJ806dee13326e46cdb3ed670e237269",
+    "name": "每条",
+    "remark": ""
+  },
+  {
+    "id": "TJ80bd3e9ffa0d4005956aacbf83a3b5",
+    "name": "医疗领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ810e118b99df42acbbe60087261654",
+    "name": "mongodb",
+    "remark": ""
+  },
+  {
+    "id": "TJ815aefd0f7eb4a87a2000414490ad1",
+    "name": "每月",
+    "remark": ""
+  },
+  {
+    "id": "TJ81b45b05c80b4c66835e5022fd8a76",
+    "name": "二级",
+    "remark": ""
+  },
+  {
+    "id": "TJ8257d88591a94e7abbc44f57011a76",
+    "name": "职务序列",
+    "remark": null
+  },
+  {
+    "id": "TJ828384e11ed7429884775996e4efd9",
+    "name": "来源类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ82918c668713498b9902c3e240b1fe",
+    "name": "标准类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ83294e2e5fb44f4399d651abd4bef8",
+    "name": "省级",
+    "remark": null
+  },
+  {
+    "id": "TJ837f4f666f23461791e958501588fa",
+    "name": "数据提供方式",
+    "remark": ""
+  },
+  {
+    "id": "TJ84077504521d49dda0068d81c53f6c",
+    "name": "文件",
+    "remark": ""
+  },
+  {
+    "id": "TJ8428c0d25635435482b2091bf38cd3",
+    "name": "公益类项目",
+    "remark": ""
+  },
+  {
+    "id": "TJ8438bc1726bd455e9093bfa54edad3",
+    "name": "策略配置",
+    "remark": ""
+  },
+  {
+    "id": "TJ84ed6a70288047058a24a4d405a7fb",
+    "name": "交通运输业",
+    "remark": ""
+  },
+  {
+    "id": "TJ8521a33b0b1f4218bfd82cd1bbd01a",
+    "name": "教育",
+    "remark": ""
+  },
+  {
+    "id": "TJ85efc92b64984be6b40ebfe4576b4d",
+    "name": "行标",
+    "remark": ""
+  },
+  {
+    "id": "TJ87b67b1c297a4d6fa109a2cdf4e13c",
+    "name": "开头",
+    "remark": ""
+  },
+  {
+    "id": "TJ8895e0c92e9a414cac7fc6eb200f49",
+    "name": "每日时间区间内使用控制",
+    "remark": ""
+  },
+  {
+    "id": "TJ8931f407763c4bfb80b3e8933b8040",
+    "name": "API产品",
+    "remark": ""
+  },
+  {
+    "id": "TJ89cb87cbe3c248b98df3db975c4a81",
+    "name": "安防",
+    "remark": ""
+  },
+  {
+    "id": "TJ89e90b776dc34f819ef4d1c75541ef",
+    "name": "空间角色",
+    "remark": ""
+  },
+  {
+    "id": "TJ8a7dd7a90e7c4ad6aa79003dc48cdf",
+    "name": "数据报告",
+    "remark": ""
+  },
+  {
+    "id": "TJ8ae8793c14044f049f48caecf027ae",
+    "name": "金融领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ8b862d283a194d60b81e93ac28b38e",
+    "name": "S1",
+    "remark": ""
+  },
+  {
+    "id": "TJ8baccc162d9e421b9acf7f5f3f2417",
+    "name": "数据源类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ8bc5be9ad09c427fb2878b148eae2a",
+    "name": "密码模式",
+    "remark": null
+  },
+  {
+    "id": "TJ8d5c828d5ec843ea9feb13393ee91f",
+    "name": "资源需求",
+    "remark": ""
+  },
+  {
+    "id": "TJ8d5c9950cc1240d8b48a7cf9081c89",
+    "name": "视频",
+    "remark": ""
+  },
+  {
+    "id": "TJ8ed8329c43c64284b8b282664f62ab",
+    "name": "!",
+    "remark": ""
+  },
+  {
+    "id": "TJ8f2658903d5e4377bed80476a0633a",
+    "name": "水利、环境和公共设施管理业",
+    "remark": ""
+  },
+  {
+    "id": "TJ8f5da8f233a34c2d815ed2aeaa559f",
+    "name": "表命名规范",
+    "remark": ""
+  },
+  {
+    "id": "TJ90ecf40a9cb84e2e9b1eaf4333f316",
+    "name": "用户同步",
+    "remark": null
+  },
+  {
+    "id": "TJ91fd1efd4cf84d5f8aadebe9733c97",
+    "name": "企业数据",
+    "remark": ""
+  },
+  {
+    "id": "TJ9222518694394703a7f717521f0e7e",
+    "name": "认证授权模式",
+    "remark": null
+  },
+  {
+    "id": "TJ923a62151ffc4864a01bd4b66a7d6f",
+    "name": "企业数据",
+    "remark": ""
+  },
+  {
+    "id": "TJ92fe40d58fcd4610a435f5c1361649",
+    "name": "每年",
+    "remark": ""
+  },
+  {
+    "id": "TJ938a8dfa29694adebc624c305c290f",
+    "name": "交通领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ94545309efbc49e5a45c2d94775d32",
+    "name": "社保领域",
+    "remark": ""
+  },
+  {
+    "id": "TJ9499cc70b53f4a6c9a4b9b10497e91",
+    "name": "文化、体育和娱乐业",
+    "remark": ""
+  },
+  {
+    "id": "TJ963f2012068c49b8ab2d72a739c986",
+    "name": "and not",
+    "remark": ""
+  },
+  {
+    "id": "TJ973b1c46bbc646bdb308197799b6a7",
+    "name": "is between",
+    "remark": ""
+  },
+  {
+    "id": "TJ98ab78b6414f4393bb43d772ec3c01",
+    "name": "应用类型",
+    "remark": null
+  },
+  {
+    "id": "TJ9963740e2d6b47deadc0e52de7e213",
+    "name": "面议",
+    "remark": ""
+  },
+  {
+    "id": "TJ9a34dc5873354f84a605fc4c197c75",
+    "name": "数据规范类别",
+    "remark": ""
+  },
+  {
+    "id": "TJ9b0610d88d5348a88ea4f349fd3b9c",
+    "name": "采购类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ9b7d6ac17476446c916673916b36f7",
+    "name": "永久",
+    "remark": ""
+  },
+  {
+    "id": "TJ9bb7e599206b44aeba97631cff2c6a",
+    "name": "年",
+    "remark": ""
+  },
+  {
+    "id": "TJ9bcb27b54abe45d28253ec04830867",
+    "name": "交通运输",
+    "remark": ""
+  },
+  {
+    "id": "TJ9be58bdaa9b84a28b4c9d1cdc4fa34",
+    "name": "产品类型",
+    "remark": ""
+  },
+  {
+    "id": "TJ9d326c4468f94e3aaf34c0752e273e",
+    "name": "全功能型接入连接器",
+    "remark": ""
+  },
+  {
+    "id": "TJ9df48925da724836b3ec153794ba2e",
+    "name": "数据形态代码",
+    "remark": ""
+  },
+  {
+    "id": "TJ9e35393e82604c4fa2c9e910922a66",
+    "name": "位置",
+    "remark": ""
+  },
+  {
+    "id": "TJ9e5d7443bd9a4f57832d51e86bb25c",
+    "name": "产品需求",
+    "remark": ""
+  },
+  {
+    "id": "TJ9ecf4e2341714ef7a1c5ed8efa6880",
+    "name": "农、林、牧、渔业",
+    "remark": ""
+  },
+  {
+    "id": "TJa0f35568867e49a193683b9320eb78",
+    "name": "军官证",
+    "remark": null
+  },
+  {
+    "id": "TJa0fe4b3edf1046489463eaf6308f62",
+    "name": "A组织机构",
+    "remark": ""
+  },
+  {
+    "id": "TJa128704652454680b5e3ccc47afd5e",
+    "name": "公共管理、社会保障和社会组织",
+    "remark": ""
+  },
+  {
+    "id": "TJa24fa3d581c34d6ab996a0c5abefa3",
+    "name": "普通用户",
+    "remark": null
+  },
+  {
+    "id": "TJa2eec33eefec432899912afffeafd8",
+    "name": "邀请招标",
+    "remark": ""
+  },
+  {
+    "id": "TJa3ac066aa4a94bd0b0cc0c117c250d",
+    "name": "数据产品供给平台",
+    "remark": ""
+  },
+  {
+    "id": "TJa3b36c0f71014aae9ee50df0519a1d",
+    "name": "需求类型",
+    "remark": ""
+  },
+  {
+    "id": "TJa3d692d6ae19418ca6c48f06aca0db",
+    "name": "大屏",
+    "remark": ""
+  },
+  {
+    "id": "TJa5c67209cb424e8c840f9fb311aba1",
+    "name": "begin with",
+    "remark": ""
+  },
+  {
+    "id": "TJa66cbf189c1d4bcab58a6f841ea89d",
+    "name": "团队",
+    "remark": ""
+  },
+  {
+    "id": "TJa675c86d75f549a38416d55b205171",
+    "name": "行业",
+    "remark": ""
+  },
+  {
+    "id": "TJa67b0b563240458db5ec557fd0528f",
+    "name": "数据类型",
+    "remark": ""
+  },
+  {
+    "id": "TJa6bcec7964e14823b14eaf54c888bc",
+    "name": "交通运输、仓储和邮政业",
+    "remark": ""
+  },
+  {
+    "id": "TJa72971c8c3fb4596952ec67cb427b2",
+    "name": "应急管理",
+    "remark": ""
+  },
+  {
+    "id": "TJa7a5285602fc4b5a828e23b1cd2208",
+    "name": "数据等级",
+    "remark": ""
+  },
+  {
+    "id": "TJa92bdb5391c242cb91c3c3cacd1d00",
+    "name": "国际组织",
+    "remark": ""
+  },
+  {
+    "id": "TJa980ee4e72224240bb9a2fa0f3daf4",
+    "name": "文化旅游",
+    "remark": ""
+  },
+  {
+    "id": "TJa9ce39a2db67475cabcf698e5c1b0f",
+    "name": "A社会信用代码",
+    "remark": ""
+  },
+  {
+    "id": "TJa9fc74974e934f2696bb065a8d916d",
+    "name": "金融业",
+    "remark": ""
+  },
+  {
+    "id": "TJab2ec7fa5ab34e3b8d5a27263a642f",
+    "name": "数据价值单位",
+    "remark": ""
+  },
+  {
+    "id": "TJab553924100e41d5a4cbbc7c3dc1bd",
+    "name": "面议",
+    "remark": ""
+  },
+  {
+    "id": "TJab7c17c14e2d49088440a9c2a2fcc7",
+    "name": "规范类别",
+    "remark": ""
+  },
+  {
+    "id": "TJab8b03c7dc5d4335bd3a6ee5781fc0",
+    "name": "每年",
+    "remark": ""
+  },
+  {
+    "id": "TJab8f909a97e4430bb1d5df3c1544c5",
+    "name": "互联网（固定公网IP）",
+    "remark": ""
+  },
+  {
+    "id": "TJabc9052f82b64a4b9952f412e5b081",
+    "name": "其他",
+    "remark": ""
+  },
+  {
+    "id": "TJad01fcd6b08744a6b8c467afb2ba15",
+    "name": "交易等级",
+    "remark": ""
+  },
+  {
+    "id": "TJae0ef66fefe84333bbd70c897b436e",
+    "name": "国",
+    "remark": null
+  },
+  {
+    "id": "TJaea926ad971c407489d118fc281acc",
+    "name": "气象服务",
+    "remark": ""
+  },
+  {
+    "id": "TJaf6bc917482a4fd9a48132e2dd6388",
+    "name": "华东地区",
+    "remark": null
+  },
+  {
+    "id": "TJb089fe2873624c3a917658beb084cc",
+    "name": "竞争性磋商",
+    "remark": ""
+  },
+  {
+    "id": "TJb0e1759d06be40c9b7799fdade0aed",
+    "name": "次/月",
+    "remark": ""
+  },
+  {
+    "id": "TJb0ee8ed323ec497e9ffe980b156eec",
+    "name": "个人",
+    "remark": ""
+  },
+  {
+    "id": "TJb1086ee317c5463c8c2fbafb9564d7",
+    "name": "政务部门",
+    "remark": ""
+  },
+  {
+    "id": "TJb172731c3efe41e79a5282605270f0",
+    "name": "公共事业单位",
+    "remark": ""
+  },
+  {
+    "id": "TJb1a6eaf0d893465a9a92dab1af3211",
+    "name": "金融服务",
+    "remark": ""
+  },
+  {
+    "id": "TJb2502d5fc7c24ceca87114b120856a",
+    "name": "已驳回",
+    "remark": ""
+  },
+  {
+    "id": "TJb2afdb1f534147c49c0e823089c0e7",
+    "name": "就业领域",
+    "remark": ""
+  },
+  {
+    "id": "TJb2dc04295fc0417da2beac325a5b2a",
+    "name": "32:9",
+    "remark": ""
+  },
+  {
+    "id": "TJb308a3c0713141d1886d334d24ac05",
+    "name": "300-499人",
+    "remark": ""
+  },
+  {
+    "id": "TJb33da59fb7a247468c6232e2752b08",
+    "name": "文件分类",
+    "remark": ""
+  },
+  {
+    "id": "TJb381e59b518347d6b167e48655903a",
+    "name": "非公开招标",
+    "remark": ""
+  },
+  {
+    "id": "TJb399eb948a6b4af48d2148c1d7eade",
+    "name": "库表",
+    "remark": ""
+  },
+  {
+    "id": "TJb3d9630941f046c0bb7838b72cd385",
+    "name": "加密方式",
+    "remark": null
+  },
+  {
+    "id": "TJb4a8c6e0a9e94711b732c08c09ba7d",
+    "name": "每月",
+    "remark": ""
+  },
+  {
+    "id": "TJb53e02ac95804cfcabb1caf6b16645",
+    "name": "人员",
+    "remark": ""
+  },
+  {
+    "id": "TJb53f068a993d43489d05e00e11135b",
+    "name": "租赁和商务服务业",
+    "remark": ""
+  },
+  {
+    "id": "TJb6b27da6788f4c99affbcdc4680d4e",
+    "name": "待提交",
+    "remark": ""
+  },
+  {
+    "id": "TJb6d5d7eb5f4749c7a69f23b184f829",
+    "name": "用户范围",
+    "remark": null
+  },
+  {
+    "id": "TJb722b132191442f6b67f2914eef05c",
+    "name": "面议",
+    "remark": ""
+  },
+  {
+    "id": "TJb7d01aedef794ab3b310a23b02ec02",
+    "name": "年度",
+    "remark": ""
+  },
+  {
+    "id": "TJb83ce4c3dc4b48a9abc715e385acf5",
+    "name": "次/年",
+    "remark": ""
+  },
+  {
+    "id": "TJb8d2ce5d5cdb4c329e1f476685be80",
+    "name": "每MB",
+    "remark": ""
+  },
+  {
+    "id": "TJb9414cb54ac14946a1e52427010074",
+    "name": "四级",
+    "remark": ""
+  },
+  {
+    "id": "TJba9187a832e3448b92fff0b8271c9a",
+    "name": "静态图",
+    "remark": ""
+  },
+  {
+    "id": "TJbd0f6e9e5448456b8e9da677fad674",
+    "name": "交通领域",
+    "remark": ""
+  },
+  {
+    "id": "TJbebad4b8b7b34817ab043a5b01a7aa",
+    "name": "角色类型",
+    "remark": null
+  },
+  {
+    "id": "TJbf943462b5304610a2010a67b9a5e7",
+    "name": "国标",
+    "remark": ""
+  },
+  {
+    "id": "TJbff9629d51db47d8a021aa4ad88e24",
+    "name": "采购方式",
+    "remark": ""
+  },
+  {
+    "id": "TJc0c079d061674d96b8e7b79dc8bba5",
+    "name": "政策法规",
+    "remark": ""
+  },
+  {
+    "id": "TJc0f28821a4374ebdaa3e968dcdefab",
+    "name": "B社会信用代码",
+    "remark": ""
+  },
+  {
+    "id": "TJc118559d03f54b61b538725c1cdda0",
+    "name": "其他",
+    "remark": ""
+  },
+  {
+    "id": "TJc1460c49e7b747bfbb0b6b931cc8f2",
+    "name": "工作流命名规范",
+    "remark": ""
+  },
+  {
+    "id": "TJc171027104be4f3398fabe7ba786a5",
+    "name": "数据报告",
+    "remark": ""
+  },
+  {
+    "id": "TJc1e1254ceb824d138e2d4462211753",
+    "name": "应用管理",
+    "remark": null
+  },
+  {
+    "id": "TJc1fcea691ea843c083c8491792a61b",
+    "name": "产品状态",
+    "remark": ""
+  },
+  {
+    "id": "TJc20fd116907d48b492c4eb6e64ed1d",
+    "name": "非公益类项目",
+    "remark": ""
+  },
+  {
+    "id": "TJc22e24f724d046ab9f74cf832a3fb9",
+    "name": "公共数据",
+    "remark": ""
+  },
+  {
+    "id": "TJc2359e137e274c7e8aa91a2b634b58",
+    "name": "市",
+    "remark": null
+  },
+  {
+    "id": "TJc2a8b84ce8ee4f59b3d834b1e33a0c",
+    "name": "hdfs",
+    "remark": ""
+  },
+  {
+    "id": "TJc2b63904d499462d9ab6f8a36c85c8",
+    "name": "租户类型",
+    "remark": ""
+  },
+  {
+    "id": "TJc2f3a26562cb4dfbb679a7d1fc1bf2",
+    "name": "采集获得(采集说明)",
+    "remark": ""
+  },
+  {
+    "id": "TJc49cfc2aaee143f194c7b40d29769b",
+    "name": "用户可见本部门任何人",
+    "remark": null
+  },
+  {
+    "id": "TJc62f00e8510a4cc6b4f93eae33cefc",
+    "name": "科学研究和技术服务业",
+    "remark": ""
+  },
+  {
+    "id": "TJc6dc988fa2844be1afe34fea8ea917",
+    "name": "数据服务",
+    "remark": ""
+  },
+  {
+    "id": "TJc77db566a44d43a2862e45d1485fd4",
+    "name": "经营平台",
+    "remark": ""
+  },
+  {
+    "id": "TJc7f7c87d28c641b19ab44b279bd553",
+    "name": "does not begin with",
+    "remark": ""
+  },
+  {
+    "id": "TJc7fddc23275a44c9afe1e66dce92c7",
+    "name": "@",
+    "remark": ""
+  },
+  {
+    "id": "TJc8475bc1a028430b9f89571eef3afc",
+    "name": "第二类型",
+    "remark": ""
+  },
+  {
+    "id": "TJc86e406ecec443038c1202f89747ed",
+    "name": "数据应用",
+    "remark": ""
+  },
+  {
+    "id": "TJc9a6c538b38d458693847216c20573",
+    "name": "智慧农业",
+    "remark": ""
+  },
+  {
+    "id": "TJca9b1d85e0714fd6bf0abefb807825",
+    "name": "oracle",
+    "remark": ""
+  },
+  {
+    "id": "TJcb400634f02c4dd8bf7877d4d562aa",
+    "name": "固定",
+    "remark": ""
+  },
+  {
+    "id": "TJccb964d0a322462b9d1357365ed0a2",
+    "name": "智慧城市",
+    "remark": ""
+  },
+  {
+    "id": "TJcd2cb2bf299c4e9b88758c87c70cfc",
+    "name": "月度",
+    "remark": ""
+  },
+  {
+    "id": "TJcd3985f82aea429681798cd8bf4a31",
+    "name": "does not begin with",
+    "remark": ""
+  },
+  {
+    "id": "TJce32db30b2424e8ba00ff801f4f5bf",
+    "name": "or not",
+    "remark": ""
+  },
+  {
+    "id": "TJce9c2d981bf04a289b4bc49c8a97ec",
+    "name": "contains",
+    "remark": ""
+  },
+  {
+    "id": "TJcf6544a7cb724d869608682e187cd9",
+    "name": "开头",
+    "remark": ""
+  },
+  {
+    "id": "TJd2728adbe5e346319b5bd20dc153cc",
+    "name": "初级",
+    "remark": null
+  },
+  {
+    "id": "TJd2a1c9562f3a4132ba4e89c4ef5cf8",
+    "name": "每月",
+    "remark": ""
+  },
+  {
+    "id": "TJd311a73b7b4a48bbb89595f6284a3f",
+    "name": "非永久",
+    "remark": ""
+  },
+  {
+    "id": "TJd3803e8d10964a14876f6ee9d4d4a9",
+    "name": "接口",
+    "remark": ""
+  },
+  {
+    "id": "TJd38d04ea11d14dbdbf6d04e06d27c1",
+    "name": "政策文件",
+    "remark": ""
+  },
+  {
+    "id": "TJd39a0777f7fc45d1a446af7e0ca8e1",
+    "name": "制造业",
+    "remark": ""
+  },
+  {
+    "id": "TJd458ee3038a64b59b9146fa604ba99",
+    "name": "在平台使用中遇到困难",
+    "remark": ""
+  },
+  {
+    "id": "TJd57808c01e7d45eba2fb57bb9cf8f9",
+    "name": "用户可见任何人",
+    "remark": null
+  },
+  {
+    "id": "TJd5bd56984c244fb9afef12db6541eb",
+    "name": "连接器类型",
+    "remark": ""
+  },
+  {
+    "id": "TJd66e2352a7cf476eb44c7cb8b18504",
+    "name": "一级",
+    "remark": ""
+  },
+  {
+    "id": "TJd6ac694d3415433dae9abf83371dc0",
+    "name": "部门",
+    "remark": null
+  },
+  {
+    "id": "TJd6bfcd8672a14ddfa54736cd306455",
+    "name": "连接器",
+    "remark": ""
+  },
+  {
+    "id": "TJd7c6fd6798b44568a3cd4de6700be6",
+    "name": "用户可见本公司任何人",
+    "remark": null
+  },
+  {
+    "id": "TJd88dc087ea304c309f33e80bb02857",
+    "name": "is not equal to",
+    "remark": ""
+  },
+  {
+    "id": "TJd914a8c8efd640128cf9014b6fc61c",
+    "name": "postgresql",
+    "remark": ""
+  },
+  {
+    "id": "TJd9f279ba3ee34e2095ff40bd7b19b9",
+    "name": "每个",
+    "remark": ""
+  },
+  {
+    "id": "TJda0ce2658c344c10b15934033f307f",
+    "name": "钉钉",
+    "remark": "钉钉"
+  },
+  {
+    "id": "TJda534735c2e94fa6a765a718cc9758",
+    "name": "项目类型",
+    "remark": ""
+  },
+  {
+    "id": "TJda62a2d10f534f64b826a33892e58d",
+    "name": "智慧医疗",
+    "remark": ""
+  },
+  {
+    "id": "TJdb6cd3f3ddbe44bca254bc72993059",
+    "name": "MD5处理",
+    "remark": ""
+  },
+  {
+    "id": "TJdbc31da46e5b4e209b640f71408ffd",
+    "name": "其他",
+    "remark": ""
+  },
+  {
+    "id": "TJdc8b6a525d01410c973bdb765cc2a9",
+    "name": "审核中",
+    "remark": ""
+  },
+  {
+    "id": "TJdcef03a1073b423bb3a3c57492bc7a",
+    "name": "待办",
+    "remark": ""
+  },
+  {
+    "id": "TJdd7895cf7ca04cceb5cd3c778d34e2",
+    "name": "数据值",
+    "remark": ""
+  },
+  {
+    "id": "TJddfac247a2b94535a65ad8e0497de9",
+    "name": "面议",
+    "remark": ""
+  },
+  {
+    "id": "TJde57ca4740754e459d2532dad0ff18",
+    "name": "mysql",
+    "remark": ""
+  },
+  {
+    "id": "TJde8270e7eb3345b6a6a38aaf3caa5b",
+    "name": "华南地区",
+    "remark": null
+  },
+  {
+    "id": "TJe203f86d7ff8482e9530032fd2906f",
+    "name": "活动专区类型",
+    "remark": ""
+  },
+  {
+    "id": "TJe23fee8fb7df466db166111f30b16f",
+    "name": "专线",
+    "remark": ""
+  },
+  {
+    "id": "TJe254a2ba6a9e4f8099404ec2f510f9",
+    "name": "待收货",
+    "remark": ""
+  },
+  {
+    "id": "TJe2d1229bee1d480db2b8a9d50d8935",
+    "name": "BCrypt",
+    "remark": null
+  },
+  {
+    "id": "TJe30ed02cc73643c585a40a9b7244a1",
+    "name": "面议",
+    "remark": ""
+  },
+  {
+    "id": "TJe45a306bb8e6429aadba79b1b0fd93",
+    "name": "hbase",
+    "remark": ""
+  },
+  {
+    "id": "TJe49d86ae5be74742b462473f741820",
+    "name": "隐私计算",
+    "remark": ""
+  },
+  {
+    "id": "TJe510395dde914a84becc4b150a34a8",
+    "name": "B组织机构",
+    "remark": ""
+  },
+  {
+    "id": "TJe61f1743eacf4a8e87baccd245a7f3",
+    "name": "账号类型",
+    "remark": ""
+  },
+  {
+    "id": "TJe634b0968d0a463696d4720167a3a2",
+    "name": "生活领域",
+    "remark": ""
+  },
+  {
+    "id": "TJe6556b06af214a038a4d8d617e6d64",
+    "name": "住宿和餐饮业",
+    "remark": ""
+  },
+  {
+    "id": "TJe65c6b4cf6a14546a6ca236802bae4",
+    "name": "政府需求",
+    "remark": ""
+  },
+  {
+    "id": "TJe6793c3354914d67bbdfe5eb06009e",
+    "name": "部门类型",
+    "remark": null
+  },
+  {
+    "id": "TJe7c7aec6613746469badbfd7e1a635",
+    "name": "安全保密员",
+    "remark": null
+  },
+  {
+    "id": "TJe8c457d627bc45d2a08b047dbf2da7",
+    "name": "商贸流通",
+    "remark": ""
+  },
+  {
+    "id": "TJe9539c73d73640bab0e9f1f08187ca",
+    "name": "疫情领域",
+    "remark": ""
+  },
+  {
+    "id": "TJe9d0b8dead8347ecbdb453eba2e2d4",
+    "name": "PUT",
+    "remark": null
+  },
+  {
+    "id": "TJe9f2ad351acd42d1bfa5b40b19da3b",
+    "name": "结尾",
+    "remark": ""
+  },
+  {
+    "id": "TJea021b9d8ef24484885c84a6e4c1d3",
+    "name": "次/周",
+    "remark": ""
+  },
+  {
+    "id": "TJea3936e342e84bebbab6296d994d56",
+    "name": "区县级",
+    "remark": ""
+  },
+  {
+    "id": "TJea4a5338efb242d3b4b2407cc4b16c",
+    "name": "企业",
+    "remark": ""
+  },
+  {
+    "id": "TJeacc1e4291fb4382a7f03cac530edd",
+    "name": "结尾",
+    "remark": ""
+  },
+  {
+    "id": "TJec739ff179374c45bfaf5802bef2d1",
+    "name": "公共数据,个人隐私数据",
+    "remark": ""
+  },
+  {
+    "id": "TJec95b624e9a849a3ac02a3afedd9b1",
+    "name": "20人以下",
+    "remark": ""
+  },
+  {
+    "id": "TJecb4e3a4a2034b48ba572b15a466e7",
+    "name": "其他",
+    "remark": ""
+  },
+  {
+    "id": "TJeeb4e01f1a284ba7a33151524eeee9",
+    "name": "每次",
+    "remark": ""
+  },
+  {
+    "id": "TJf09ee1aa4b9345d084926cec3f10c1",
+    "name": "SCrypt",
+    "remark": null
+  },
+  {
+    "id": "TJf22bba43c7334d68addd92af304126",
+    "name": "MD5",
+    "remark": null
+  },
+  {
+    "id": "TJf26cc10c4ff64cb98a05a95218aeb6",
+    "name": "安保领域",
+    "remark": ""
+  },
+  {
+    "id": "TJf30eb69b3662431fb22ad5d02776a0",
+    "name": "互联网（无固定公网IP）",
+    "remark": ""
+  },
+  {
+    "id": "TJf5578449d0a74c619eb82ef6cacb52",
+    "name": "行政区划",
+    "remark": null
+  },
+  {
+    "id": "TJf6a731084f2a40ad91e0b7578d7211",
+    "name": "数据API",
+    "remark": ""
+  },
+  {
+    "id": "TJf6db03ae8b8a423385c7da8d0d2828",
+    "name": "无",
+    "remark": ""
+  },
+  {
+    "id": "TJf6f52c0de6354b96b3683cb026359a",
+    "name": "来源类型",
+    "remark": ""
+  },
+  {
+    "id": "TJf6f52c0de6354b96b3683cb02635zz",
+    "name": "资源形态",
+    "remark": null
+  },
+  {
+    "id": "TJf7862f46fbde4a9baa7cfcaed7e81f",
+    "name": "替换位置",
+    "remark": ""
+  },
+  {
+    "id": "TJf86cc23699b74a33bfa619277c481a",
+    "name": "请求方式",
+    "remark": null
+  },
+  {
+    "id": "TJf870b51848f54d81a0f6989a5ddf46",
+    "name": "其他",
+    "remark": ""
+  },
+  {
+    "id": "TJf8c4c996f2124bca95688262bd94b7",
+    "name": "授权码模式",
+    "remark": null
+  },
+  {
+    "id": "TJfa799f9891284f9692055d56dfdb3f",
+    "name": "平台活动",
+    "remark": ""
+  },
+  {
+    "id": "TJfc62ad786d914f8fadf3a7d1d663f0",
+    "name": "已办",
+    "remark": ""
+  },
+  {
+    "id": "TJfcb783faa0e3476e976a5614232216",
+    "name": "20-99人",
+    "remark": ""
+  },
+  {
+    "id": "TJfcc854f201e14034a43960b166cf68",
+    "name": "三级",
+    "remark": ""
+  },
+  {
+    "id": "TJfd816b29f16b4a48aebee0b33af56d",
+    "name": "规格",
+    "remark": ""
+  },
+  {
+    "id": "TJfd8ef307d6964366a9a6641f9a8721",
+    "name": "动态图",
+    "remark": ""
+  },
+  {
+    "id": "TJfdeceb5446c9458784318617cd92e6",
+    "name": "地方标准",
+    "remark": ""
+  },
+  {
+    "id": "TJfdf9feb97da24f5f89f63916b6f45c",
+    "name": "is greater than",
+    "remark": ""
+  },
+  {
+    "id": "TJfe01dfbf47ca4826afe10a2c8e5bc2",
+    "name": "区块",
+    "remark": ""
+  },
+  {
+    "id": "TJfe4e02ea076e4c5cba8a9aa94b38f2",
+    "name": "is less than or equal to",
+    "remark": ""
+  },
+  {
+    "id": "TJfe8ac8a97d76499698159594fefc28",
+    "name": "技术岗",
+    "remark": null
+  }
+]
