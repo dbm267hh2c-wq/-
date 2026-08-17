@@ -1,0 +1,2752 @@
+[
+  {
+    "id": "MENU_SYS_ROOT",
+    "name": "菜单管理",
+    "remark": null
+  },
+  {
+    "id": "TJ00b5958580264d55aa8b8f31fb1e48",
+    "name": "注销人员",
+    "remark": ""
+  },
+  {
+    "id": "TJ00e9fbcffe1d43acafb7408ad5311f",
+    "name": "组织机构",
+    "remark": ""
+  },
+  {
+    "id": "TJ011881629b76450d88af0f0880c7b8",
+    "name": "回收站",
+    "remark": ""
+  },
+  {
+    "id": "TJ02c6197817b54feb94ce36b8bd0661",
+    "name": "审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJ03b24a84b82a46f1b3583a787e428f",
+    "name": "产品需求订单",
+    "remark": ""
+  },
+  {
+    "id": "TJ03ce5dda68f744dfa24c81f083141b",
+    "name": "发布审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJ03eb7115df9e4dbda94f944e5554bc",
+    "name": "资源供给",
+    "remark": ""
+  },
+  {
+    "id": "TJ043ed0512fc143c69271ca269a42f3",
+    "name": "申请单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ05aed3751a03497a84f8ef9dbb39e7",
+    "name": "在线客服",
+    "remark": "/business/back/onlineService"
+  },
+  {
+    "id": "TJ05ce930dee534643a80141cdcda1cd",
+    "name": "隐私计算管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ05d8106a619840e89835349dca9c84",
+    "name": "业务过程",
+    "remark": "{\"group\":1}"
+  },
+  {
+    "id": "TJ06e33a21e3094036ac4dceb59a4623",
+    "name": "订单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ071af71245ff4a439dad5636922877",
+    "name": "数据标签",
+    "remark": ""
+  },
+  {
+    "id": "TJ071af71245ff4a439dad56369228aa",
+    "name": "数据标签",
+    "remark": ""
+  },
+  {
+    "id": "TJ081f82dec7b0439484a72d4a133f8c",
+    "name": "订单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ0a314a2daedc4b49b4c47917531c6e",
+    "name": "用户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ0a548d1a695f42bb9fd73f01fb29b8",
+    "name": "多维分析",
+    "remark": null
+  },
+  {
+    "id": "TJ0ac08cf18832474483ceed8a52cc09",
+    "name": "执行结果确认",
+    "remark": ""
+  },
+  {
+    "id": "TJ0afe940b39b14e9881df84959a8b7c",
+    "name": "离线任务分类",
+    "remark": ""
+  },
+  {
+    "id": "TJ0b19298fc605425d805a718543c880",
+    "name": "组织机构",
+    "remark": ""
+  },
+  {
+    "id": "TJ0b6057e9fbcd4617b2ccd660ebbb5f",
+    "name": "日志管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ0b72e74cfaec4d3da61c9c767794b3",
+    "name": "函数管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ0cdbb755f1ba4775b6e229113d1f7a",
+    "name": "节点管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ0d609c5de57a44d79a5458390357fd",
+    "name": "空间设置",
+    "remark": ""
+  },
+  {
+    "id": "TJ0d8908f0281842fcb53e7d71ff1011",
+    "name": "登记信息版本",
+    "remark": ""
+  },
+  {
+    "id": "TJ0d8c40135fae4eb9ab4f852d4e9098",
+    "name": "登记信息查看",
+    "remark": ""
+  },
+  {
+    "id": "TJ0d9bb8d8c4d5404f85fd7a7221bad5",
+    "name": "数据交换工具",
+    "remark": ""
+  },
+  {
+    "id": "TJ0e08aba5f8c64ae28a9451e4808fcf",
+    "name": "指标模型",
+    "remark": null
+  },
+  {
+    "id": "TJ0e51b1c0a99b430bb2f764e81242be",
+    "name": "数据接入",
+    "remark": ""
+  },
+  {
+    "id": "TJ0eafed145b8a46a7818d88893588ff",
+    "name": "个人",
+    "remark": ""
+  },
+  {
+    "id": "TJ0f5405bce2034809b35cbc5295556e",
+    "name": "日志管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ1241c738d1df446696014a10a4794c",
+    "name": "数据分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJ131c6bf2eb084c2698610211b5fef7",
+    "name": "运营管理平台",
+    "remark": ""
+  },
+  {
+    "id": "TJ13a660302a5a4549994e411482cafa",
+    "name": "上架审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ13b146c1e8c4426aa4ba6f9433c603",
+    "name": "资源列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ13f55e036a42450682b8982ba55ad8",
+    "name": "需求管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ14dd511674894624a4003eb15aeb6a",
+    "name": "数据标签",
+    "remark": ""
+  },
+  {
+    "id": "TJ15fc2c7e4e0e405cb4156ec0ee8088",
+    "name": "连接器管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ1631d76b0e664914a02b6cebcbb8a2",
+    "name": "任务日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ175c3564abc74232b17f5ac8d4dd75",
+    "name": "系统管理员",
+    "remark": ""
+  },
+  {
+    "id": "TJ1833f8c28478471b97116a96519efc",
+    "name": "用户认证",
+    "remark": ""
+  },
+  {
+    "id": "TJ1904bbf6003141939b8dee54595f87",
+    "name": "用户组管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ195a2e5f114c4ef185f4eabf5a8c83",
+    "name": "数据源",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ196959b0002c410eaf2ff865d1fc68",
+    "name": "发布服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ1acb8968785d4fbc9929e12b0f99ff",
+    "name": "数据资源",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ1b00f2e3d74d41c68c61c9fe4ec9f5",
+    "name": "安全保密员",
+    "remark": ""
+  },
+  {
+    "id": "TJ1b05f5408a7d41889ce0d5618969aa",
+    "name": "质量校验",
+    "remark": ""
+  },
+  {
+    "id": "TJ1b05f5408a7d41889ce0d5618969d9",
+    "name": "质量校验",
+    "remark": ""
+  },
+  {
+    "id": "TJ1bdb68583cb747b5ad2abf1c34eb92",
+    "name": "批量分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJ1d05cfce0bd645a78f0d3dcda216aa",
+    "name": "质量报告",
+    "remark": ""
+  },
+  {
+    "id": "TJ1d05cfce0bd645a78f0d3dcda216c1",
+    "name": "质量报告",
+    "remark": ""
+  },
+  {
+    "id": "TJ1ed7beb159eb48acbccb3790f6a80d",
+    "name": "回收站",
+    "remark": ""
+  },
+  {
+    "id": "TJ1f98d12137634537a116003c3a6773",
+    "name": "大屏",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ1fe02758973a4aab89286e9596106f",
+    "name": "我的看板",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ20766bc9cd4b413c9e422488e21808",
+    "name": "接入任务日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ20debbca79fa48b29bf729343cd06e",
+    "name": "服务调用量统计",
+    "remark": ""
+  },
+  {
+    "id": "TJ21592f2199ca4162a276d0800b61da",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ21a997a1447d4760ae96c742e679bf",
+    "name": "全局配置",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJ227000538a4b4f6cab1bc33eaebcd1",
+    "name": "接入配置",
+    "remark": ""
+  },
+  {
+    "id": "TJ22c912345da349da8524bfbcb62b1f",
+    "name": "脱敏数据项定义",
+    "remark": ""
+  },
+  {
+    "id": "TJ22c912345da349da8524bfbcb62baa",
+    "name": "脱敏数据项定义",
+    "remark": ""
+  },
+  {
+    "id": "TJ232d77a97b3b4dbebfe1d6e7353402",
+    "name": "资源列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ235d2071a8314d0987502b72f96c3a",
+    "name": "产品需求审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ2472498d2ca7407cacf360a27aa068",
+    "name": "态势总览",
+    "remark": ""
+  },
+  {
+    "id": "TJ2477072c611c43ca9be4483bcd2e1c",
+    "name": "项目管理",
+    "remark": "{\"en\":\"Project Management\"}"
+  },
+  {
+    "id": "TJ24df0217f6ea4d6a9aad61f2a26d09",
+    "name": "实时开发",
+    "remark": ""
+  },
+  {
+    "id": "TJ2516db5f60454d4b9245b63d508db1",
+    "name": "策略管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ25c6cac8c40442b6bf8d0e801cae3a",
+    "name": "订单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ262c6cf915fe4d4c947583323a543a",
+    "name": "BinLog接入",
+    "remark": ""
+  },
+  {
+    "id": "TJ269147391d564663a02f6b02a5a8cc",
+    "name": "法人",
+    "remark": ""
+  },
+  {
+    "id": "TJ2772045e7ae446c8a1663a9d537f67",
+    "name": "用户信息",
+    "remark": ""
+  },
+  {
+    "id": "TJ27a0b30977b9482ba5f33275246148",
+    "name": "用户注销",
+    "remark": ""
+  },
+  {
+    "id": "TJ299a8eeaa4b54dfa9410dfdd8e7630",
+    "name": "注销账号",
+    "remark": ""
+  },
+  {
+    "id": "TJ29ad785abc8b4496b6f645566f67c5",
+    "name": "用户范围",
+    "remark": ""
+  },
+  {
+    "id": "TJ29e2938cbc8e4d22ba36b55582f804",
+    "name": "交易管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ2ad1dfaa7b1d468080d491f5f7782f",
+    "name": "订单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ2b711339f57647af93588feb6fcf28",
+    "name": "模板审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ2c23b90ee6de4212a95b7c9d887807",
+    "name": "项目列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ2c34579f0b504af4a6d69f94b4720e",
+    "name": "空间管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ2c7778a1b9dc48499941778ee87d04",
+    "name": "调用统计",
+    "remark": ""
+  },
+  {
+    "id": "TJ2f9113af60df4d9d936a0d1934867b",
+    "name": "需求认领",
+    "remark": ""
+  },
+  {
+    "id": "TJ2ff3dd45344f4edf8d9ebf894ad701",
+    "name": "开发利用",
+    "remark": ""
+  },
+  {
+    "id": "TJ301a871c9d494902a6859f7758ebdb",
+    "name": "审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJ302256ba894940619258486a2bd557",
+    "name": "信息系统管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ303f7f38ffe34a849267cd5b6e1865",
+    "name": "数据需求",
+    "remark": ""
+  },
+  {
+    "id": "TJ30dc47054da04145a65b3e692d009b",
+    "name": "数据集列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ318c8de83a534ab696d91f82f85a46",
+    "name": "挂接审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ323e55ecd5604e68a418256970fcc4",
+    "name": "工作台",
+    "remark": "{\"en\":\"Dashboard\"}"
+  },
+  {
+    "id": "TJ32aeb36f74924305b6a13a036492aa",
+    "name": "数据元",
+    "remark": ""
+  },
+  {
+    "id": "TJ32aeb36f74924305b6a13a036492b5",
+    "name": "数据元",
+    "remark": ""
+  },
+  {
+    "id": "TJ32cc2a7555e441d9a891aeac54aa15",
+    "name": "应用信息",
+    "remark": ""
+  },
+  {
+    "id": "TJ33b3572d7ab84675b2bcb96d2fd0b5",
+    "name": "空间角色",
+    "remark": ""
+  },
+  {
+    "id": "TJ33fb1b581b13404e8f0e554a3840c4",
+    "name": "账号安全",
+    "remark": ""
+  },
+  {
+    "id": "TJ348159fd60554d78a9e68594410c02",
+    "name": "管理后台",
+    "remark": null
+  },
+  {
+    "id": "TJ3482d6d818094d70ac9bbc226502cf",
+    "name": "数据源",
+    "remark": "{\"en\":\"Data Source\"}"
+  },
+  {
+    "id": "TJ35e6705397494c3399f1a7bde43908",
+    "name": "标识解析",
+    "remark": ""
+  },
+  {
+    "id": "TJ360436060aca487a8bfa9df413316e",
+    "name": "已审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ36a4c53743774870834f217c4792fa",
+    "name": "统一标识",
+    "remark": ""
+  },
+  {
+    "id": "TJ36bd46ef84594e52bef949c0199448",
+    "name": "任务概览",
+    "remark": ""
+  },
+  {
+    "id": "TJ37d8083690194f42aed8bec9863676",
+    "name": "普通用户",
+    "remark": ""
+  },
+  {
+    "id": "TJ37e5d196dc244e7ab80f36733d2014",
+    "name": "回收站",
+    "remark": ""
+  },
+  {
+    "id": "TJ38047a1347a349bfb401e9ef4efe6e",
+    "name": "系统管理",
+    "remark": null
+  },
+  {
+    "id": "TJ38235f598a33417fbda92b1ed839b4",
+    "name": "存证追溯",
+    "remark": ""
+  },
+  {
+    "id": "TJ38bb49af81bb446a966e7009941dc2",
+    "name": "数据脱敏",
+    "remark": ""
+  },
+  {
+    "id": "TJ3a89f6bc0fb94eb3bac0d4d9ace32f",
+    "name": "数据使用控制",
+    "remark": ""
+  },
+  {
+    "id": "TJ3aa595c5d04c44e7be8341f18ace21",
+    "name": "已审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ3b735392494a404384d7a997a38427",
+    "name": "分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJ3b9dd5856a244c1196227788c6ed8a",
+    "name": "系统管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ3c2d73ca8052416dab173a0dc77334",
+    "name": "标准上线审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ3c2d73ca8052416dab173a0dc773aa",
+    "name": "标准上线审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ3c66201091824fa7a4b7881bceed03",
+    "name": "回收站",
+    "remark": ""
+  },
+  {
+    "id": "TJ3d19026ef7b949abbf9b669d1431f4",
+    "name": "登记审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ3d81acc0555744779f421b0c1e1f31",
+    "name": "资源管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ3e97dd5f26c14c90a349acb1698c6b",
+    "name": "数据源",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJ3ea51cf0ca424159ac1df01dc3ba50",
+    "name": "数据登记",
+    "remark": ""
+  },
+  {
+    "id": "TJ3fa34bbcc8ed4546ad3604f76a4246",
+    "name": "接出任务管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ3fa7cf069638443fbd3c713b847ba7",
+    "name": "全量产品列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ3fbb4fe1bc7b439db994918c48f559",
+    "name": "集群管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ3fce2d17f5e041259dce5004e735b8",
+    "name": "新闻资讯",
+    "remark": ""
+  },
+  {
+    "id": "TJ416d1a050f574abc8a1866d6e788fd",
+    "name": "数据建模",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJ4240560b6d534bb1bd7e17f1237a37",
+    "name": "角色管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ42d98d6039124e4f8b967374ff7c62",
+    "name": "数据产品订单",
+    "remark": ""
+  },
+  {
+    "id": "TJ438efc5b662e44dfbb3e9ba491e030",
+    "name": "自动分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJ43a5a9d957784d149fcc31428f7df2",
+    "name": "供给平台门户",
+    "remark": null
+  },
+  {
+    "id": "TJ43dae1625b80405199ee5de6f07b79",
+    "name": "注册中心",
+    "remark": ""
+  },
+  {
+    "id": "TJ4415259c05db41fba227e19a366669",
+    "name": "质量校验",
+    "remark": ""
+  },
+  {
+    "id": "TJ441a7567865949caa7b979eb756cb1",
+    "name": "项目管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ444543a9d5bd41a9ace83af4928eb5",
+    "name": "权限检索",
+    "remark": ""
+  },
+  {
+    "id": "TJ447551c005c34d638c8046a6b15756",
+    "name": "驾驶舱",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ4666c1d2ab6046cabdff743f5081cc",
+    "name": "数据治理",
+    "remark": ""
+  },
+  {
+    "id": "TJ467995c74c6e4147886ec0ef9518b3",
+    "name": "合约策略库",
+    "remark": ""
+  },
+  {
+    "id": "TJ46a6f8bb42014a0ca70cf5b9c61a6b",
+    "name": "质量评估",
+    "remark": ""
+  },
+  {
+    "id": "TJ46a6f8bb42014a0ca70cf5b9c61aaa",
+    "name": "质量评估",
+    "remark": ""
+  },
+  {
+    "id": "TJ47504f1883174606b23b22e4d7f81a",
+    "name": "部门管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ476d26bcdb93452592d46c5f2095c8",
+    "name": "目录编码",
+    "remark": ""
+  },
+  {
+    "id": "TJ47ad6ad5526b4ecc842d0371177be9",
+    "name": "菜单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ47ad9429964241d395d00fa61fe659",
+    "name": "工单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ48bc6b7ed9414a688e71a2b37015cd",
+    "name": "机构管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ4918b082a3134e40a7d7741d494753",
+    "name": "权限管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ494535b5bdc84cd2b1d2612bcdf128",
+    "name": "分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJ495941af49d94e23af40d53585caaa",
+    "name": "标签定义",
+    "remark": ""
+  },
+  {
+    "id": "TJ495941af49d94e23af40d53585cae3",
+    "name": "标签定义",
+    "remark": ""
+  },
+  {
+    "id": "TJ49976ad5c6d949da99ba07f4c827fa",
+    "name": "合作主体评价",
+    "remark": ""
+  },
+  {
+    "id": "TJ4a8a3fc50c7b44498e46b38881dcb1",
+    "name": "登录日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ4af7e16573134d129eb426abadb04b",
+    "name": "产品登记审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ4b23ef3d75784379acf9871ddbf16a",
+    "name": "待审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ4bc9a7ea618c472db84438b4d72569",
+    "name": "订单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ4bcc978646814f35abcc56edb8fb94",
+    "name": "项目审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ4bccba88f81e4367af19557b709a42",
+    "name": "资源供给",
+    "remark": ""
+  },
+  {
+    "id": "TJ4d3d3197cbb14d6fb343907a3f92a9",
+    "name": "存证追溯",
+    "remark": ""
+  },
+  {
+    "id": "TJ4d5f3ed93aa94631a623c0bde2808e",
+    "name": "后台管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ4dfad99df460477c800a2bf32e56a4",
+    "name": "数据产品",
+    "remark": ""
+  },
+  {
+    "id": "TJ4e10ee6800a84afdad36582c1a1f29",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ4ecae0b33e5541e6932182863eb69f",
+    "name": "资源模板管理",
+    "remark": null
+  },
+  {
+    "id": "TJ4f0f6d6bc25e4f51b83dce2fce5d22",
+    "name": "机构管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ4f9ffd73529d4edab89585d17eb9ef",
+    "name": "部门目录",
+    "remark": ""
+  },
+  {
+    "id": "TJ4fccbb4c1c4b4c18a4c363bbaa54e8",
+    "name": "部门管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ50eddc672979412fa2c257d3e78fb1",
+    "name": "服务调用日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ51091cc7cfd54c908324332a991299",
+    "name": "应用空间",
+    "remark": null
+  },
+  {
+    "id": "TJ512baca1539841738cb13da79d84a2",
+    "name": "备份",
+    "remark": ""
+  },
+  {
+    "id": "TJ51765ae7beb349068ae8a40abb580f",
+    "name": "数据产品",
+    "remark": ""
+  },
+  {
+    "id": "TJ51c2cd1cb01d486587399816864a9c",
+    "name": "账户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ51d5d86195574608bc96635f78024c",
+    "name": "批量分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJ523ee52db97045f799d2f0e37607bf",
+    "name": "参数配置",
+    "remark": ""
+  },
+  {
+    "id": "TJ52607591ea6d45f2ba3a1863080606",
+    "name": "字典管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ528a5ecc8db34609bfd65e9d819a2c",
+    "name": "质量评估",
+    "remark": ""
+  },
+  {
+    "id": "TJ52f83def330b494abd6ab4a47b71ce",
+    "name": "消息模板",
+    "remark": ""
+  },
+  {
+    "id": "TJ52fcc098871b4d2aa3f33944d379e4",
+    "name": "热搜词管理",
+    "remark": null
+  },
+  {
+    "id": "TJ53116ff722d54612a425d1e23347df",
+    "name": "数据源",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ54583f67282e4c66b1ef4c705b860a",
+    "name": "菜单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ54a2637392e041d592e7ed00e3139c",
+    "name": "数据接入接出",
+    "remark": ""
+  },
+  {
+    "id": "TJ56f56045f562472a9574929f10616f",
+    "name": "计量计费",
+    "remark": ""
+  },
+  {
+    "id": "TJ58398a16cf0c46c795b13ff27d478f",
+    "name": "数据门户",
+    "remark": null
+  },
+  {
+    "id": "TJ588da9093814437e952e1999539647",
+    "name": "字典管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ5898e31389aa4787bf3ba1903bdb44",
+    "name": "数据模型",
+    "remark": ""
+  },
+  {
+    "id": "TJ5898e31389aa4787bf3ba1903bdbaa",
+    "name": "数据模型",
+    "remark": ""
+  },
+  {
+    "id": "TJ5a242ed38b9c406d95090aab522a31",
+    "name": "数据资源",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ5c20147435144c388c0962bfcc8a06",
+    "name": "接口数据源",
+    "remark": ""
+  },
+  {
+    "id": "TJ5cf40bc47adb41c4a42b8eac912fd9",
+    "name": "PPT",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ5d05c6de9d4546dcb237925327a11d",
+    "name": "审核日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ5d3157d35ba0404aac50c1d9dd793d",
+    "name": "产品登记",
+    "remark": ""
+  },
+  {
+    "id": "TJ5e74fde199884e0c9b2b979fafbb1b",
+    "name": "回收站",
+    "remark": ""
+  },
+  {
+    "id": "TJ5e84f40cae23413e937f1a67ac4d6f",
+    "name": "数据表",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJ5eba07076dfd464fb5d9216c9d3f78",
+    "name": "公共数据编码",
+    "remark": ""
+  },
+  {
+    "id": "TJ5f10e5d4f45b48cc9dc10cb633a59c",
+    "name": "订单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ5f14fa5c17a7453c8e0bdf60073c00",
+    "name": "用户认证审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ5f1f1f4fcf6a4f618490484ddeaedc",
+    "name": "产品评价",
+    "remark": ""
+  },
+  {
+    "id": "TJ5f5a0fc258e44160b309e004ef9c24",
+    "name": "接口服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ6089a7c185b94427844def2f05d545",
+    "name": "组织机构",
+    "remark": null
+  },
+  {
+    "id": "TJ61579d06ef2b4a9eba5ff1073c124d",
+    "name": "数据登记",
+    "remark": ""
+  },
+  {
+    "id": "TJ61bafcacd70c429bade374e6477a5b",
+    "name": "数据资源",
+    "remark": ""
+  },
+  {
+    "id": "TJ61ec99bff3e6478bb14d81f12d9ef4",
+    "name": "合同管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ624bd68cdd524855a88d0949916905",
+    "name": "地理坐标",
+    "remark": ""
+  },
+  {
+    "id": "TJ626f4d9aa65a4dfeb60b566552c024",
+    "name": "数据资源",
+    "remark": ""
+  },
+  {
+    "id": "TJ6270e4308447428da4fca97aa8a34b",
+    "name": "日志管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ62ab7e50f542495d83cc0e29bf2d4a",
+    "name": "主体列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ62b0c91b412543e291e98c3fd2b94b",
+    "name": "层级管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ62b0c91b412543e291e98c3fd2b9aa",
+    "name": "层级管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6411bf161aa44aea96f9c7bd825f53",
+    "name": "组织机构",
+    "remark": ""
+  },
+  {
+    "id": "TJ64d02bab785d496899ea5c0f8a04fa",
+    "name": "账号安全",
+    "remark": ""
+  },
+  {
+    "id": "TJ65be259fea5f4a19a1a803711146c9",
+    "name": "告警规则",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ66017743204e44a289db378385430a",
+    "name": "标识规则",
+    "remark": ""
+  },
+  {
+    "id": "TJ6649542d0063446a93d4ca12d10515",
+    "name": "授权管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ667b7a327a1743cb9f394c20aad8a5",
+    "name": "已购服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ66e644a83fa1412391a4098c5b48f5",
+    "name": "新闻资讯",
+    "remark": ""
+  },
+  {
+    "id": "TJ673ba3f797ff4dbf899dc4c74d689c",
+    "name": "权限审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ676d4d551e2344cc89a5da9da218bc",
+    "name": "执行结果确认",
+    "remark": ""
+  },
+  {
+    "id": "TJ6831bdc3280e4fbcad541390bd0a5f",
+    "name": "脱敏数据项定义",
+    "remark": ""
+  },
+  {
+    "id": "TJ6853fbce09e343f594526e88890755",
+    "name": "资源发布审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ68c551dcba7343fc9805cf6730e331",
+    "name": "数据规范",
+    "remark": ""
+  },
+  {
+    "id": "TJ68c551dcba7343fc9805cf6730e3aa",
+    "name": "数据规范",
+    "remark": ""
+  },
+  {
+    "id": "TJ6936aaa8c3e247bd9714871dfd5504",
+    "name": "实例",
+    "remark": ""
+  },
+  {
+    "id": "TJ6936aaa8c3e247bd9714871dfd55aa",
+    "name": "实例",
+    "remark": ""
+  },
+  {
+    "id": "TJ695c7fbcb53d437dbb52125aeafb17",
+    "name": "标识解析",
+    "remark": ""
+  },
+  {
+    "id": "TJ69a2100afea542c482a8cec592fdfc",
+    "name": "信息系统管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6a5b954629da42f486741f749af8ed",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ6a5d1a7de3ac4936a7501462b6cf17",
+    "name": "数据登记审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ6a733023bce4437f9c671469aa7bf3",
+    "name": "待审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ6aab908945bf4bb596eee8394a2207",
+    "name": "产品上架列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ6ab2c5cf857f432cace01ac2243a89",
+    "name": "授权申请列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ6afb396e8fc94901818b8b82fb39aa",
+    "name": "码表",
+    "remark": ""
+  },
+  {
+    "id": "TJ6afb396e8fc94901818b8b82fb39fa",
+    "name": "码表",
+    "remark": ""
+  },
+  {
+    "id": "TJ6afca98bed484a07b76d12658239f1",
+    "name": "使用监控",
+    "remark": ""
+  },
+  {
+    "id": "TJ6b703ef02bda4e0a82f3919d0158d4",
+    "name": "开发利用",
+    "remark": ""
+  },
+  {
+    "id": "TJ6bd9f78339a84a99bcd3e963c30424",
+    "name": "数据源管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6c662744a8794125bc02d5f73e3f87",
+    "name": "编目审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ6c6d4b9cd1c642fe9c4bdb1b502ffd",
+    "name": "模块管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6c6d5546169f4fd784db6a5f564a7c",
+    "name": "数据管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6ce8b24fae954e5eb47fd8e28c78ca",
+    "name": "环境变量",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ6d18e3ffd9124f4492ea91eec9bead",
+    "name": "租户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6d629ee6e9f4462aa9012aa5a7db8e",
+    "name": "接入任务分类",
+    "remark": ""
+  },
+  {
+    "id": "TJ6e057b37cdbc4ba9947f42a7b2228f",
+    "name": "数据发布审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ6e09c92c19a5419ea9b3ddc3bc28e2",
+    "name": "操作日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ6e52159f2da64eaea1295b9a78e438",
+    "name": "工单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6e8c57adabe8439f89922a891e25e7",
+    "name": "API",
+    "remark": null
+  },
+  {
+    "id": "TJ6ed19ea130c343148b9a5ac61834c3",
+    "name": "用户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6f29e2bcba6d48da9fb4fd04054ed1",
+    "name": "连接器管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ6fb656443bbc4143a2cd575d162234",
+    "name": "数据概览",
+    "remark": ""
+  },
+  {
+    "id": "TJ6fc37e9f8d6d44cba8bc186fade3b9",
+    "name": "持有方机构",
+    "remark": ""
+  },
+  {
+    "id": "TJ700e3e248e5741488d13a3c9e34e9a",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ7073c0a1db0344dd8531def3a600b0",
+    "name": "数据授权审批",
+    "remark": ""
+  },
+  {
+    "id": "TJ71820f9e245748718f64a0599d18e1",
+    "name": "参数配置",
+    "remark": ""
+  },
+  {
+    "id": "TJ71b3c254a1da46a8a124eb9c84c4e5",
+    "name": "服务组管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ71c75d2c8c574075ad5a3f3fe7982c",
+    "name": "数据产品",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ71e5e767481945fab2b30def579cf8",
+    "name": "数据产品",
+    "remark": ""
+  },
+  {
+    "id": "TJ7214c59f1cfe4fcabbe39d00cbc8d5",
+    "name": "数据登记审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ722d982974b243c0b9a103dbdd95fe",
+    "name": "申请单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ7283bde6e92046c9a24576136b9b23",
+    "name": "数据集列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ7350d0819d764601ab8b74271d7298",
+    "name": "授权管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ7378f25c13e9400794962f190a63a6",
+    "name": "操作日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ741b9a7cb2a24d76b9e8f261203a06",
+    "name": "已售服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ75742256ae6f41e0a3838262f2f7ce",
+    "name": "平台管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ75995fe180a2462c887bd23a9e5183",
+    "name": "法人",
+    "remark": ""
+  },
+  {
+    "id": "TJ759b985eb4c3438195d4bfb1cc7088",
+    "name": "菜单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ75ce8082c28346e5b428c398c75cef",
+    "name": "系统管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ7622540cd92345ee80903592fe4a73",
+    "name": "项目空间管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ763a670d3238489b9e5017ca431821",
+    "name": "编目及挂接",
+    "remark": ""
+  },
+  {
+    "id": "TJ76deb388cfb3416496789341072884",
+    "name": "个人设置",
+    "remark": null
+  },
+  {
+    "id": "TJ76ff49481ea9431aa44d488beb3882",
+    "name": "标签定义",
+    "remark": ""
+  },
+  {
+    "id": "TJ7708ef40491c4bdeba6bf993d2ae97",
+    "name": "数据表",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJ77a67540f93247f6910c60f219e402",
+    "name": "下载日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ7835f5068b1d4fbdb236de53b6146b",
+    "name": "回收站",
+    "remark": ""
+  },
+  {
+    "id": "TJ78e09caf0f7a4596aa6147f1a33fca",
+    "name": "数据同步",
+    "remark": ""
+  },
+  {
+    "id": "TJ79187ed91554481a8df24516aa861e",
+    "name": "注册中心",
+    "remark": ""
+  },
+  {
+    "id": "TJ79196dc963614773821a092a2fc0a9",
+    "name": "申请单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ79b5e60ff1e94d86af29c90645062f",
+    "name": "群组管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ7a51c17cd3154cd3befb4c4182803a",
+    "name": "经营交易",
+    "remark": ""
+  },
+  {
+    "id": "TJ7a6018cb3e7f47289692ce921f429d",
+    "name": "运营方工作台",
+    "remark": ""
+  },
+  {
+    "id": "TJ7b4de17a0e6846b392c27d929e8791",
+    "name": "请求日志",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJ7baef636f67e4c3cbf4908872d9a86",
+    "name": "数据集列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ7bdd0ab2fec442668a0b87c1920e5b",
+    "name": "标准文件",
+    "remark": ""
+  },
+  {
+    "id": "TJ7bdd0ab2fec442668a0b87c1920eaa",
+    "name": "标准文件",
+    "remark": ""
+  },
+  {
+    "id": "TJ7c2ec02ba6514de59ba9180ffb09f5",
+    "name": "监控中心",
+    "remark": ""
+  },
+  {
+    "id": "TJ7c5fe8d8edc94266ad066606576ac9",
+    "name": "离线任务列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ7d0de9e2ef094698a1d19f7d46a945",
+    "name": "数据脱敏",
+    "remark": ""
+  },
+  {
+    "id": "TJ7d0de9e2ef094698a1d19f7d46a9aa",
+    "name": "数据脱敏",
+    "remark": ""
+  },
+  {
+    "id": "TJ7dc173389d664b6283ac0e2ce4e78c",
+    "name": "收藏管理",
+    "remark": "/business/back/favor"
+  },
+  {
+    "id": "TJ7dc53b1aec8948fc96f0d4b77411ae",
+    "name": "隐私计算",
+    "remark": ""
+  },
+  {
+    "id": "TJ7e8105a81761499c986a181c22838a",
+    "name": "主题管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ7e84b4f6688b42e8b8f69e6b3edacd",
+    "name": "目录编码1",
+    "remark": ""
+  },
+  {
+    "id": "TJ7ec027056b684181a195a3e45aaad4",
+    "name": "用户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ7ee7591e0e6849efbaf3fcd460b7bb",
+    "name": "审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJ7f133d31014e429b95a3b4df673da2",
+    "name": "标识码管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ7f757992695d4f1a85c745ab64e68a",
+    "name": "质量任务日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ7f757992695d4f1a85c745ab64e6aa",
+    "name": "质量任务日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ7f9d7de269fe45a4b5813a24515904",
+    "name": "数据需求",
+    "remark": ""
+  },
+  {
+    "id": "TJ801a851517d14555b3193debbdfcba",
+    "name": "接出任务日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ803177939bff408b8f28df01b4cf6a",
+    "name": "数据使用计量",
+    "remark": ""
+  },
+  {
+    "id": "TJ8144b9c2746c4d05b4f8cde551583a",
+    "name": "账号管理",
+    "remark": null
+  },
+  {
+    "id": "TJ8153a49a1cf2476c885e1e719a0c38",
+    "name": "模型管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8153a49a1cf2476c885e1e719a0caa",
+    "name": "模型管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ815f4aef1c114a4f85c531159ef073",
+    "name": "总资源列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ820a79d00f7f4d22a9aa1185232f0b",
+    "name": "产品管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8226a8d11f7d48a29f4cb151d5c9c8",
+    "name": "资源目录",
+    "remark": ""
+  },
+  {
+    "id": "TJ824c5aefbad0464ab801b97714bfe6",
+    "name": "数据管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ826b13998adc42959b86893ae6aaa6",
+    "name": "统一标识",
+    "remark": ""
+  },
+  {
+    "id": "TJ8296fc8953cc450599c168f7cca13e",
+    "name": "发布审批",
+    "remark": ""
+  },
+  {
+    "id": "TJ83c63200617b430dbb666abb6e7036",
+    "name": "产品登记审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ83d2d5e597e0497fb69da00f591c31",
+    "name": "生态管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8403c45441404623acbd3263335ca0",
+    "name": "正在执行",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJ845d2cdb671d406ab96dac5d6b8cde",
+    "name": "接入管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ84e2a42d9b6f4f548f598e29296aec",
+    "name": "认证审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ85b9092409ee45eeabac2c1c680e3d",
+    "name": "隐私计算",
+    "remark": ""
+  },
+  {
+    "id": "TJ85efc1af38494f2e857aa391adaa1b",
+    "name": "经营交易",
+    "remark": ""
+  },
+  {
+    "id": "TJ8657e83f11dc46a9b09472aac71614",
+    "name": "产品登记列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ8697d50c432444038d32f8a558990b",
+    "name": "职务管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ86f2d7544434472a9196164e50e0fd",
+    "name": "实时数据接入",
+    "remark": ""
+  },
+  {
+    "id": "TJ871cd376debf40f8b70727f4b083eb",
+    "name": "用户密码绑定",
+    "remark": ""
+  },
+  {
+    "id": "TJ87a68c0d06b54fa595aedf0d927850",
+    "name": "认证审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ888c71f3e9634e3593f775c537d769",
+    "name": "订单列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ89e296539b164a1d8d9c20116dd14a",
+    "name": "安全审计员",
+    "remark": ""
+  },
+  {
+    "id": "TJ8a0d30e559954909a7967fbe03f5a7",
+    "name": "审计分析",
+    "remark": ""
+  },
+  {
+    "id": "TJ8a72fb19402644bea86187fa350f81",
+    "name": "执行器管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8a77e0e5e90a465eac23c2c1c78aea",
+    "name": "身份管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8aacfaa9986a4fd189449e25364f82",
+    "name": "短信服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ8b45a7eeeada45c1a3d0c127c58541",
+    "name": "消息配置",
+    "remark": ""
+  },
+  {
+    "id": "TJ8b470b34feb84e078bbcf4db4c3adf",
+    "name": "执行器管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8b9a2350170848dda1db0e978b5b64",
+    "name": "模块管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8c1289a6a6484fbebd00b87d586c6b",
+    "name": "授权申请列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ8c3f19a8b538418c862973f512dc96",
+    "name": "回收站",
+    "remark": ""
+  },
+  {
+    "id": "TJ8c4a9f8c768d4c3394d9fd168424aa",
+    "name": "质量任务管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8c4a9f8c768d4c3394d9fd168424dd",
+    "name": "质量任务管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8c905139874043618ea1fc83166258",
+    "name": "产品发布列表",
+    "remark": ""
+  },
+  {
+    "id": "TJ8cdf8adf0a5845158e73eda40f98da",
+    "name": "需求订单",
+    "remark": ""
+  },
+  {
+    "id": "TJ8d5b99c3093e4bb4b6d66df4fb05a4",
+    "name": "岗位管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ8dfb3ed7dc344382b760035fbf0d02",
+    "name": "个人",
+    "remark": ""
+  },
+  {
+    "id": "TJ8e6ae50a1a5d45dcbf8317e37699b4",
+    "name": "项目审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ8eaa6d3724dc4628a9702ce7f361f5",
+    "name": "数据登记",
+    "remark": ""
+  },
+  {
+    "id": "TJ8f277f9bc5704e10913dd7211160d5",
+    "name": "审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJ8f4148c5bb024b73bdbfef2226207b",
+    "name": "凭证调用量统计",
+    "remark": ""
+  },
+  {
+    "id": "TJ8f67ef91c1a2468289f5e58a1712eb",
+    "name": "消息管理",
+    "remark": "/business/back/messageManagement"
+  },
+  {
+    "id": "TJ8fe58f2ec8504faea316214ad41ba7",
+    "name": "登记申请",
+    "remark": ""
+  },
+  {
+    "id": "TJ8ffc2fa8ad29431db556b37b6eedd1",
+    "name": "可信管控",
+    "remark": ""
+  },
+  {
+    "id": "TJ9072e17d60f7458bbda145e9eb9bd5",
+    "name": "API 集合",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ90fa4696c5304fbeaa2cab745400e5",
+    "name": "存证审计",
+    "remark": ""
+  },
+  {
+    "id": "TJ923bba299b7d416a931f066659ccd0",
+    "name": "隐私计算",
+    "remark": ""
+  },
+  {
+    "id": "TJ9265191676154803820bc342166b6f",
+    "name": "目录",
+    "remark": ""
+  },
+  {
+    "id": "TJ9265191676154803820bc342166baa",
+    "name": "目录",
+    "remark": ""
+  },
+  {
+    "id": "TJ92c0ad7948f142faa219e372228c7e",
+    "name": "质量任务日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ94601fa452554d83ba360c5861e5cf",
+    "name": "评价管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ949f7d839f294ae09365d5550fb3e0",
+    "name": "逻辑空间管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ953bd1f346a340458686c71a14bcc9",
+    "name": "数据接入_old",
+    "remark": ""
+  },
+  {
+    "id": "TJ953d053806164c03be9546f18b08e4",
+    "name": "资源目录",
+    "remark": ""
+  },
+  {
+    "id": "TJ971cdaeaecef46ddab73b283c78a49",
+    "name": "需求发布审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ972c8f3659b243e0bc53988aac8584",
+    "name": "岗位管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ9731a8fcd0ad490cb9bb8a23d65b1e",
+    "name": "数据产品",
+    "remark": ""
+  },
+  {
+    "id": "TJ9829a932737a4f679b2e3e0b74479d",
+    "name": "正在执行",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ99c5c40ca3d841bca01ec08d87f806",
+    "name": "模板日志",
+    "remark": ""
+  },
+  {
+    "id": "TJ99e9b498572f4dfa996cffe8366514",
+    "name": "模块管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ9a44c94e3dfb44baa067297595ed60",
+    "name": "节点管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ9a7d454def824340b36fbc6dcbac4e",
+    "name": "数据预警",
+    "remark": null
+  },
+  {
+    "id": "TJ9a9c5a101ade4cbeb84ebe07f0031d",
+    "name": "恢复",
+    "remark": ""
+  },
+  {
+    "id": "TJ9aa40e6cc6c348ec90dd374cfd8fa7",
+    "name": "数据分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJ9b334b1cdd6d4476a23080a03c4803",
+    "name": "发布审核",
+    "remark": ""
+  },
+  {
+    "id": "TJ9bacf72c5200452c8a669abc5dd788",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJ9c773f43a7204b4897fd4545edc982",
+    "name": "产品发布管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ9cd90ad77c4d4fe8af9b0cad674b77",
+    "name": "执行结果确认",
+    "remark": ""
+  },
+  {
+    "id": "TJ9ce86ea98b3a47c2af33ed37172fa8",
+    "name": "批量分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJ9d8be2686e8c4189a5411c951804a8",
+    "name": "产品订单",
+    "remark": ""
+  },
+  {
+    "id": "TJ9d8fcdac68f04c24ac3055094f2e6d",
+    "name": "部门管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ9e57c3a17266420eb126238906ff0b",
+    "name": "逻辑空间管理",
+    "remark": ""
+  },
+  {
+    "id": "TJ9e9c62aed5d543f587fff5be3d3635",
+    "name": "数据授权服务",
+    "remark": ""
+  },
+  {
+    "id": "TJ9f004e5d3d98462dab08ea509309f9",
+    "name": "回收站",
+    "remark": "{\"group\": 2}"
+  },
+  {
+    "id": "TJ9fcfed78d16645dd999102d4b24479",
+    "name": "态势总览",
+    "remark": ""
+  },
+  {
+    "id": "TJa012e91e96264c4bbba847074969bc",
+    "name": "登录日志",
+    "remark": ""
+  },
+  {
+    "id": "TJa07bd367e407437ca33a3302c51e8c",
+    "name": "登录日志",
+    "remark": ""
+  },
+  {
+    "id": "TJa155e0bd5bb643d49c5003d37ec991",
+    "name": "备份恢复",
+    "remark": ""
+  },
+  {
+    "id": "TJa25b6c4c61ae42019f305fb4e7908e",
+    "name": "数据管理",
+    "remark": ""
+  },
+  {
+    "id": "TJa2e99d18591f4ea89dfdf6d28a2789",
+    "name": "参数配置",
+    "remark": ""
+  },
+  {
+    "id": "TJa2ee346198a44eac9f1049e5c25907",
+    "name": "目录管理",
+    "remark": ""
+  },
+  {
+    "id": "TJa2ff808273d342ddb65c53ca8dbfaf",
+    "name": "成员管理",
+    "remark": ""
+  },
+  {
+    "id": "TJa4c830cd290043eca4ad18fc2b571e",
+    "name": "法人",
+    "remark": ""
+  },
+  {
+    "id": "TJa5b534e7bd084c3685b21e361532b4",
+    "name": "工单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJa62728c888434e77b5a07bd53a1668",
+    "name": "监控中心",
+    "remark": ""
+  },
+  {
+    "id": "TJa6449cc283644a5a84985315cc8b65",
+    "name": "数据概览",
+    "remark": ""
+  },
+  {
+    "id": "TJa693ec8a6a9b4422a9fd37efe9764f",
+    "name": "合同管理",
+    "remark": ""
+  },
+  {
+    "id": "TJa78772aff71f48ef94d1dbd99d35f2",
+    "name": "用户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJa8002bd7e1af4f89a3b045e22442a4",
+    "name": "接出任务分类",
+    "remark": ""
+  },
+  {
+    "id": "TJa88b0d3b0fff4b92a50589333f0d99",
+    "name": "数据接出",
+    "remark": ""
+  },
+  {
+    "id": "TJa90c5172c8444a63931e80acdf92c0",
+    "name": "审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJa9dd81a3d9c34f74bd63599ed56802",
+    "name": "用户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJaaaeffe52fc24311b2956134b4c4b3",
+    "name": "产品管理",
+    "remark": ""
+  },
+  {
+    "id": "TJad5b2a26910d4ae1a7c46fca971784",
+    "name": "统一标识",
+    "remark": ""
+  },
+  {
+    "id": "TJae6267e0af9742edaeb0a11eadc64b",
+    "name": "标识规则",
+    "remark": ""
+  },
+  {
+    "id": "TJae65e67b87f24033a8ba2401719b8a",
+    "name": "离线任务日志",
+    "remark": ""
+  },
+  {
+    "id": "TJae9dd2bbe9ab446e9778c32a71f684",
+    "name": "目录分类1",
+    "remark": ""
+  },
+  {
+    "id": "TJaee61e3b424343f1a909df201614cd",
+    "name": "节点管理",
+    "remark": ""
+  },
+  {
+    "id": "TJafb044c0d84648d594ef133f80ddb9",
+    "name": "资源分配",
+    "remark": ""
+  },
+  {
+    "id": "TJaff779489bdc4ccabd9bf72521e9a4",
+    "name": "接入任务列表",
+    "remark": ""
+  },
+  {
+    "id": "TJb07702c9a3cc41cf9a565813c0d001",
+    "name": "订单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJb0d9a9989ad144e7b1939ce7f0aafa",
+    "name": "项目审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJb4a1c783393d4c98ac63045dae990c",
+    "name": "告警记录",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJb520e04c463d496ea89cf2286d11d0",
+    "name": "负面清单",
+    "remark": ""
+  },
+  {
+    "id": "TJb61f5ee08b724c3283d69a7d9169aa",
+    "name": "命名规范",
+    "remark": ""
+  },
+  {
+    "id": "TJb61f5ee08b724c3283d69a7d9169ad",
+    "name": "命名规范",
+    "remark": ""
+  },
+  {
+    "id": "TJb62cfa23bb5b4831b38aa2c634a22e",
+    "name": "LOGO展示管理",
+    "remark": ""
+  },
+  {
+    "id": "TJb65034994e314082ab21b21b19ec65",
+    "name": "数据资源申请单",
+    "remark": ""
+  },
+  {
+    "id": "TJb6524217b260447cb5a1b22cdd3704",
+    "name": "接入日志",
+    "remark": ""
+  },
+  {
+    "id": "TJb69745801673468c93b9da02cd2f07",
+    "name": "用户范围",
+    "remark": ""
+  },
+  {
+    "id": "TJb6cffbafa8e442919d92b042e4abd5",
+    "name": "用户认证审核",
+    "remark": ""
+  },
+  {
+    "id": "TJb6ef4853e5d44a95bdce8709bdda93",
+    "name": "审计分析",
+    "remark": ""
+  },
+  {
+    "id": "TJb70a46a357374ac59d4c4623982cf5",
+    "name": "审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJb7a86815f03a4b87ac2d3017a20140",
+    "name": "存证追溯",
+    "remark": ""
+  },
+  {
+    "id": "TJb99e07c670c54e00aa74f551b22f32",
+    "name": "分类分级查询",
+    "remark": ""
+  },
+  {
+    "id": "TJba5ee4064c0f45f885856967aa5c0c",
+    "name": "存证追溯",
+    "remark": ""
+  },
+  {
+    "id": "TJbb21e153b6664fc68db45c77215e67",
+    "name": "评价管理",
+    "remark": ""
+  },
+  {
+    "id": "TJbc6d1ab3a9eb434882d2569bc5721e",
+    "name": "数据分析",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJbcba500a6d0a42259e669359a4bd1c",
+    "name": "审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJbccc306f797a4f329be3be3085f2b9",
+    "name": "客户端注册",
+    "remark": ""
+  },
+  {
+    "id": "TJbd1174b16bce4c26b52d53cd8e8cbf",
+    "name": "数据开发平台工作台",
+    "remark": ""
+  },
+  {
+    "id": "TJbd75371f12354473b6e0cad8ac1087",
+    "name": "产品登记管理",
+    "remark": ""
+  },
+  {
+    "id": "TJbdf2345dcb8b40a5892f98c5f76313",
+    "name": "账号信息",
+    "remark": ""
+  },
+  {
+    "id": "TJbe8156fc3f004130a364cbe61f5b7e",
+    "name": "新闻资讯",
+    "remark": ""
+  },
+  {
+    "id": "TJbf3bc2d2b5f543c985958ebea0933e",
+    "name": "标识码管理",
+    "remark": ""
+  },
+  {
+    "id": "TJbf873246f387476ca3344322ee1841",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJc0178151ff78431eabc0ee7b8ea15a",
+    "name": "合同模板",
+    "remark": ""
+  },
+  {
+    "id": "TJc0d010969b67491eaa19f7ff7f61db",
+    "name": "密码管理",
+    "remark": ""
+  },
+  {
+    "id": "TJc12f766f7522454887f29879f4b2e9",
+    "name": "总资源列表",
+    "remark": ""
+  },
+  {
+    "id": "TJc1882dafe707483ebef3072aa7785e",
+    "name": "资源申请单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJc252a678a6da4f8a84f7997d0b5fbb",
+    "name": "数据供给平台后台",
+    "remark": null
+  },
+  {
+    "id": "TJc2da1638493f475189ce858637b161",
+    "name": "数据集列表",
+    "remark": ""
+  },
+  {
+    "id": "TJc31a49ab4dbd4c99ac10079b75aed8",
+    "name": "社交平台",
+    "remark": ""
+  },
+  {
+    "id": "TJc440154601fb4d45815e95753924a5",
+    "name": "数据资源",
+    "remark": ""
+  },
+  {
+    "id": "TJc4a88b23612f4c39a804c0e95af8e0",
+    "name": "连接器",
+    "remark": ""
+  },
+  {
+    "id": "TJc54994e525024020b361b2b6288bab",
+    "name": "平台管理",
+    "remark": ""
+  },
+  {
+    "id": "TJc6bfab68645f429ab4e49bf541d127",
+    "name": "质量任务管理",
+    "remark": ""
+  },
+  {
+    "id": "TJc7085245c3bb4933aea437aa381f3f",
+    "name": "使用监控",
+    "remark": ""
+  },
+  {
+    "id": "TJc79308c80e5a47769c6e978bb2d9b0",
+    "name": "数据产品",
+    "remark": null
+  },
+  {
+    "id": "TJc86aa7e1c7a9490b9f9c41fd4e0532",
+    "name": "用户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJc9537cc978504a999f6f98e2457e75",
+    "name": "数据标准",
+    "remark": ""
+  },
+  {
+    "id": "TJc9537cc978504a999f6f98e2457eaa",
+    "name": "数据标准",
+    "remark": ""
+  },
+  {
+    "id": "TJc96b7fc61ed94947b1b11d78d05711",
+    "name": "操作日志",
+    "remark": ""
+  },
+  {
+    "id": "TJc997d78f427c42bb8628c9cae94342",
+    "name": "通知人组",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJc9fe269b3f4a4b7fb119deb3b004cf",
+    "name": "消息中心",
+    "remark": null
+  },
+  {
+    "id": "TJccab78c4bc6444f1a610ee14b1942c",
+    "name": "任务概览",
+    "remark": ""
+  },
+  {
+    "id": "TJccb5e65aba89447fbc0943b7d06a52",
+    "name": "主体管理",
+    "remark": ""
+  },
+  {
+    "id": "TJccfd56765ffa4ff5a2ae45c37517eb",
+    "name": "租户管理",
+    "remark": "租户管理"
+  },
+  {
+    "id": "TJcd87c4db88a541908abe2de5dd5baf",
+    "name": "产品管理",
+    "remark": "{\"en\":\"Product Management\"}"
+  },
+  {
+    "id": "TJcda84b3e09d545fbb481edbc115513",
+    "name": "目录分类",
+    "remark": ""
+  },
+  {
+    "id": "TJcdf4ce602a3f42ebb720828e1b78ce",
+    "name": "用户范围",
+    "remark": ""
+  },
+  {
+    "id": "TJce31e731432a423b8b93a7ccc69ffd",
+    "name": "数据经营平台",
+    "remark": ""
+  },
+  {
+    "id": "TJce8431db069a41ff9bb2ef1f763f9d",
+    "name": "回收站",
+    "remark": ""
+  },
+  {
+    "id": "TJcea7b0950587490f860757422b85a2",
+    "name": "数据治理",
+    "remark": ""
+  },
+  {
+    "id": "TJcec3d840704b45328a3fc8c95f7870",
+    "name": "日志管理",
+    "remark": ""
+  },
+  {
+    "id": "TJceec5ff9c9d945b5bdd1cbf2e1b9a0",
+    "name": "需求发布",
+    "remark": ""
+  },
+  {
+    "id": "TJcefb87c649ef4b4bbb5d7c71882f09",
+    "name": "密码管理",
+    "remark": ""
+  },
+  {
+    "id": "TJcf027329fe7544c2899d29ab19cbb9",
+    "name": "工作台",
+    "remark": ""
+  },
+  {
+    "id": "TJcf67ea67a68d46b4b7754642a4946a",
+    "name": "态势分析",
+    "remark": ""
+  },
+  {
+    "id": "TJcf8bfc11bdef4c4e91a279cacd1c39",
+    "name": "节点管理",
+    "remark": ""
+  },
+  {
+    "id": "TJcf9990d7f3734639bd26c61c1d94fa",
+    "name": "角色管理",
+    "remark": ""
+  },
+  {
+    "id": "TJd03b3d8bfb2a4b19a84c63ba038623",
+    "name": "产品需求",
+    "remark": ""
+  },
+  {
+    "id": "TJd1c28199f731458896f08e9ced0063",
+    "name": "服务管理",
+    "remark": ""
+  },
+  {
+    "id": "TJd25d87d510ef49958aca5c5a3edf8b",
+    "name": "角色管理",
+    "remark": ""
+  },
+  {
+    "id": "TJd29125ce3fde48649f4bd43231d19a",
+    "name": "产品列表",
+    "remark": ""
+  },
+  {
+    "id": "TJd2c9d32388bc4bafa90cd00758caa2",
+    "name": "个人资料",
+    "remark": ""
+  },
+  {
+    "id": "TJd2eec645a2f1409f8555d94ad0083c",
+    "name": "产品需求列表",
+    "remark": ""
+  },
+  {
+    "id": "TJd2f89cb1d78741afa5882332f37b42",
+    "name": "数据分类分级",
+    "remark": ""
+  },
+  {
+    "id": "TJd308b01a9973422c9afc6e62d51831",
+    "name": "接出任务配置",
+    "remark": ""
+  },
+  {
+    "id": "TJd324c265cc444e8daa119913128e18",
+    "name": "数据申请",
+    "remark": "{\"en\":\"Data Request\"}"
+  },
+  {
+    "id": "TJd454a7b6a50a4d2180686ecd589e1d",
+    "name": "工单管理",
+    "remark": ""
+  },
+  {
+    "id": "TJd45fffbcfb60419c94d7e817bad843",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJd4c056fd63264f27a9c426a54c5b97",
+    "name": "账号安全",
+    "remark": ""
+  },
+  {
+    "id": "TJd4fd608bcc0b4b86940b4dbb140bd3",
+    "name": "资源登记",
+    "remark": ""
+  },
+  {
+    "id": "TJd6d0e13764464e819b53c805329039",
+    "name": "数据接出",
+    "remark": ""
+  },
+  {
+    "id": "TJd78156fac63045bd91a8ab571a960e",
+    "name": "权限管理",
+    "remark": ""
+  },
+  {
+    "id": "TJd79fbd9a4c464d8d9e9ed4a05378d3",
+    "name": "主体管理",
+    "remark": ""
+  },
+  {
+    "id": "TJd7c75fcf9783424c8a567322754d8a",
+    "name": "数据规范",
+    "remark": ""
+  },
+  {
+    "id": "TJd89057fffbd044a5ba881eee27281a",
+    "name": "资源登记",
+    "remark": ""
+  },
+  {
+    "id": "TJd89edce742414b8fb3390ffaa0ca1b",
+    "name": "项目审核",
+    "remark": null
+  },
+  {
+    "id": "TJd8d97886fec64940a6dde48735bdde",
+    "name": "资源管理",
+    "remark": ""
+  },
+  {
+    "id": "TJd8ff78554c1f4d638d45831b2f60f8",
+    "name": "用户注销审核",
+    "remark": ""
+  },
+  {
+    "id": "TJd92430d0e13244bf85a540028fac89",
+    "name": "消息接收",
+    "remark": ""
+  },
+  {
+    "id": "TJd95d289f73294cfd8aa229e1582cb4",
+    "name": "工作台",
+    "remark": ""
+  },
+  {
+    "id": "TJda0714cb9e46462083af5ee4642b4c",
+    "name": "离线数据接入",
+    "remark": ""
+  },
+  {
+    "id": "TJdaa372a212b644919a8729327888de",
+    "name": "策略配置",
+    "remark": ""
+  },
+  {
+    "id": "TJdae6d551ae9c4aec8c0e65be2480fe",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJdb6beacb2ca44a3a8a0ed2e6990f81",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJdb9350005b6644618486a2b0a62174",
+    "name": "数据打标",
+    "remark": ""
+  },
+  {
+    "id": "TJdba6bfd55869474c849be61c28cea1",
+    "name": "机构管理",
+    "remark": ""
+  },
+  {
+    "id": "TJdc61c74f7b0e43d8906a46df6cef53",
+    "name": "数据打标",
+    "remark": ""
+  },
+  {
+    "id": "TJdc61c74f7b0e43d8906a46df6cefaa",
+    "name": "数据打标",
+    "remark": ""
+  },
+  {
+    "id": "TJdc94c1cbb52043788fdbc3c4d2ae5a",
+    "name": "部门目录",
+    "remark": ""
+  },
+  {
+    "id": "TJdca30622ee894336bf6d027a1f7c32",
+    "name": "登记信息查看",
+    "remark": ""
+  },
+  {
+    "id": "TJdcd4c255f67e493ea7c95a3610f0e3",
+    "name": "需求评价",
+    "remark": ""
+  },
+  {
+    "id": "TJdd488be5d85e4207a5531202717db0",
+    "name": "群组管理",
+    "remark": ""
+  },
+  {
+    "id": "TJddbc1252f43644b8be6af630cfc80b",
+    "name": "数据集列表",
+    "remark": ""
+  },
+  {
+    "id": "TJde30e7b78e1444c5b851bb240f23bd",
+    "name": "主体管理",
+    "remark": ""
+  },
+  {
+    "id": "TJdeb95395008741feb5593737e46431",
+    "name": "回收站",
+    "remark": "{\"group\":2}"
+  },
+  {
+    "id": "TJdebbc3b2f3194078806423ed8c859f",
+    "name": "主体管理",
+    "remark": ""
+  },
+  {
+    "id": "TJe034e3cb5eaa47288ad194d8a100aa",
+    "name": "权限管理",
+    "remark": null
+  },
+  {
+    "id": "TJe03a69826aa447f191844f03b4be5e",
+    "name": "资源接入",
+    "remark": ""
+  },
+  {
+    "id": "TJe099682ba6174fb6a77c3e0f2a897f",
+    "name": "部门管理",
+    "remark": ""
+  },
+  {
+    "id": "TJe1014a7fd4ca4dee81e7aa3a2892dc",
+    "name": "产品发布审核",
+    "remark": ""
+  },
+  {
+    "id": "TJe18da70301dd404997a5e0b60a86f2",
+    "name": "数据交换工具",
+    "remark": ""
+  },
+  {
+    "id": "TJe1abdf08ed444182a2e32ea1e397d8",
+    "name": "数据管理",
+    "remark": null
+  },
+  {
+    "id": "TJe1b0c9ee98c54c7cb2106914011aff",
+    "name": "空间管理",
+    "remark": ""
+  },
+  {
+    "id": "TJe1b3ae402d964725a3ae21dd379981",
+    "name": "我的分析",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJe3144a6fde134ffeab7a8916820c14",
+    "name": "项目管理",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJe52a31528221404ab2b9591ac5a438",
+    "name": "集群管理",
+    "remark": ""
+  },
+  {
+    "id": "TJe597e8989abf40978b714f0b3be399",
+    "name": "数据供给平台后台",
+    "remark": ""
+  },
+  {
+    "id": "TJe5e0e2d973ef4ee0a07003fe7c1a88",
+    "name": "函数管理",
+    "remark": ""
+  },
+  {
+    "id": "TJe5f1e35ada394207b80e256db7e47e",
+    "name": "产品发布",
+    "remark": null
+  },
+  {
+    "id": "TJe5fb5e8005ee4762ad8b884414127c",
+    "name": "审核管理",
+    "remark": ""
+  },
+  {
+    "id": "TJe63b7971310a4e25ac3a286c7ce645",
+    "name": "下载日志",
+    "remark": ""
+  },
+  {
+    "id": "TJe66a04f47e2b452f8c230b21f0ae57",
+    "name": "数据指标",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJe692c8f9c0334ad997602be68fddc4",
+    "name": "节点管理",
+    "remark": ""
+  },
+  {
+    "id": "TJe6fc599a7c3f4a3db14eb17228e784",
+    "name": "数据接出",
+    "remark": ""
+  },
+  {
+    "id": "TJe8d767f0870749a7a13b712e9b1b8c",
+    "name": "数据工厂",
+    "remark": null
+  },
+  {
+    "id": "TJe8ec2efbcc2d4e35937d5aa4bca0a7",
+    "name": "项目列表",
+    "remark": ""
+  },
+  {
+    "id": "TJea1c1609c6bd44b39541184c27a00b",
+    "name": "产品需求管理",
+    "remark": ""
+  },
+  {
+    "id": "TJeca1e2d8c4db4168ae9e76d0267712",
+    "name": "数据可视化",
+    "remark": null
+  },
+  {
+    "id": "TJece202147308451c9c504913ab339f",
+    "name": "质量维度",
+    "remark": ""
+  },
+  {
+    "id": "TJed2d388d20a14d04ae4039b0905f9b",
+    "name": "操作日志",
+    "remark": ""
+  },
+  {
+    "id": "TJed4fc6b2150c4cc589025f1adcf779",
+    "name": "日志管理",
+    "remark": ""
+  },
+  {
+    "id": "TJf013e62555224717a6fb7a443513ea",
+    "name": "全局配置",
+    "remark": "{\"group\": 1}"
+  },
+  {
+    "id": "TJf025c86d56114973b76ebfff7e0c16",
+    "name": "合同管理",
+    "remark": ""
+  },
+  {
+    "id": "TJf0f4405cdff348d59cc88b094d5ce1",
+    "name": "区划管理",
+    "remark": ""
+  },
+  {
+    "id": "TJf127067a990b42788c98993e1eea40",
+    "name": "公告管理",
+    "remark": ""
+  },
+  {
+    "id": "TJf1722d05a121413ab5c7a658e04512",
+    "name": "工作台",
+    "remark": ""
+  },
+  {
+    "id": "TJf21868c9540c425fbad2dca055c682",
+    "name": "操作日志",
+    "remark": ""
+  },
+  {
+    "id": "TJf2601376c2b74c1381e107d34173ac",
+    "name": "数据资源",
+    "remark": ""
+  },
+  {
+    "id": "TJf2c9bff8c95d4ca983de38b51ccb19",
+    "name": "租户管理",
+    "remark": ""
+  },
+  {
+    "id": "TJf2e634f1d7db479abf66c038dcb3d8",
+    "name": "目录分类管理",
+    "remark": ""
+  },
+  {
+    "id": "TJf30f4e9981e34d11bb40f3d1f111fc",
+    "name": "项目空间管理",
+    "remark": ""
+  },
+  {
+    "id": "TJf35dfb938fe247e0bca8bb72e54ae1",
+    "name": "授权审批",
+    "remark": ""
+  },
+  {
+    "id": "TJf3c1a8c4fef3412e9abf4854bb3d75",
+    "name": "工作动态",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJf3ff050332a04135af83e6233ca2ac",
+    "name": "数据集列表",
+    "remark": ""
+  },
+  {
+    "id": "TJf457127dca994844ac5cf8dcd01baa",
+    "name": "质量维度",
+    "remark": ""
+  },
+  {
+    "id": "TJf457127dca994844ac5cf8dcd01bf4",
+    "name": "质量维度",
+    "remark": ""
+  },
+  {
+    "id": "TJf4eef63177cd4fa78d7fc25bdc4110",
+    "name": "文件接入",
+    "remark": ""
+  },
+  {
+    "id": "TJf5634ad3503740989fb3bc563ad1fe",
+    "name": "总资源列表",
+    "remark": ""
+  },
+  {
+    "id": "TJf766e8cb14bd4e1c8ffc67043313bd",
+    "name": "凭证管理",
+    "remark": ""
+  },
+  {
+    "id": "TJf79506befb9440fe80067613d046e3",
+    "name": "账号信息",
+    "remark": ""
+  },
+  {
+    "id": "TJf8181da1e7194f4fad0a51ba0b8b39",
+    "name": "数据使用",
+    "remark": ""
+  },
+  {
+    "id": "TJf83c279d64a74e1aa32afb35248d76",
+    "name": "权限管理",
+    "remark": ""
+  },
+  {
+    "id": "TJfaab45773011478285b24f82b28dba",
+    "name": "产品发布列表",
+    "remark": ""
+  },
+  {
+    "id": "TJfbec7d0d867b4eb7851a55f4dd1d0f",
+    "name": "部门管理",
+    "remark": ""
+  },
+  {
+    "id": "TJfc67c9420b934906a3091bc7241d93",
+    "name": "数据域",
+    "remark": "{\"group\": 0}"
+  },
+  {
+    "id": "TJfcd5356987354ce5a980ec39fd3d61",
+    "name": "上架审核记录",
+    "remark": ""
+  },
+  {
+    "id": "TJfd7dc4d0276741cb8170b7109c4b18",
+    "name": "元数据",
+    "remark": null
+  },
+  {
+    "id": "TJfdb2c063956144a59ab2c3bb87404e",
+    "name": "库表数据源",
+    "remark": ""
+  },
+  {
+    "id": "TJfea1c52cb56f4cd2a5d839e057b55e",
+    "name": "连接器",
+    "remark": ""
+  },
+  {
+    "id": "TJfed6185b74c44f93aa1b5064016837",
+    "name": "登记信息版本",
+    "remark": ""
+  },
+  {
+    "id": "TJfee3845ac4804b5aa0beb7dc9f25a7",
+    "name": "个人",
+    "remark": ""
+  },
+  {
+    "id": "TJff1a560afe2b45f68be99a723cd16a",
+    "name": "质量报告",
+    "remark": ""
+  },
+  {
+    "id": "TJff87c31761d6431099149d0ac45e53",
+    "name": "运营态势",
+    "remark": ""
+  },
+  {
+    "id": "TJff9f8df3891749a5938e6b3a540cc0",
+    "name": "数据管理",
+    "remark": "{\"en\":\"Data Management\"}"
+  },
+  {
+    "id": "TJffd71c87c18f4cbbaed6ce44bae889",
+    "name": "字典管理",
+    "remark": ""
+  },
+  {
+    "id": "TJffdde915a06f4104b4a1d15cd8e405",
+    "name": "我的组件",
+    "remark": "{\"group\":1}"
+  }
+]

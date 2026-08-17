@@ -1,0 +1,316 @@
+menu_name	en
+API	API
+API 集合	API Collection
+BinLog接入	BinLog Ingestion
+LOGO展示管理	Logo Display Management
+PPT	PPT
+上架审核	Listing Review
+上架审核记录	Listing Review Records
+下载日志	Download Logs
+业务过程	Business Process
+个人	Individual
+个人设置	Personal Settings
+个人资料	Personal Profile
+主体列表	Entity List
+主体管理	Entity Management
+主题管理	Theme Management
+交易管理	Transaction Management
+产品上架列表	Product Listing List
+产品列表	Product List
+产品发布	Product Publishing
+产品发布列表	Product Publishing List
+产品发布审核	Product Publishing Review
+产品发布管理	Product Publishing Management
+产品登记	Product Registration
+产品登记列表	Product Registration List
+产品登记审核	Product Registration Review
+产品登记管理	Product Registration Management
+产品管理	Product Management
+产品订单	Product Orders
+产品评价	Product Reviews
+产品需求	Product Demand
+产品需求列表	Product Demand List
+产品需求审核	Product Demand Review
+产品需求管理	Product Demand Management
+产品需求订单	Product Demand Orders
+任务日志	Task Logs
+任务概览	Task Overview
+使用监控	Usage Monitoring
+供给平台门户	Supply Platform Portal
+信息系统管理	Information System Management
+元数据	Metadata
+全局配置	Global Configuration
+全量产品列表	Full Product List
+公共数据编码	Public Data Encoding
+公告管理	Announcement Management
+凭证管理	Certificate Management
+凭证调用量统计	Certificate Call Statistics
+函数管理	Function Management
+分类分级	Classification and Grading
+分类分级查询	Classification Query
+区划管理	Region Management
+参数配置	Parameter Configuration
+发布审批	Publishing Approval
+发布审核	Publishing Review
+发布审核记录	Publishing Review Records
+发布服务	Publishing Service
+可信管控	Trusted Control
+合作主体评价	Partner Entity Reviews
+合同模板	Contract Templates
+合同管理	Contract Management
+合约策略库	Contract Policy Library
+后台管理	Backend Administration
+告警规则	Alert Rules
+告警记录	Alert Records
+命名规范	Naming Convention
+回收站	Recycle Bin
+在线客服	Online Customer Service
+地理坐标	Geographic Coordinates
+备份	Backup
+备份恢复	Backup and Restore
+多维分析	Multidimensional Analysis
+大屏	Visualization Screen
+字典管理	Dictionary Management
+存证审计	Evidence Audit
+存证追溯	Evidence Traceability
+安全保密员	Security Officer
+安全审计员	Security Auditor
+实例	Instances
+实时开发	Real-time Development
+实时数据接入	Real-time Data Ingestion
+审核日志	Review Logs
+审核管理	Review Management
+审核记录	Review Records
+审计分析	Audit Analysis
+客户端注册	Client Registration
+密码管理	Password Management
+层级管理	Hierarchy Management
+岗位管理	Position Management
+工作动态	Work Log
+工作台	Dashboard
+工单管理	Ticket Management
+已售服务	Sold Services
+已审核	Reviewed
+已购服务	Purchased Services
+平台管理	Platform Management
+库表数据源	Database Table Source
+应用信息	Application Information
+应用空间	Application Space
+开发利用	Development and Utilization
+待审核	Pending Review
+态势分析	Situation Analysis
+态势总览	Situation Overview
+总资源列表	All Resources
+恢复	Restore
+成员管理	Member Management
+我的分析	My Analysis
+我的看板	My Dashboards
+我的组件	My Widgets
+执行器管理	Executor Management
+执行结果确认	Execution Result Confirmation
+批量分类分级	Batch Classification and Grading
+持有方机构	Data Holder Organization
+挂接审核	Binding Review
+指标模型	Indicator Model
+授权审批	Authorization Approval
+授权申请列表	Authorization Application List
+授权管理	Authorization Management
+接入任务分类	Ingestion Task Classification
+接入任务列表	Ingestion Task List
+接入任务日志	Ingestion Task Logs
+接入日志	Ingestion Logs
+接入管理	Ingestion Management
+接入配置	Ingestion Configuration
+接出任务分类	Egress Task Classification
+接出任务日志	Egress Task Logs
+接出任务管理	Egress Task Management
+接出任务配置	Egress Task Configuration
+接口数据源	API Data Source
+接口服务	API Service
+操作日志	Operation Logs
+收藏管理	Favorites Management
+数据交换工具	Data Exchange Tools
+数据产品	Data Product
+数据产品订单	Data Product Orders
+数据使用	Data Usage
+数据使用控制	Data Usage Control
+数据使用计量	Data Usage Metering
+数据供给平台后台	Data Supply Platform Admin
+数据元	Data Element
+数据分析	Data Analysis
+数据分类分级	Data Classification and Grading
+数据发布审核	Data Publishing Review
+数据可视化	Data Visualization
+数据同步	Data Synchronization
+数据域	Data Domain
+数据工厂	Data Factory
+数据建模	Data Modeling
+数据开发平台工作台	Data Development Workbench
+数据打标	Data Tagging
+数据指标	Data Indicators
+数据授权审批	Data Authorization Approval
+数据授权服务	Data Authorization Service
+数据接入	Data Ingestion
+数据接入_old	Data Ingestion (Old)
+数据接入接出	Data Ingestion and Egress
+数据接出	Data Egress
+数据标准	Data Standard
+数据标签	Data Labels
+数据概览	Data Overview
+数据模型	Data Model
+数据治理	Data Governance
+数据源	Data Source
+数据源管理	Data Source Management
+数据申请	Data Request
+数据登记	Data Registration
+数据登记审核	Data Registration Review
+数据管理	Data Management
+数据经营平台	Data Business Platform
+数据脱敏	Data Masking
+数据表	Data Table
+数据规范	Data Specification
+数据资源	Data Resource
+数据资源申请单	Data Resource Application
+数据门户	Data Portal
+数据集列表	Dataset List
+数据需求	Data Demand
+数据预警	Data Alert
+文件接入	File Ingestion
+新闻资讯	News
+日志管理	Log Management
+普通用户	Regular User
+服务管理	Service Management
+服务组管理	Service Group Management
+服务调用日志	Service Call Logs
+服务调用量统计	Service Call Statistics
+机构管理	Institution Management
+权限审核	Permission Review
+权限检索	Permission Search
+权限管理	Permission Management
+标准上线审核	Standard Go-live Review
+标准文件	Standard Documents
+标签定义	Label Definition
+标识码管理	Identifier Management
+标识规则	Identifier Rules
+标识解析	Identifier Resolution
+模块管理	Module Management
+模型管理	Model Management
+模板审核	Template Review
+模板日志	Template Logs
+正在执行	In Progress
+法人	Legal Entity
+注册中心	Registry
+注销人员	Deregistered Users
+注销账号	Account Deregistration
+消息中心	Message Center
+消息接收	Message Inbox
+消息模板	Message Templates
+消息管理	Message Management
+消息配置	Message Configuration
+热搜词管理	Hot Search Management
+环境变量	Environment Variables
+生态管理	Ecosystem Management
+用户信息	User Information
+用户密码绑定	User Password Binding
+用户注销	User Deregistration
+用户注销审核	User Deregistration Review
+用户管理	User Management
+用户组管理	User Group Management
+用户范围	User Scope
+用户认证	User Authentication
+用户认证审核	User Authentication Review
+申请单列表	Application List
+登录日志	Login Logs
+登记信息查看	View Registration Info
+登记信息版本	Registration Info Version
+登记审核	Registration Review
+登记申请	Registration Application
+监控中心	Monitoring Center
+目录	Catalog
+目录分类	Catalog Category
+目录分类1	Catalog Category 1
+目录分类管理	Catalog Category Management
+目录管理	Catalog Management
+目录编码	Catalog Encoding
+目录编码1	Catalog Encoding 1
+短信服务	SMS Service
+码表	Code Table
+社交平台	Social Platforms
+离线任务分类	Offline Task Classification
+离线任务列表	Offline Task List
+离线任务日志	Offline Task Logs
+离线数据接入	Offline Data Ingestion
+租户管理	Tenant Management
+空间管理	Space Management
+空间角色	Space Roles
+空间设置	Workspace Settings
+策略管理	Policy Management
+策略配置	Policy Configuration
+管理后台	Admin Console
+系统管理	System Management
+系统管理员	System Administrator
+组织机构	Organization
+经营交易	Business Transactions
+统一标识	Unified Identifier
+编目及挂接	Cataloging and Binding
+编目审核	Cataloging Review
+群组管理	Group Management
+职务管理	Job Title Management
+脱敏数据项定义	Masked Data Item Definition
+自动分类分级	Automatic Classification and Grading
+节点管理	Node Management
+菜单管理	Menu Management
+角色管理	Role Management
+计量计费	Metering and Billing
+订单列表	Order List
+订单管理	Order Management
+认证审核	Certification Review
+评价管理	Review Management
+请求日志	Request Logs
+调用统计	Call Statistics
+负面清单	Negative List
+账号信息	Account Information
+账号安全	Account Security
+账号管理	Account Management
+账户管理	Account Management
+质量任务日志	Quality Task Logs
+质量任务管理	Quality Task Management
+质量报告	Quality Report
+质量校验	Quality Validation
+质量维度	Quality Dimensions
+质量评估	Quality Assessment
+资源供给	Resource Supply
+资源分配	Resource Allocation
+资源列表	Resource List
+资源发布审核	Resource Publishing Review
+资源接入	Resource Ingestion
+资源模板管理	Resource Template Management
+资源申请单管理	Resource Application Management
+资源登记	Resource Registration
+资源目录	Resource Catalog
+资源管理	Resource Management
+身份管理	Identity Management
+运营态势	Operational Situation
+运营方工作台	Operator Workbench
+运营管理平台	Operations Management Platform
+连接器	Connector
+连接器管理	Connector Management
+通知人组	Notifier Groups
+逻辑空间管理	Logical Space Management
+部门目录	Department Catalog
+部门管理	Department Management
+隐私计算	Privacy Computing
+隐私计算管理	Privacy Computing Management
+集群管理	Cluster Management
+需求发布	Demand Publishing
+需求发布审核	Demand Publishing Review
+需求管理	Demand Management
+需求订单	Demand Orders
+需求认领	Demand Claiming
+需求评价	Demand Reviews
+项目列表	Project List
+项目审核	Project Review
+项目审核记录	Project Review Records
+项目空间管理	Project Space Management
+项目管理	Project Management
+驾驶舱	Cockpit
