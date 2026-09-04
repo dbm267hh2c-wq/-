@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tdp.example.cn/schema/tdp-contract-create.schema.json",
+  "title": "国内合约发起",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["contractName", "issuerId", "issuerEntityId"],
+  "properties": {
+    "contractName": { "type": "string", "minLength": 1 },
+    "contractAbstract": { "type": "string" },
+    "issueTime": { "type": "string" },
+    "activationTime": { "type": "string" },
+    "endTime": { "type": "string" },
+    "signMode": { "type": "string", "enum": ["01", "02"] },
+    "issuerId": { "type": "string", "minLength": 1 },
+    "issuerEntityId": { "type": "string", "minLength": 1 },
+    "signature": { "type": "string" },
+    "callbackAddress": { "type": "string" },
+    "strategy": { "type": "object" }
+  }
+}

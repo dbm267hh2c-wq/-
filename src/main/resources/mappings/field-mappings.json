@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "comment": "字段名契约：国内接口路径 ↔ DSP JSON-LD 路径。业务值不写在这里，只声明结构。",
+  "templates": {
+    "dataset": {
+      "@type": "dcat:Dataset",
+      "dct:description": [ { "@language": "zh" } ],
+      "dcat:keyword": [],
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dcat:accessService": [
+            {
+              "@type": "dcat:DataService",
+              "dspace:dataServiceType": "dspace:connector"
+            }
+          ]
+        }
+      ]
+    },
+    "product": {
+      "keywords": [],
+      "format": "application/json"
+    },
+    "offer": {
+      "@type": "odrl:Offer",
+      "odrl:permission": []
+    },
+    "strategy": {
+      "subjectInfo": {},
+      "executionNodeInfo": {},
+      "actions": [],
+      "constraints": []
+    },
+    "catalogQuery": {
+      "pageNum": 1,
+      "pageSize": 20
+    },
+    "constraint": {},
+    "odrlConstraint": {}
+  },
+  "bindings": {
+    "productToDataset": [
+      { "from": "dataProductId", "to": "@id", "required": true },
+      { "from": "dataProductName", "to": "dct:title", "required": true },
+      { "from": "dataProductAbstract", "to": "dct:description.0.@value" },
+      { "from": "keywords", "to": "dcat:keyword" },
+      { "from": "format", "to": "dcat:distribution.0.dct:format" },
+      { "from": "endpointUrl", "to": "dcat:distribution.0.dcat:accessService.0.dcat:endpointURL" }
+    ],
+    "datasetToProduct": [
+      { "from": "@id", "to": "dataProductId" },
+      { "from": "dct:title", "to": "dataProductName" },
+      { "from": "dct:description.0.@value", "to": "dataProductAbstract" },
+      { "from": "dcat:keyword", "to": "keywords" },
+      { "from": "dcat:distribution.0.dct:format", "to": "format" },
+      { "from": "dcat:distribution.0.dcat:accessService.0.dcat:endpointURL", "to": "endpointUrl" },
+      { "from": "odrl:hasPolicy.0.odrl:assigner", "to": "ownerEntityId" }
+    ],
+    "constraintToOdrl": [
+      { "from": "constraintName", "to": "odrl:leftOperand", "codec": "constraint" },
+      { "from": "constraintOperator", "to": "odrl:operator", "codec": "operator" },
+      { "from": "constraintValue", "to": "odrl:rightOperand" }
+    ],
+    "odrlToConstraint": [
+      { "from": "odrl:leftOperand", "to": "constraintName", "codec": "constraint" },
+      { "from": "odrl:operator", "to": "constraintOperator", "codec": "operator" },
+      { "from": "odrl:rightOperand", "to": "constraintValue" }
+    ],
+    "catalogQueryToDsp": [
+      { "from": "issuerId", "to": "issuerId" },
+      { "from": "issuerEntityId", "to": "issuerEntityId" }
+    ],
+    "dspToCatalogQuery": [
+      { "from": "issuerId", "to": "issuerId" },
+      { "from": "issuerEntityId", "to": "issuerEntityId" }
+    ]
+  }
+}

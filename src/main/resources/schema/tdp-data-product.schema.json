@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tdp.example.cn/schema/tdp-data-product.schema.json",
+  "title": "国内数据产品",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["dataProductId", "dataProductName"],
+  "properties": {
+    "dataProductId": { "type": "string", "minLength": 1 },
+    "dataProductName": { "type": "string", "minLength": 1 },
+    "dataProductAbstract": { "type": "string" },
+    "ownerEntityId": { "type": "string" },
+    "ownerName": { "type": "string" },
+    "keywords": { "type": "array", "items": { "type": "string" } },
+    "format": { "type": "string" },
+    "endpointUrl": { "type": "string" },
+    "connectorId": { "type": "string" },
+    "classification": { "type": "string" },
+    "strategy": { "$ref": "tdp-strategy.schema.json" }
+  }
+}
