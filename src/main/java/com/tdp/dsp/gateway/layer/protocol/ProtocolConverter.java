@@ -1,0 +1,289 @@
+package com.tdp.dsp.gateway.layer.protocol;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.tdp.dsp.gateway.constant.ProtocolConstants;
+import com.tdp.dsp.gateway.json.Jsons;
+import com.tdp.dsp.gateway.layer.adapter.MessageAdapter;
+import com.tdp.dsp.gateway.model.dsp.DspMessages;
+
+import java.time.Instant;
+import java.util.List;
+import java.util.Locale;
+import java.util.UUID;
+
+/**
+ * ① 协议转换层：将国内可信数据空间内部协议转换为国际数据空间协议（DSP）。
+ */
+public class ProtocolConverter {
+
+    private final MessageAdapter adapter;
+
+    public ProtocolConverter(MessageAdapter adapter) {
+        this.adapter = adapter;
+    }
+
+    public String tdpOperationToDspType(String tdpOperation) {
+        return switch (tdpOperation) {
+            case ProtocolConstants.OP_CATALOG_QUERY -> ProtocolConstants.DSP_CATALOG_REQUEST;
+            case ProtocolConstants.OP_PRODUCT_DETAIL -> ProtocolConstants.DSP_DATASET_REQUEST;
+            case ProtocolConstants.OP_CONTRACT_CREATE, ProtocolConstants.OP_CONTRACT_NEGOTIATE
+                    -> ProtocolConstants.DSP_CONTRACT_REQUEST;
+            case ProtocolConstants.OP_CONTRACT_EXECUTION -> ProtocolConstants.DSP_TRANSFER_REQUEST;
+            case ProtocolConstants.OP_CONTRACT_TERMINATE -> ProtocolConstants.DSP_CONTRACT_TERMINATION;
+            default -> throw new IllegalArgumentException("不支持的国内协议操作: " + tdpOperation);
+        };
+    }
+
+    public String dspTypeToTdpOperation(String dspType) {
+        String type = Jsons.shortName(dspType);
+        return switch (type) {
+            case ProtocolConstants.DSP_CATALOG_REQUEST -> ProtocolConstants.OP_CATALOG_QUERY;
+            case ProtocolConstants.DSP_DATASET_REQUEST -> ProtocolConstants.OP_PRODUCT_DETAIL;
+            case ProtocolConstants.DSP_CONTRACT_REQUEST, ProtocolConstants.DSP_CONTRACT_AGREEMENT
+                    -> ProtocolConstants.OP_CONTRACT_NEGOTIATE;
+            case ProtocolConstants.DSP_TRANSFER_REQUEST, ProtocolConstants.DSP_TRANSFER_START
+                    -> ProtocolConstants.OP_CONTRACT_EXECUTION;
+            case ProtocolConstants.DSP_CONTRACT_TERMINATION -> ProtocolConstants.OP_CONTRACT_TERMINATE;
+            default -> throw new IllegalArgumentException("不支持的 DSP 消息类型: " + dspType);
+        };
+    }
+
+    public String dspPathForTdpOperation(String tdpOperation) {
+        return switch (tdpOperation) {
+            case ProtocolConstants.OP_CATALOG_QUERY -> ProtocolConstants.DSP_PATH_CATALOG_REQUEST;
+            case ProtocolConstants.OP_PRODUCT_DETAIL -> ProtocolConstants.DSP_PATH_DATASET_REQUEST;
+            case ProtocolConstants.OP_CONTRACT_CREATE, ProtocolConstants.OP_CONTRACT_NEGOTIATE
+                    -> ProtocolConstants.DSP_PATH_NEGOTIATION_REQUEST;
+            case ProtocolConstants.OP_CONTRACT_EXECUTION -> ProtocolConstants.DSP_PATH_TRANSFER_REQUEST;
+            case ProtocolConstants.OP_CONTRACT_TERMINATE -> "/negotiations/termination";
+            default -> throw new IllegalArgumentException("不支持的国内协议操作: " + tdpOperation);
+        };
+    }
+
+    public String tdpPathForDspType(String dspType) {
+        return switch (Jsons.shortName(dspType)) {
+            case ProtocolConstants.DSP_CATALOG_REQUEST -> ProtocolConstants.TDP_PATH_CATALOG_QUERY;
+            case ProtocolConstants.DSP_DATASET_REQUEST -> ProtocolConstants.TDP_PATH_PRODUCT_DETAIL;
+            case ProtocolConstants.DSP_CONTRACT_REQUEST -> ProtocolConstants.TDP_PATH_CONTRACT_CREATE;
+            case ProtocolConstants.DSP_CONTRACT_AGREEMENT -> ProtocolConstants.TDP_PATH_CONTRACT_NEGOTIATE;
+            case ProtocolConstants.DSP_TRANSFER_REQUEST, ProtocolConstants.DSP_TRANSFER_START
+                    -> ProtocolConstants.TDP_PATH_CONTRACT_EXECUTION;
+            case ProtocolConstants.DSP_CONTRACT_TERMINATION -> ProtocolConstants.TDP_PATH_CONTRACT_TERMINATE;
+            default -> throw new IllegalArgumentException("不支持的 DSP 消息类型: " + dspType);
+        };
+    }
+
+    public ObjectNode tdpToDsp(String tdpOperation, JsonNode tdpPayload, ObjectNode context) {
+        return switch (tdpOperation) {
+            case ProtocolConstants.OP_CATALOG_QUERY -> toCatalogRequest(tdpPayload);
+            case ProtocolConstants.OP_PRODUCT_DETAIL -> DspMessages.datasetRequest(
+                    Jsons.textOrEmpty(tdpPayload, "dataProductId")
+            );
+            case ProtocolConstants.OP_CONTRACT_CREATE, ProtocolConstants.OP_CONTRACT_NEGOTIATE
+                    -> toContractRequest(tdpPayload, context);
+            case ProtocolConstants.OP_CONTRACT_EXECUTION -> toTransferRequest(tdpPayload, context);
+            case ProtocolConstants.OP_CONTRACT_TERMINATE -> DspMessages.contractTermination(
+                    Jsons.textOrEmpty(tdpPayload, "contractId"),
+                    Jsons.textOrEmpty(context, "consumerPid"),
+                    "terminated",
+                    Jsons.textOrEmpty(tdpPayload, "reason")
+            );
+            default -> throw new IllegalArgumentException("不支持的国内协议操作: " + tdpOperation);
+        };
+    }
+
+    public ObjectNode dspToTdp(JsonNode dspMessage, ObjectNode context) {
+        String type = Jsons.typeName(dspMessage);
+        return switch (type) {
+            case ProtocolConstants.DSP_CATALOG_REQUEST -> adapter.dspFilterToCatalogQuery(
+                    dspMessage,
+                    Jsons.textOrEmpty(context, "tdpConnectorId"),
+                    Jsons.textOrEmpty(context, "tdpEntityId")
+            );
+            case ProtocolConstants.DSP_DATASET_REQUEST -> Jsons.objectOf(
+                    "dataProductId", Jsons.textOrEmpty(dspMessage, "dspace:dataset", "dataset"),
+                    "issuerId", Jsons.textOrEmpty(context, "tdpConnectorId"),
+                    "issuerEntityId", Jsons.textOrEmpty(context, "tdpEntityId")
+            );
+            case ProtocolConstants.DSP_CONTRACT_REQUEST -> toContractCreate(dspMessage, context);
+            case ProtocolConstants.DSP_CONTRACT_AGREEMENT -> toContractNegotiate(dspMessage, context);
+            case ProtocolConstants.DSP_TRANSFER_REQUEST, ProtocolConstants.DSP_TRANSFER_START
+                    -> toContractExecution(dspMessage, context);
+            case ProtocolConstants.DSP_CONTRACT_TERMINATION -> Jsons.objectOf(
+                    "contractId", Jsons.textOrEmpty(dspMessage, "dspace:providerPid", "providerPid"),
+                    "reason", firstReason(dspMessage),
+                    "issuerId", Jsons.textOrEmpty(context, "tdpConnectorId")
+            );
+            default -> throw new IllegalArgumentException("不支持的 DSP 消息类型: " + type);
+        };
+    }
+
+    public ObjectNode tdpCatalogToDsp(JsonNode tdpCatalog, String participantId, String connectorUrl) {
+        ArrayNode datasets = Jsons.array();
+        JsonNode products = Jsons.get(tdpCatalog, "products");
+        if (products != null) {
+            products.forEach(product -> datasets.add(adapter.productToDataset(product)));
+        }
+        return DspMessages.catalog(
+                "urn:uuid:" + UUID.nameUUIDFromBytes(participantId.getBytes()),
+                "Trusted Data Space Catalog",
+                participantId,
+                datasets,
+                connectorUrl
+        );
+    }
+
+    public ObjectNode dspCatalogToTdp(JsonNode dspCatalog) {
+        ObjectNode response = Jsons.object();
+        response.put("status", "0");
+        ArrayNode products = Jsons.array();
+        JsonNode datasets = Jsons.get(dspCatalog, "dcat:dataset", "dataset");
+        if (datasets != null) {
+            for (JsonNode dataset : datasets) {
+                products.add(adapter.datasetToProduct(dataset));
+            }
+        }
+        response.set("products", products);
+        response.put("total", products.size());
+        return response;
+    }
+
+    public ObjectNode tdpContractResultToDsp(JsonNode tdpResult, String consumerPid, String datasetId) {
+        String contractId = Jsons.textOrEmpty(tdpResult, "contractId");
+        String flag = Jsons.textOrEmpty(tdpResult, "creationFlag", "negotiationStatus");
+        String state = "0".equals(flag) || flag.isBlank() ? "dspace:REQUESTED" : "dspace:TERMINATED";
+        return DspMessages.contractNegotiation(contractId, consumerPid, state, datasetId);
+    }
+
+    public ObjectNode tdpExecutionToDsp(JsonNode tdpResult, String consumerPid) {
+        String transferId = Jsons.textOrEmpty(tdpResult, "transferId", "contractId");
+        return DspMessages.transferProcess(transferId, consumerPid, "dspace:STARTED",
+                Jsons.textOrEmpty(tdpResult, "contractId"));
+    }
+
+    private ObjectNode toCatalogRequest(JsonNode tdpPayload) {
+        List<String> filters = Jsons.stringList(Jsons.get(tdpPayload, "filter"));
+        String keyword = Jsons.text(tdpPayload, "keyword");
+        if (keyword != null && !keyword.isBlank() && !filters.contains(keyword)) {
+            filters.add(0, keyword);
+        }
+        return DspMessages.catalogRequest(filters);
+    }
+
+    private ObjectNode toContractRequest(JsonNode tdpPayload, ObjectNode context) {
+        JsonNode strategy = Jsons.get(tdpPayload, "strategy");
+        String productId = "";
+        if (strategy != null) {
+            productId = Jsons.textOrEmpty(Jsons.get(strategy, "subjectInfo"), "dataProductId");
+        }
+        ObjectNode offer = adapter.strategyToOffer(
+                strategy,
+                productId,
+                Jsons.textOrEmpty(tdpPayload, "issuerEntityId")
+        );
+        String consumerPid = Jsons.textOrEmpty(context, "consumerPid");
+        if (consumerPid.isBlank()) {
+            consumerPid = "urn:uuid:" + UUID.randomUUID();
+        }
+        String callback = Jsons.textOrEmpty(tdpPayload, "callbackAddress");
+        if (callback.isBlank()) {
+            callback = Jsons.textOrEmpty(context, "callbackAddress");
+        }
+        return DspMessages.contractRequest(consumerPid, offer, callback, productId);
+    }
+
+    private ObjectNode toTransferRequest(JsonNode tdpPayload, ObjectNode context) {
+        String consumerPid = Jsons.textOrEmpty(context, "consumerPid");
+        if (consumerPid.isBlank()) {
+            consumerPid = "urn:uuid:" + UUID.randomUUID();
+        }
+        String callback = Jsons.textOrEmpty(context, "callbackAddress");
+        return DspMessages.transferRequest(
+                consumerPid,
+                Jsons.textOrEmpty(tdpPayload, "contractId"),
+                Jsons.textOrEmpty(tdpPayload, "transferType"),
+                callback,
+                Jsons.get(tdpPayload, "dataAddress")
+        );
+    }
+
+    private ObjectNode toContractCreate(JsonNode dspMessage, ObjectNode context) {
+        JsonNode offer = Jsons.get(dspMessage, "odrl:offer", "offer");
+        ObjectNode strategy = adapter.offerToStrategy(offer == null ? Jsons.object() : offer);
+        ObjectNode subject = Jsons.requireObject(strategy.get("subjectInfo"));
+        if (subject.path("dataProductId").asText("").isBlank()) {
+            subject.put("dataProductId", Jsons.textOrEmpty(dspMessage, "dspace:dataset", "dataset"));
+        }
+        Instant now = Instant.now();
+        ObjectNode create = Jsons.object();
+        create.put("contractName", "跨境数据使用合约-" + subject.path("dataProductId").asText());
+        create.put("contractAbstract", "由 DSP ContractRequestMessage 转换生成");
+        create.put("issueTime", now.toString());
+        create.put("activationTime", now.toString());
+        create.put("endTime", now.plusSeconds(30L * 24 * 3600).toString());
+        create.put("signMode", ProtocolConstants.SIGN_MODE_PLATFORM);
+        create.put("issuerId", Jsons.textOrEmpty(context, "tdpConnectorId"));
+        create.put("issuerEntityId", Jsons.textOrEmpty(context, "tdpEntityId"));
+        create.put("signature", "dsp-bridge");
+        create.put("callbackAddress", Jsons.textOrEmpty(dspMessage, "dspace:callbackAddress", "callbackAddress"));
+        create.set("strategy", strategy);
+        return create;
+    }
+
+    private ObjectNode toContractNegotiate(JsonNode dspMessage, ObjectNode context) {
+        JsonNode agreement = Jsons.get(dspMessage, "dspace:agreement", "agreement");
+        ObjectNode strategy = adapter.offerToStrategy(agreement == null ? Jsons.object() : agreement);
+        ObjectNode negotiate = Jsons.object();
+        negotiate.put("contractName", "跨境数据使用合约");
+        negotiate.put("contractId", Jsons.textOrEmpty(dspMessage, "dspace:providerPid", "providerPid"));
+        negotiate.set("strategy", strategy);
+        ArrayNode signatures = Jsons.array();
+        signatures.add(Jsons.objectOf(
+                "entityId", Jsons.textOrEmpty(context, "tdpEntityId"),
+                "signature", "dsp-agreement",
+                "signatoryTime", Instant.now().toString()
+        ));
+        negotiate.set("signatureList", signatures);
+        return negotiate;
+    }
+
+    private ObjectNode toContractExecution(JsonNode dspMessage, ObjectNode context) {
+        ObjectNode execution = Jsons.object();
+        execution.put("contractId", Jsons.textOrEmpty(
+                dspMessage, "dspace:agreementId", "agreementId", "dspace:providerPid", "providerPid"
+        ));
+        execution.put("dataProductId", Jsons.textOrEmpty(context, "dataProductId"));
+        execution.put("providerNodeId", Jsons.textOrEmpty(context, "tdpConnectorId"));
+        execution.put("consumerNodeId", Jsons.textOrEmpty(dspMessage, "dspace:consumerPid", "consumerPid"));
+        String format = Jsons.textOrEmpty(dspMessage, "dct:format", "format");
+        execution.put("transferType", format.isBlank() ? "HttpData-PULL" : format);
+        JsonNode dataAddress = Jsons.get(dspMessage, "dspace:dataAddress", "dataAddress");
+        execution.set("dataAddress", dataAddress == null ? Jsons.object() : dataAddress);
+        return execution;
+    }
+
+    private static String firstReason(JsonNode message) {
+        JsonNode reasons = Jsons.get(message, "dspace:reason", "reason");
+        if (reasons == null || reasons.isEmpty()) {
+            return "";
+        }
+        JsonNode first = reasons.isArray() ? reasons.get(0) : reasons;
+        if (first.isTextual()) {
+            return first.asText();
+        }
+        return Jsons.textOrEmpty(first, "@value");
+    }
+
+    public boolean isDspMessage(JsonNode payload) {
+        if (payload == null || !payload.has("@type")) {
+            return false;
+        }
+        String type = Jsons.typeName(payload).toLowerCase(Locale.ROOT);
+        return type.contains("catalog")
+                || type.contains("dataset")
+                || type.contains("contract")
+                || type.contains("transfer");
+    }
+}
