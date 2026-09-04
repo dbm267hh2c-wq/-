@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tdp.example.cn/schema/tdp-catalog-query.schema.json",
+  "title": "国内数据目录查询",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["issuerId", "issuerEntityId"],
+  "properties": {
+    "issuerId": { "type": "string", "minLength": 1 },
+    "issuerEntityId": { "type": "string", "minLength": 1 },
+    "keyword": { "type": "string" },
+    "dataProductId": { "type": "string" },
+    "pageNum": { "type": "integer", "minimum": 1 },
+    "pageSize": { "type": "integer", "minimum": 1 },
+    "filter": { "type": "array", "items": { "type": "string" } }
+  }
+}

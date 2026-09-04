@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "comment": "语义码表：国内数字合约词典 ↔ ODRL。新增条目只需改本文件或 overlay，不必改 Java。",
+  "actions": {
+    "defaultTdp": "授权使用",
+    "defaultDsp": "odrl:use",
+    "entries": [
+      { "tdp": "读取", "tdpAliases": ["read"], "dsp": "odrl:read", "dspAliases": ["read"] },
+      { "tdp": "授权使用", "tdpAliases": ["use"], "dsp": "odrl:use", "dspAliases": ["use"] },
+      { "tdp": "转换", "tdpAliases": ["transform", "derive"], "dsp": "odrl:derive", "dspAliases": ["derive"] },
+      { "tdp": "匿名化", "tdpAliases": ["anonymize"], "dsp": "odrl:anonymize", "dspAliases": ["anonymize"] },
+      { "tdp": "脱敏", "tdpAliases": ["desensitize"], "dsp": "tdp:desensitize", "dspAliases": ["desensitize"] },
+      { "tdp": "出售", "tdpAliases": ["sell"], "dsp": "odrl:sell", "dspAliases": ["sell"] },
+      { "tdp": "追踪", "tdpAliases": ["track"], "dsp": "odrl:grantUse", "dspAliases": ["grantUse"] }
+    ]
+  },
+  "operators": {
+    "defaultTdp": "01",
+    "defaultDsp": "odrl:eq",
+    "entries": [
+      { "tdp": "01", "dsp": "odrl:eq", "dspAliases": ["eq"] },
+      { "tdp": "02", "dsp": "odrl:gt", "dspAliases": ["gt"] },
+      { "tdp": "03", "dsp": "odrl:gteq", "dspAliases": ["gteq"] },
+      { "tdp": "04", "dsp": "odrl:isPartOf", "dspAliases": ["isPartOf"] },
+      { "tdp": "05", "dsp": "odrl:isA", "dspAliases": ["isA"] },
+      { "tdp": "06", "dsp": "odrl:isAllOf", "dspAliases": ["isAllOf"] },
+      { "tdp": "07", "dsp": "odrl:isAnyOf", "dspAliases": ["isAnyOf"] },
+      { "tdp": "08", "dsp": "odrl:neq", "dspAliases": ["neq"] },
+      { "tdp": "09", "dsp": "odrl:isPartOf" },
+      { "tdp": "10", "dsp": "odrl:lt", "dspAliases": ["lt"] },
+      { "tdp": "11", "dsp": "odrl:lteq", "dspAliases": ["lteq"] },
+      { "tdp": "12", "dsp": "odrl:neq" }
+    ]
+  },
+  "constraints": {
+    "defaultTdp": "",
+    "defaultDsp": "",
+    "passThroughUnknown": true,
+    "entries": [
+      { "tdp": "空间范围", "tdpAliases": ["spatial"], "dsp": "odrl:spatial", "dspAliases": ["spatial"] },
+      { "tdp": "时间范围", "tdpAliases": ["datetime"], "dsp": "odrl:dateTime", "dspAliases": ["dateTime", "elapsedTime", "odrl:elapsedTime"] },
+      { "tdp": "使用次数", "tdpAliases": ["count"], "dsp": "odrl:count", "dspAliases": ["count"] },
+      { "tdp": "使用目的", "tdpAliases": ["purpose"], "dsp": "odrl:purpose", "dspAliases": ["purpose"] },
+      { "tdp": "接收方", "tdpAliases": ["recipient"], "dsp": "odrl:recipient", "dspAliases": ["recipient"] }
+    ]
+  }
+}

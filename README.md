@@ -1,81 +1,55 @@
 # 国内可信数据空间 ↔ 国际数据空间（DSP）互联互通网关
 
-Java 实现的跨境数据空间桥接网关，按四层拆分：
+Java 21 Maven 工程。跨境网关按四层拆分，字段分三类落地：
 
-1. **协议转换层**：把国内可信数据空间内部协议（目录查询、数字合约、合约履行等，对齐 TC609 / NDI-TR-2025）转换成国际 [Dataspace Protocol (DSP)](https://github.com/International-Data-Spaces-Association/ids-specification) 的 Catalog / Contract Negotiation / Transfer Process。
-2. **消息适配层**：国内接口字段与 DSP JSON-LD（DCAT / ODRL）之间的格式适配、字段映射、语义转换（操作行为、约束运算符、约束名称）。
-3. **桥接层**：登记并路由境内接入连接器 / 服务平台与 IDS 参与方连接器，完成入境（IDS → TDP）和出境（TDP → IDS）。
-4. **合规关口层**：跨境请求唯一出入口，统一审计；`ComplianceHook` 预留数据分类分级、目的国白名单等后续合规校验点位。
+| 类别 | 是否事先定义 | 落地点 | 改什么 |
+| --- | --- | --- | --- |
+| 协议标识（路径、`@type`、操作名） | 是 | `TdpOperation` / `DspMessageType` 枚举 | 改 Java |
+| 字段名契约、语义码表 | 是，但是配置 | `src/main/resources/mappings/`、`schema/` | 改 JSON，不必改 Java |
+| 产品名、合约 ID、约束值等实例 | 否 | 运行时报文 | 不预定义 |
 
-## 架构
+新增「联合建模」这类操作行为：在 `mappings/semantic-codes.json` 加一条，或启动时用 overlay / 环境变量 `TDP_DSP_MAPPING_DIR` 覆盖，适配层会自动转换。
+
+## 工程结构
 
 ```
-跨境调用（唯一出入口）
-        │
-        ▼
-④ 合规关口 ComplianceGateway
-   审计 + ComplianceHook 扩展点
-        │
-        ▼
-③ 桥接 BridgeLayer
-   参与方身份映射 / 路由到 TDP 平台或 IDS 连接器
-        │
-        ▼
-② 消息适配 MessageAdapter     ① 协议转换 ProtocolConverter
-   字段/语义                     操作与消息类型
+src/main/java/com/tdp/dsp/gateway/
+  protocol/          协议枚举（常量层）
+  mapping/           码表加载、字段路径、Schema 校验
+  layer/adapter      消息适配（读配置做转换）
+  layer/protocol     协议转换（操作 ↔ DSP 消息）
+  layer/bridge       境内平台 ↔ IDS 连接器
+  layer/compliance   合规关口与扩展点
+  http/              统一 HTTP 出入口
+src/main/resources/
+  mappings/semantic-codes.json     动作 / 运算符 / 约束码表
+  mappings/field-mappings.json     字段路径契约 + 报文模板
+  schema/*.schema.json             国内接口 JSON Schema
 ```
 
 ## 运行
 
 ```bash
-mvn -q test
-mvn -q -DskipTests package
+mvn test
+mvn -DskipTests package
 java -jar target/tdp-dsp-gateway-1.0.0.jar 8080
 ```
 
-健康检查：`GET /health`
+可选覆盖目录：
+
+```bash
+export TDP_DSP_MAPPING_DIR=/etc/tdp-dsp/mappings
+# 目录内放 semantic-overlay.json 即可追加码表
+```
+
+查看已加载码表：`GET /mappings`
 
 ## HTTP 出入口
 
-入境（IDS 消费方 → 国内平台）
+入境：`POST /dsp/catalog/request`、`/dsp/negotiations/request`、`/dsp/transfers/request`
 
-- `POST /dsp/catalog/request`
-- `POST /dsp/catalog/datasets`
-- `POST /dsp/negotiations/request`
-- `POST /dsp/transfers/request`
+出境：`POST /tdp/catalogQuery`、`/productDetail`、`/contractCreate`、`/contractNegotiate`、`/contractExecution`、`/contractTerminate`
 
-出境（国内连接器 → IDS）
+管理：`GET /health`、`/audit`、`/bridge/participants`、`/compliance/extensions`、`/mappings`
 
-- `POST /tdp/catalogQuery`
-- `POST /tdp/productDetail`
-- `POST /tdp/contractCreate`
-- `POST /tdp/contractNegotiate`
-- `POST /tdp/contractExecution`
-- `POST /tdp/contractTerminate`
-
-管理
-
-- `GET /audit` 跨境流量审计
-- `GET /bridge/participants` 参与方映射
-- `GET /compliance/extensions` 合规扩展点
-
-出境可带请求头：
-
-- `X-IDS-Participant` 目标 IDS 参与方
-- `X-Destination-Country` 目的国（供白名单扩展点使用）
-
-## 字段与语义映射（节选）
-
-| 国内 TDP | DSP |
-| --- | --- |
-| 数据产品 `dataProduct` | `dcat:Dataset` |
-| 数据产品标识 `dataProductId` | `@id` |
-| 数据产品名称 `dataProductName` | `dct:title` |
-| 合约策略 `strategy` | `odrl:Offer` / `odrl:hasPolicy` |
-| 操作行为 读取/授权使用/匿名化/脱敏 | `odrl:read` / `odrl:use` / `odrl:anonymize` / `tdp:desensitize` |
-| 约束运算符 `01`–`12` | `odrl:eq` / `gt` / `gteq` / … |
-| `/catalogQuery` | `dspace:CatalogRequestMessage` |
-| `/contractCreate` `/contractNegotiate` | `dspace:ContractRequestMessage` |
-| `/contractExecution` | `dspace:TransferRequestMessage` |
-
-仓库内带内存版国内服务平台与 IDS 连接器，便于本地联调；将 `TdpPlatformClient` / `IdsConnectorClient` 换成 HTTP 客户端即可对接真实系统。
+出境不符合 Schema 时返回 HTTP 400（`SCHEMA_INVALID`）。重要数据出境由合规关口返回 HTTP 403。

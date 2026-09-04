@@ -12,6 +12,8 @@ import com.tdp.dsp.gateway.layer.compliance.ComplianceGateway;
 import com.tdp.dsp.gateway.layer.compliance.DestinationAllowlistHook;
 import com.tdp.dsp.gateway.layer.compliance.SensitiveDataHook;
 import com.tdp.dsp.gateway.layer.protocol.ProtocolConverter;
+import com.tdp.dsp.gateway.mapping.ContractSchemaValidator;
+import com.tdp.dsp.gateway.mapping.MappingRegistry;
 import com.tdp.dsp.gateway.model.common.Direction;
 import com.tdp.dsp.gateway.model.common.InteropEnvelope;
 import com.tdp.dsp.gateway.model.common.Participant;
@@ -27,17 +29,23 @@ public final class InteropPipeline {
     private final ProtocolConverter protocolConverter;
     private final BridgeLayer bridgeLayer;
     private final ComplianceGateway complianceGateway;
+    private final MappingRegistry mappingRegistry;
+    private final ContractSchemaValidator schemaValidator;
 
     public InteropPipeline(
             MessageAdapter messageAdapter,
             ProtocolConverter protocolConverter,
             BridgeLayer bridgeLayer,
-            ComplianceGateway complianceGateway
+            ComplianceGateway complianceGateway,
+            MappingRegistry mappingRegistry,
+            ContractSchemaValidator schemaValidator
     ) {
         this.messageAdapter = messageAdapter;
         this.protocolConverter = protocolConverter;
         this.bridgeLayer = bridgeLayer;
         this.complianceGateway = complianceGateway;
+        this.mappingRegistry = mappingRegistry;
+        this.schemaValidator = schemaValidator;
     }
 
     public static InteropPipeline createDefault() {
@@ -57,7 +65,8 @@ public final class InteropPipeline {
                 "EU",
                 "ids"
         );
-        MessageAdapter adapter = new MessageAdapter();
+        MappingRegistry mappings = MappingRegistry.fromClasspath();
+        MessageAdapter adapter = new MessageAdapter(mappings);
         ProtocolConverter converter = new ProtocolConverter(adapter);
         TdpPlatformClient tdp = new InMemoryTdpPlatformClient(local);
         IdsConnectorClient ids = new InMemoryIdsConnectorClient();
@@ -66,7 +75,7 @@ public final class InteropPipeline {
         ComplianceGateway gateway = new ComplianceGateway(bridge);
         gateway.registerHook(new SensitiveDataHook());
         gateway.registerHook(new DestinationAllowlistHook(Set.of()));
-        return new InteropPipeline(adapter, converter, bridge, gateway);
+        return new InteropPipeline(adapter, converter, bridge, gateway, mappings, new ContractSchemaValidator());
     }
 
     public ObjectNode inboundDsp(String operation, ObjectNode dspMessage, ObjectNode metadata) {
@@ -107,5 +116,13 @@ public final class InteropPipeline {
 
     public ComplianceGateway complianceGateway() {
         return complianceGateway;
+    }
+
+    public MappingRegistry mappingRegistry() {
+        return mappingRegistry;
+    }
+
+    public ContractSchemaValidator schemaValidator() {
+        return schemaValidator;
     }
 }

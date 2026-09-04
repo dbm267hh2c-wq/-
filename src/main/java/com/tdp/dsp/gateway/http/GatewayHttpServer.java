@@ -5,15 +5,15 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
-import com.tdp.dsp.gateway.constant.ProtocolConstants;
 import com.tdp.dsp.gateway.json.Jsons;
 import com.tdp.dsp.gateway.pipeline.InteropPipeline;
+import com.tdp.dsp.gateway.protocol.DspMessageType;
+import com.tdp.dsp.gateway.protocol.TdpOperation;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -39,16 +39,17 @@ public class GatewayHttpServer {
         server.createContext("/audit", this::audit);
         server.createContext("/bridge/participants", this::participants);
         server.createContext("/compliance/extensions", this::extensions);
-        server.createContext("/dsp/catalog/request", exchange -> inbound(exchange, ProtocolConstants.DSP_CATALOG_REQUEST));
-        server.createContext("/dsp/catalog/datasets", exchange -> inbound(exchange, ProtocolConstants.DSP_DATASET_REQUEST));
-        server.createContext("/dsp/negotiations/request", exchange -> inbound(exchange, ProtocolConstants.DSP_CONTRACT_REQUEST));
-        server.createContext("/dsp/transfers/request", exchange -> inbound(exchange, ProtocolConstants.DSP_TRANSFER_REQUEST));
-        server.createContext("/tdp/catalogQuery", exchange -> outbound(exchange, ProtocolConstants.OP_CATALOG_QUERY));
-        server.createContext("/tdp/productDetail", exchange -> outbound(exchange, ProtocolConstants.OP_PRODUCT_DETAIL));
-        server.createContext("/tdp/contractCreate", exchange -> outbound(exchange, ProtocolConstants.OP_CONTRACT_CREATE));
-        server.createContext("/tdp/contractNegotiate", exchange -> outbound(exchange, ProtocolConstants.OP_CONTRACT_NEGOTIATE));
-        server.createContext("/tdp/contractExecution", exchange -> outbound(exchange, ProtocolConstants.OP_CONTRACT_EXECUTION));
-        server.createContext("/tdp/contractTerminate", exchange -> outbound(exchange, ProtocolConstants.OP_CONTRACT_TERMINATE));
+        server.createContext("/mappings", this::mappings);
+        server.createContext("/dsp/catalog/request", exchange -> inbound(exchange, DspMessageType.CATALOG_REQUEST.typeName()));
+        server.createContext("/dsp/catalog/datasets", exchange -> inbound(exchange, DspMessageType.DATASET_REQUEST.typeName()));
+        server.createContext("/dsp/negotiations/request", exchange -> inbound(exchange, DspMessageType.CONTRACT_REQUEST.typeName()));
+        server.createContext("/dsp/transfers/request", exchange -> inbound(exchange, DspMessageType.TRANSFER_REQUEST.typeName()));
+        server.createContext("/tdp/catalogQuery", exchange -> outbound(exchange, TdpOperation.CATALOG_QUERY));
+        server.createContext("/tdp/productDetail", exchange -> outbound(exchange, TdpOperation.PRODUCT_DETAIL));
+        server.createContext("/tdp/contractCreate", exchange -> outbound(exchange, TdpOperation.CONTRACT_CREATE));
+        server.createContext("/tdp/contractNegotiate", exchange -> outbound(exchange, TdpOperation.CONTRACT_NEGOTIATE));
+        server.createContext("/tdp/contractExecution", exchange -> outbound(exchange, TdpOperation.CONTRACT_EXECUTION));
+        server.createContext("/tdp/contractTerminate", exchange -> outbound(exchange, TdpOperation.CONTRACT_TERMINATE));
         server.setExecutor(null);
         server.start();
     }
@@ -91,6 +92,10 @@ public class GatewayHttpServer {
         ));
     }
 
+    private void mappings(HttpExchange exchange) throws IOException {
+        writeJson(exchange, 200, pipeline.mappingRegistry().snapshot());
+    }
+
     private void inbound(HttpExchange exchange, String dspType) throws IOException {
         if (!"POST".equals(exchange.getRequestMethod())) {
             writeJson(exchange, 405, Jsons.objectOf("message", "仅支持 POST"));
@@ -104,15 +109,25 @@ public class GatewayHttpServer {
         writeJson(exchange, status, response);
     }
 
-    private void outbound(HttpExchange exchange, String tdpOperation) throws IOException {
+    private void outbound(HttpExchange exchange, TdpOperation operation) throws IOException {
         if (!"POST".equals(exchange.getRequestMethod())) {
             writeJson(exchange, 405, Jsons.objectOf("message", "仅支持 POST"));
             return;
         }
         ObjectNode body = readBody(exchange);
+        java.util.List<String> schemaErrors = pipeline.schemaValidator().validate(operation.schemaFile(), body);
+        if (!schemaErrors.isEmpty()) {
+            writeJson(exchange, 400, Jsons.objectOf(
+                    "status", "1",
+                    "code", "SCHEMA_INVALID",
+                    "message", "报文不符合字段契约",
+                    "errors", schemaErrors
+            ));
+            return;
+        }
         ObjectNode metadata = metadataFrom(exchange);
         metadata.put("peer", exchange.getRemoteAddress().toString());
-        ObjectNode response = pipeline.outboundTdp(tdpOperation, body, metadata);
+        ObjectNode response = pipeline.outboundTdp(operation.code(), body, metadata);
         int status = "1".equals(Jsons.text(response, "status")) ? 403 : 200;
         writeJson(exchange, status, response);
     }

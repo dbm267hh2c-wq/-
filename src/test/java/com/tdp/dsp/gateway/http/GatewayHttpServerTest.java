@@ -42,6 +42,9 @@ class GatewayHttpServerTest {
         assertTrue(extensions.get("registeredHooks").toString().contains("sensitive-data"));
         JsonNode participants = get("/bridge/participants");
         assertTrue(participants.get("participants").size() >= 2);
+        JsonNode mappings = get("/mappings");
+        assertTrue(mappings.get("actions").get("size").asInt() >= 7);
+        assertTrue(mappings.get("bindingSets").toString().contains("productToDataset"));
     }
 
     @Test
@@ -79,6 +82,15 @@ class GatewayHttpServerTest {
         assertEquals(403, response.statusCode());
         JsonNode json = Jsons.MAPPER.readTree(response.body());
         assertEquals("CB-CLASSIFICATION", json.get("code").asText());
+    }
+
+    @Test
+    void outboundCatalogQueryRejectsPayloadMissingContractFields() throws Exception {
+        ObjectNode body = Jsons.objectOf("keyword", "交通");
+        HttpResponse<String> response = post("/tdp/catalogQuery", body, "did:web:ids.example.eu:provider");
+        assertEquals(400, response.statusCode());
+        JsonNode json = Jsons.MAPPER.readTree(response.body());
+        assertEquals("SCHEMA_INVALID", json.get("code").asText());
     }
 
     private JsonNode get(String path) throws Exception {

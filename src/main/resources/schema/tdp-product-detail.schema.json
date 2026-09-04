@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tdp.example.cn/schema/tdp-product-detail.schema.json",
+  "title": "国内数据产品详情查询",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["dataProductId"],
+  "properties": {
+    "dataProductId": { "type": "string", "minLength": 1 },
+    "issuerId": { "type": "string" },
+    "issuerEntityId": { "type": "string" },
+    "classification": { "type": "string" }
+  }
+}

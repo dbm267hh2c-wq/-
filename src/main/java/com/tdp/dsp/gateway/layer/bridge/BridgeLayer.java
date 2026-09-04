@@ -3,7 +3,6 @@ package com.tdp.dsp.gateway.layer.bridge;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.tdp.dsp.gateway.constant.ProtocolConstants;
 import com.tdp.dsp.gateway.json.Jsons;
 import com.tdp.dsp.gateway.layer.adapter.MessageAdapter;
 import com.tdp.dsp.gateway.layer.protocol.ProtocolConverter;
@@ -11,6 +10,8 @@ import com.tdp.dsp.gateway.model.common.Direction;
 import com.tdp.dsp.gateway.model.common.InteropEnvelope;
 import com.tdp.dsp.gateway.model.common.Participant;
 import com.tdp.dsp.gateway.model.dsp.DspMessages;
+import com.tdp.dsp.gateway.protocol.DspMessageType;
+import com.tdp.dsp.gateway.protocol.TdpOperation;
 
 import java.util.Collection;
 import java.util.Map;
@@ -73,7 +74,7 @@ public class BridgeLayer {
         ObjectNode context = contextOf(local, envelope);
         ObjectNode tdpRequest = protocolConverter.dspToTdp(envelope.payload(), context);
         String dspType = Jsons.typeName(envelope.payload());
-        ObjectNode tdpResponse = invokeTdp(protocolConverter.tdpPathForDspType(dspType), tdpRequest);
+        ObjectNode tdpResponse = invokeTdp(protocolConverter.tdpOperationForDsp(dspType), tdpRequest);
         return toDspResponse(dspType, tdpResponse, context, tdpRequest);
     }
 
@@ -82,51 +83,46 @@ public class BridgeLayer {
         ObjectNode context = contextOf(tdpPlatformClient.localParticipant(), envelope);
         context.put("callbackAddress", tdpPlatformClient.localParticipant().idsConnectorUrl() + "/callback");
         ObjectNode dspRequest = protocolConverter.tdpToDsp(envelope.operation(), envelope.payload(), context);
-        ObjectNode dspResponse = invokeIds(remote.idsConnectorUrl(), envelope.operation(), dspRequest);
+        ObjectNode dspResponse = invokeIds(remote.idsConnectorUrl(), TdpOperation.fromCode(envelope.operation()), dspRequest);
         return toTdpResponse(envelope.operation(), dspResponse);
     }
 
-    private ObjectNode invokeTdp(String path, ObjectNode request) {
-        return switch (path) {
-            case ProtocolConstants.TDP_PATH_CATALOG_QUERY -> tdpPlatformClient.catalogQuery(request);
-            case ProtocolConstants.TDP_PATH_PRODUCT_DETAIL -> tdpPlatformClient.productDetail(request);
-            case ProtocolConstants.TDP_PATH_CONTRACT_CREATE -> tdpPlatformClient.contractCreate(request);
-            case ProtocolConstants.TDP_PATH_CONTRACT_NEGOTIATE -> tdpPlatformClient.contractNegotiate(request);
-            case ProtocolConstants.TDP_PATH_CONTRACT_EXECUTION -> tdpPlatformClient.contractExecution(request);
-            case ProtocolConstants.TDP_PATH_CONTRACT_TERMINATE -> tdpPlatformClient.contractTerminate(request);
-            default -> throw new IllegalArgumentException("未知国内接口: " + path);
+    private ObjectNode invokeTdp(TdpOperation operation, ObjectNode request) {
+        return switch (operation) {
+            case CATALOG_QUERY -> tdpPlatformClient.catalogQuery(request);
+            case PRODUCT_DETAIL -> tdpPlatformClient.productDetail(request);
+            case CONTRACT_CREATE -> tdpPlatformClient.contractCreate(request);
+            case CONTRACT_NEGOTIATE -> tdpPlatformClient.contractNegotiate(request);
+            case CONTRACT_EXECUTION -> tdpPlatformClient.contractExecution(request);
+            case CONTRACT_TERMINATE -> tdpPlatformClient.contractTerminate(request);
         };
     }
 
-    private ObjectNode invokeIds(String connectorUrl, String tdpOperation, ObjectNode dspRequest) {
-        return switch (tdpOperation) {
-            case ProtocolConstants.OP_CATALOG_QUERY -> idsConnectorClient.catalogRequest(connectorUrl, dspRequest);
-            case ProtocolConstants.OP_PRODUCT_DETAIL -> idsConnectorClient.datasetRequest(connectorUrl, dspRequest);
-            case ProtocolConstants.OP_CONTRACT_CREATE, ProtocolConstants.OP_CONTRACT_NEGOTIATE
-                    -> idsConnectorClient.negotiationRequest(connectorUrl, dspRequest);
-            case ProtocolConstants.OP_CONTRACT_EXECUTION -> idsConnectorClient.transferRequest(connectorUrl, dspRequest);
-            case ProtocolConstants.OP_CONTRACT_TERMINATE -> idsConnectorClient.terminate(connectorUrl, dspRequest);
-            default -> throw new IllegalArgumentException("未知出境操作: " + tdpOperation);
+    private ObjectNode invokeIds(String connectorUrl, TdpOperation operation, ObjectNode dspRequest) {
+        return switch (operation) {
+            case CATALOG_QUERY -> idsConnectorClient.catalogRequest(connectorUrl, dspRequest);
+            case PRODUCT_DETAIL -> idsConnectorClient.datasetRequest(connectorUrl, dspRequest);
+            case CONTRACT_CREATE, CONTRACT_NEGOTIATE -> idsConnectorClient.negotiationRequest(connectorUrl, dspRequest);
+            case CONTRACT_EXECUTION -> idsConnectorClient.transferRequest(connectorUrl, dspRequest);
+            case CONTRACT_TERMINATE -> idsConnectorClient.terminate(connectorUrl, dspRequest);
         };
     }
 
     private ObjectNode toDspResponse(String dspType, ObjectNode tdpResponse, ObjectNode context, ObjectNode tdpRequest) {
-        return switch (Jsons.shortName(dspType)) {
-            case ProtocolConstants.DSP_CATALOG_REQUEST -> protocolConverter.tdpCatalogToDsp(
+        return switch (DspMessageType.fromTypeName(dspType)) {
+            case CATALOG_REQUEST -> protocolConverter.tdpCatalogToDsp(
                     tdpResponse,
                     context.get("idsParticipantId").asText(),
                     context.get("idsConnectorUrl").asText()
             );
-            case ProtocolConstants.DSP_DATASET_REQUEST -> {
+            case DATASET_REQUEST -> {
                 JsonNode product = tdpResponse.get("product");
                 yield product == null
                         ? DspMessages.catalogError("404", Jsons.textOrEmpty(tdpResponse, "message"))
                         : messageAdapter.productToDataset(product);
             }
-            case ProtocolConstants.DSP_CONTRACT_REQUEST, ProtocolConstants.DSP_CONTRACT_AGREEMENT -> {
-                String datasetId = Jsons.textOrEmpty(
-                        Jsons.get(tdpRequest, "strategy"), "subjectInfo"
-                );
+            case CONTRACT_REQUEST, CONTRACT_AGREEMENT -> {
+                String datasetId = "";
                 if (tdpRequest.get("strategy") != null) {
                     datasetId = Jsons.textOrEmpty(tdpRequest.get("strategy").get("subjectInfo"), "dataProductId");
                 }
@@ -136,9 +132,9 @@ public class BridgeLayer {
                         datasetId
                 );
             }
-            case ProtocolConstants.DSP_TRANSFER_REQUEST, ProtocolConstants.DSP_TRANSFER_START
+            case TRANSFER_REQUEST, TRANSFER_START
                     -> protocolConverter.tdpExecutionToDsp(tdpResponse, Jsons.textOrEmpty(context, "consumerPid"));
-            case ProtocolConstants.DSP_CONTRACT_TERMINATION -> DspMessages.contractNegotiation(
+            case CONTRACT_TERMINATION -> DspMessages.contractNegotiation(
                     Jsons.textOrEmpty(tdpResponse, "contractId"),
                     Jsons.textOrEmpty(context, "consumerPid"),
                     "dspace:TERMINATED",
@@ -149,9 +145,9 @@ public class BridgeLayer {
     }
 
     private ObjectNode toTdpResponse(String tdpOperation, ObjectNode dspResponse) {
-        return switch (tdpOperation) {
-            case ProtocolConstants.OP_CATALOG_QUERY -> protocolConverter.dspCatalogToTdp(dspResponse);
-            case ProtocolConstants.OP_PRODUCT_DETAIL -> {
+        return switch (TdpOperation.fromCode(tdpOperation)) {
+            case CATALOG_QUERY -> protocolConverter.dspCatalogToTdp(dspResponse);
+            case PRODUCT_DETAIL -> {
                 ObjectNode response = Jsons.object();
                 if ("CatalogError".equals(Jsons.typeName(dspResponse))) {
                     response.put("status", "1");
@@ -162,21 +158,20 @@ public class BridgeLayer {
                 response.set("product", messageAdapter.datasetToProduct(dspResponse));
                 yield response;
             }
-            case ProtocolConstants.OP_CONTRACT_CREATE, ProtocolConstants.OP_CONTRACT_NEGOTIATE -> Jsons.objectOf(
+            case CONTRACT_CREATE, CONTRACT_NEGOTIATE -> Jsons.objectOf(
                     "creationFlag", "0",
                     "negotiationStatus", "0",
                     "contractId", Jsons.textOrEmpty(dspResponse, "dspace:providerPid", "providerPid", "@id")
             );
-            case ProtocolConstants.OP_CONTRACT_EXECUTION -> Jsons.objectOf(
+            case CONTRACT_EXECUTION -> Jsons.objectOf(
                     "status", "0",
                     "transferId", Jsons.textOrEmpty(dspResponse, "dspace:providerPid", "providerPid", "@id"),
                     "contractId", Jsons.textOrEmpty(dspResponse, "dspace:agreementId", "agreementId")
             );
-            case ProtocolConstants.OP_CONTRACT_TERMINATE -> Jsons.objectOf(
+            case CONTRACT_TERMINATE -> Jsons.objectOf(
                     "status", "0",
                     "contractId", Jsons.textOrEmpty(dspResponse, "dspace:providerPid", "providerPid")
             );
-            default -> dspResponse;
         };
     }
 

@@ -1,10 +1,11 @@
 package com.tdp.dsp.gateway.layer.protocol;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.tdp.dsp.gateway.constant.ProtocolConstants;
 import com.tdp.dsp.gateway.json.Jsons;
 import com.tdp.dsp.gateway.layer.adapter.MessageAdapter;
 import com.tdp.dsp.gateway.model.dsp.DspMessages;
+import com.tdp.dsp.gateway.protocol.DspMessageType;
+import com.tdp.dsp.gateway.protocol.TdpOperation;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,13 +17,13 @@ class ProtocolConverterTest {
 
     @Test
     void mapsDomesticOperationsToDspTypesAndPaths() {
-        assertEquals(ProtocolConstants.DSP_CATALOG_REQUEST,
-                converter.tdpOperationToDspType(ProtocolConstants.OP_CATALOG_QUERY));
-        assertEquals(ProtocolConstants.DSP_PATH_NEGOTIATION_REQUEST,
-                converter.dspPathForTdpOperation(ProtocolConstants.OP_CONTRACT_CREATE));
-        assertEquals(ProtocolConstants.TDP_PATH_CATALOG_QUERY,
+        assertEquals(DspMessageType.CATALOG_REQUEST.typeName(),
+                converter.tdpOperationToDspType(TdpOperation.CATALOG_QUERY.code()));
+        assertEquals(DspMessageType.CONTRACT_REQUEST.dspPath(),
+                converter.dspPathForTdpOperation(TdpOperation.CONTRACT_CREATE.code()));
+        assertEquals(TdpOperation.CATALOG_QUERY.domesticPath(),
                 converter.tdpPathForDspType("dspace:CatalogRequestMessage"));
-        assertEquals(ProtocolConstants.OP_CONTRACT_EXECUTION,
+        assertEquals(TdpOperation.CONTRACT_EXECUTION.code(),
                 converter.dspTypeToTdpOperation("TransferRequestMessage"));
     }
 
@@ -33,7 +34,7 @@ class ProtocolConverterTest {
                 "issuerEntityId", "91310000MA1FL0XXXX",
                 "keyword", "交通"
         );
-        ObjectNode dsp = converter.tdpToDsp(ProtocolConstants.OP_CATALOG_QUERY, query, Jsons.object());
+        ObjectNode dsp = converter.tdpToDsp(TdpOperation.CATALOG_QUERY.code(), query, Jsons.object());
         assertEquals("CatalogRequestMessage", Jsons.typeName(dsp));
         assertEquals("交通", dsp.get("dspace:filter").get(0).asText());
     }

@@ -7,6 +7,8 @@ import com.tdp.dsp.gateway.constant.ProtocolConstants;
 import com.tdp.dsp.gateway.json.Jsons;
 import com.tdp.dsp.gateway.layer.adapter.MessageAdapter;
 import com.tdp.dsp.gateway.model.dsp.DspMessages;
+import com.tdp.dsp.gateway.protocol.DspMessageType;
+import com.tdp.dsp.gateway.protocol.TdpOperation;
 
 import java.time.Instant;
 import java.util.List;
@@ -25,93 +27,83 @@ public class ProtocolConverter {
     }
 
     public String tdpOperationToDspType(String tdpOperation) {
-        return switch (tdpOperation) {
-            case ProtocolConstants.OP_CATALOG_QUERY -> ProtocolConstants.DSP_CATALOG_REQUEST;
-            case ProtocolConstants.OP_PRODUCT_DETAIL -> ProtocolConstants.DSP_DATASET_REQUEST;
-            case ProtocolConstants.OP_CONTRACT_CREATE, ProtocolConstants.OP_CONTRACT_NEGOTIATE
-                    -> ProtocolConstants.DSP_CONTRACT_REQUEST;
-            case ProtocolConstants.OP_CONTRACT_EXECUTION -> ProtocolConstants.DSP_TRANSFER_REQUEST;
-            case ProtocolConstants.OP_CONTRACT_TERMINATE -> ProtocolConstants.DSP_CONTRACT_TERMINATION;
-            default -> throw new IllegalArgumentException("不支持的国内协议操作: " + tdpOperation);
+        return toDspType(TdpOperation.fromCode(tdpOperation)).typeName();
+    }
+
+    public DspMessageType toDspType(TdpOperation operation) {
+        return switch (operation) {
+            case CATALOG_QUERY -> DspMessageType.CATALOG_REQUEST;
+            case PRODUCT_DETAIL -> DspMessageType.DATASET_REQUEST;
+            case CONTRACT_CREATE, CONTRACT_NEGOTIATE -> DspMessageType.CONTRACT_REQUEST;
+            case CONTRACT_EXECUTION -> DspMessageType.TRANSFER_REQUEST;
+            case CONTRACT_TERMINATE -> DspMessageType.CONTRACT_TERMINATION;
         };
     }
 
     public String dspTypeToTdpOperation(String dspType) {
-        String type = Jsons.shortName(dspType);
+        return toTdpOperation(DspMessageType.fromTypeName(dspType)).code();
+    }
+
+    public TdpOperation toTdpOperation(DspMessageType type) {
         return switch (type) {
-            case ProtocolConstants.DSP_CATALOG_REQUEST -> ProtocolConstants.OP_CATALOG_QUERY;
-            case ProtocolConstants.DSP_DATASET_REQUEST -> ProtocolConstants.OP_PRODUCT_DETAIL;
-            case ProtocolConstants.DSP_CONTRACT_REQUEST, ProtocolConstants.DSP_CONTRACT_AGREEMENT
-                    -> ProtocolConstants.OP_CONTRACT_NEGOTIATE;
-            case ProtocolConstants.DSP_TRANSFER_REQUEST, ProtocolConstants.DSP_TRANSFER_START
-                    -> ProtocolConstants.OP_CONTRACT_EXECUTION;
-            case ProtocolConstants.DSP_CONTRACT_TERMINATION -> ProtocolConstants.OP_CONTRACT_TERMINATE;
-            default -> throw new IllegalArgumentException("不支持的 DSP 消息类型: " + dspType);
+            case CATALOG_REQUEST -> TdpOperation.CATALOG_QUERY;
+            case DATASET_REQUEST -> TdpOperation.PRODUCT_DETAIL;
+            case CONTRACT_REQUEST -> TdpOperation.CONTRACT_CREATE;
+            case CONTRACT_AGREEMENT -> TdpOperation.CONTRACT_NEGOTIATE;
+            case TRANSFER_REQUEST, TRANSFER_START -> TdpOperation.CONTRACT_EXECUTION;
+            case CONTRACT_TERMINATION -> TdpOperation.CONTRACT_TERMINATE;
+            default -> throw new IllegalArgumentException("不支持的 DSP 消息类型: " + type);
         };
     }
 
     public String dspPathForTdpOperation(String tdpOperation) {
-        return switch (tdpOperation) {
-            case ProtocolConstants.OP_CATALOG_QUERY -> ProtocolConstants.DSP_PATH_CATALOG_REQUEST;
-            case ProtocolConstants.OP_PRODUCT_DETAIL -> ProtocolConstants.DSP_PATH_DATASET_REQUEST;
-            case ProtocolConstants.OP_CONTRACT_CREATE, ProtocolConstants.OP_CONTRACT_NEGOTIATE
-                    -> ProtocolConstants.DSP_PATH_NEGOTIATION_REQUEST;
-            case ProtocolConstants.OP_CONTRACT_EXECUTION -> ProtocolConstants.DSP_PATH_TRANSFER_REQUEST;
-            case ProtocolConstants.OP_CONTRACT_TERMINATE -> "/negotiations/termination";
-            default -> throw new IllegalArgumentException("不支持的国内协议操作: " + tdpOperation);
-        };
+        return toDspType(TdpOperation.fromCode(tdpOperation)).dspPath();
     }
 
     public String tdpPathForDspType(String dspType) {
-        return switch (Jsons.shortName(dspType)) {
-            case ProtocolConstants.DSP_CATALOG_REQUEST -> ProtocolConstants.TDP_PATH_CATALOG_QUERY;
-            case ProtocolConstants.DSP_DATASET_REQUEST -> ProtocolConstants.TDP_PATH_PRODUCT_DETAIL;
-            case ProtocolConstants.DSP_CONTRACT_REQUEST -> ProtocolConstants.TDP_PATH_CONTRACT_CREATE;
-            case ProtocolConstants.DSP_CONTRACT_AGREEMENT -> ProtocolConstants.TDP_PATH_CONTRACT_NEGOTIATE;
-            case ProtocolConstants.DSP_TRANSFER_REQUEST, ProtocolConstants.DSP_TRANSFER_START
-                    -> ProtocolConstants.TDP_PATH_CONTRACT_EXECUTION;
-            case ProtocolConstants.DSP_CONTRACT_TERMINATION -> ProtocolConstants.TDP_PATH_CONTRACT_TERMINATE;
-            default -> throw new IllegalArgumentException("不支持的 DSP 消息类型: " + dspType);
-        };
+        return toTdpOperation(DspMessageType.fromTypeName(dspType)).domesticPath();
+    }
+
+    public TdpOperation tdpOperationForDsp(String dspType) {
+        return toTdpOperation(DspMessageType.fromTypeName(dspType));
     }
 
     public ObjectNode tdpToDsp(String tdpOperation, JsonNode tdpPayload, ObjectNode context) {
-        return switch (tdpOperation) {
-            case ProtocolConstants.OP_CATALOG_QUERY -> toCatalogRequest(tdpPayload);
-            case ProtocolConstants.OP_PRODUCT_DETAIL -> DspMessages.datasetRequest(
-                    Jsons.textOrEmpty(tdpPayload, "dataProductId")
-            );
-            case ProtocolConstants.OP_CONTRACT_CREATE, ProtocolConstants.OP_CONTRACT_NEGOTIATE
-                    -> toContractRequest(tdpPayload, context);
-            case ProtocolConstants.OP_CONTRACT_EXECUTION -> toTransferRequest(tdpPayload, context);
-            case ProtocolConstants.OP_CONTRACT_TERMINATE -> DspMessages.contractTermination(
+        return tdpToDsp(TdpOperation.fromCode(tdpOperation), tdpPayload, context);
+    }
+
+    public ObjectNode tdpToDsp(TdpOperation operation, JsonNode tdpPayload, ObjectNode context) {
+        return switch (operation) {
+            case CATALOG_QUERY -> toCatalogRequest(tdpPayload);
+            case PRODUCT_DETAIL -> DspMessages.datasetRequest(Jsons.textOrEmpty(tdpPayload, "dataProductId"));
+            case CONTRACT_CREATE, CONTRACT_NEGOTIATE -> toContractRequest(tdpPayload, context);
+            case CONTRACT_EXECUTION -> toTransferRequest(tdpPayload, context);
+            case CONTRACT_TERMINATE -> DspMessages.contractTermination(
                     Jsons.textOrEmpty(tdpPayload, "contractId"),
                     Jsons.textOrEmpty(context, "consumerPid"),
                     "terminated",
                     Jsons.textOrEmpty(tdpPayload, "reason")
             );
-            default -> throw new IllegalArgumentException("不支持的国内协议操作: " + tdpOperation);
         };
     }
 
     public ObjectNode dspToTdp(JsonNode dspMessage, ObjectNode context) {
-        String type = Jsons.typeName(dspMessage);
+        DspMessageType type = DspMessageType.fromTypeName(Jsons.typeName(dspMessage));
         return switch (type) {
-            case ProtocolConstants.DSP_CATALOG_REQUEST -> adapter.dspFilterToCatalogQuery(
+            case CATALOG_REQUEST -> adapter.dspFilterToCatalogQuery(
                     dspMessage,
                     Jsons.textOrEmpty(context, "tdpConnectorId"),
                     Jsons.textOrEmpty(context, "tdpEntityId")
             );
-            case ProtocolConstants.DSP_DATASET_REQUEST -> Jsons.objectOf(
+            case DATASET_REQUEST -> Jsons.objectOf(
                     "dataProductId", Jsons.textOrEmpty(dspMessage, "dspace:dataset", "dataset"),
                     "issuerId", Jsons.textOrEmpty(context, "tdpConnectorId"),
                     "issuerEntityId", Jsons.textOrEmpty(context, "tdpEntityId")
             );
-            case ProtocolConstants.DSP_CONTRACT_REQUEST -> toContractCreate(dspMessage, context);
-            case ProtocolConstants.DSP_CONTRACT_AGREEMENT -> toContractNegotiate(dspMessage, context);
-            case ProtocolConstants.DSP_TRANSFER_REQUEST, ProtocolConstants.DSP_TRANSFER_START
-                    -> toContractExecution(dspMessage, context);
-            case ProtocolConstants.DSP_CONTRACT_TERMINATION -> Jsons.objectOf(
+            case CONTRACT_REQUEST -> toContractCreate(dspMessage, context);
+            case CONTRACT_AGREEMENT -> toContractNegotiate(dspMessage, context);
+            case TRANSFER_REQUEST, TRANSFER_START -> toContractExecution(dspMessage, context);
+            case CONTRACT_TERMINATION -> Jsons.objectOf(
                     "contractId", Jsons.textOrEmpty(dspMessage, "dspace:providerPid", "providerPid"),
                     "reason", firstReason(dspMessage),
                     "issuerId", Jsons.textOrEmpty(context, "tdpConnectorId")

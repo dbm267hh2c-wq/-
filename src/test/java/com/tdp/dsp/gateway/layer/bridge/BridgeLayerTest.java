@@ -1,7 +1,6 @@
 package com.tdp.dsp.gateway.layer.bridge;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.tdp.dsp.gateway.constant.ProtocolConstants;
 import com.tdp.dsp.gateway.json.Jsons;
 import com.tdp.dsp.gateway.layer.adapter.MessageAdapter;
 import com.tdp.dsp.gateway.layer.protocol.ProtocolConverter;
@@ -9,6 +8,8 @@ import com.tdp.dsp.gateway.model.common.Direction;
 import com.tdp.dsp.gateway.model.common.InteropEnvelope;
 import com.tdp.dsp.gateway.model.common.Participant;
 import com.tdp.dsp.gateway.model.dsp.DspMessages;
+import com.tdp.dsp.gateway.protocol.DspMessageType;
+import com.tdp.dsp.gateway.protocol.TdpOperation;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -21,7 +22,7 @@ class BridgeLayerTest {
         BridgeLayer bridge = newBridge();
         ObjectNode dsp = DspMessages.catalogRequest(java.util.List.of("交通"));
         InteropEnvelope envelope = new InteropEnvelope(
-                Direction.INBOUND, "DSP", "TDP", ProtocolConstants.DSP_CATALOG_REQUEST, dsp, Jsons.object()
+                Direction.INBOUND, "DSP", "TDP", DspMessageType.CATALOG_REQUEST.typeName(), dsp, Jsons.object()
         );
         ObjectNode catalog = bridge.dispatch(envelope);
         assertEquals("Catalog", Jsons.typeName(catalog));
@@ -38,7 +39,7 @@ class BridgeLayerTest {
         );
         ObjectNode metadata = Jsons.objectOf("idsParticipantId", "did:web:ids.example.eu:provider");
         InteropEnvelope envelope = new InteropEnvelope(
-                Direction.OUTBOUND, "TDP", "DSP", ProtocolConstants.OP_CATALOG_QUERY, query, metadata
+                Direction.OUTBOUND, "TDP", "DSP", TdpOperation.CATALOG_QUERY.code(), query, metadata
         );
         ObjectNode response = bridge.dispatch(envelope);
         assertEquals("0", response.get("status").asText());
@@ -58,7 +59,7 @@ class BridgeLayerTest {
                 "DP-CN-TRAFFIC-0001"
         );
         ObjectNode result = bridge.dispatch(new InteropEnvelope(
-                Direction.INBOUND, "DSP", "TDP", ProtocolConstants.DSP_CONTRACT_REQUEST, dsp, Jsons.object()
+                Direction.INBOUND, "DSP", "TDP", DspMessageType.CONTRACT_REQUEST.typeName(), dsp, Jsons.object()
         ));
         assertEquals("ContractNegotiation", Jsons.typeName(result));
         assertEquals("dspace:REQUESTED", result.get("dspace:state").asText());
