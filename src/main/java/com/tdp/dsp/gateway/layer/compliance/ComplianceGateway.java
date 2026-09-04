@@ -15,7 +15,13 @@ import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * ④ 合规关口层：跨境请求统一出入口，跨境流量统一审计，并为后续合规校验预留扩展点。
+ * ④ 合规关口：跨境流量的唯一出入口。
+ *
+ * <p>处理顺序：注册钩子短路评估 → 写审计 → 拒绝则按方向返回错误形态，放行则交给桥接层，
+ * 成功响应再记一条 {@code operation:response} 审计。
+ *
+ * <p>后续出境安全评估、目的国评估、合同备案等应实现 {@link ComplianceHook} 并 {@link #registerHook}，
+ * 不要在 Controller 或桥接层里另开旁路。
  */
 public class ComplianceGateway {
 
@@ -35,6 +41,9 @@ public class ComplianceGateway {
         return List.copyOf(hooks);
     }
 
+    /**
+     * 跨境请求总入口。无论放行还是拒绝都会落审计。
+     */
     public ObjectNode handle(InteropEnvelope envelope) {
         ComplianceDecision decision = evaluate(envelope);
         audit(envelope, decision);
@@ -46,6 +55,9 @@ public class ComplianceGateway {
         return response;
     }
 
+    /**
+     * 按注册顺序执行钩子，第一个 DENY 立即返回；全部通过则 ALLOW。
+     */
     public ComplianceDecision evaluate(InteropEnvelope envelope) {
         for (ComplianceHook hook : hooks) {
             ComplianceDecision decision = hook.check(envelope);
@@ -95,6 +107,9 @@ public class ComplianceGateway {
         ));
     }
 
+    /**
+     * 拒绝响应与方向对齐：入境回 DSP {@code CatalogError}，出境回国内 {@code status=1}。
+     */
     private ObjectNode reject(InteropEnvelope envelope, ComplianceDecision decision) {
         if (envelope.direction() == Direction.INBOUND) {
             return DspMessages.catalogError(decision.code(), decision.message());

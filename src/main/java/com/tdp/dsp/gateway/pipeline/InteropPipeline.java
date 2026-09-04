@@ -21,7 +21,12 @@ import com.tdp.dsp.gateway.model.common.Participant;
 import java.util.Set;
 
 /**
- * 组装四层：合规关口 → 桥接 → 消息适配 / 协议转换。
+ * 四层互联互通的门面：HTTP 与单测都只通过本类进出。
+ *
+ * <p>实际调用顺序固定为「④ 合规关口 → ③ 桥接 → ① 协议转换 + ② 消息适配」。
+ * 本类负责把方向、协议名、操作码打进 {@link InteropEnvelope}，不自己做字段映射。
+ *
+ * <p>{@link #createDefault()} 给无 Spring 的单元测试用，参与方与钩子与生产默认配置对齐。
  */
 public final class InteropPipeline {
 
@@ -48,6 +53,9 @@ public final class InteropPipeline {
         this.schemaValidator = schemaValidator;
     }
 
+    /**
+     * 无容器装配：内存 TDP / IDS、默认码表、敏感数据钩子；目的地白名单为空（未启用）。
+     */
     public static InteropPipeline createDefault() {
         Participant local = new Participant(
                 "91310000MA1FL0XXXX",
@@ -78,6 +86,13 @@ public final class InteropPipeline {
         return new InteropPipeline(adapter, converter, bridge, gateway, mappings, new ContractSchemaValidator());
     }
 
+    /**
+     * 入境：DSP → 国内。{@code operation} 为 DSP {@code @type} 短名，例如 {@code CatalogRequestMessage}。
+     *
+     * @param dspMessage 境外原始 JSON-LD
+     * @param metadata   请求头抽出的对端身份等，可空
+     * @return DSP 形态响应；合规拒绝时为 {@code CatalogError}
+     */
     public ObjectNode inboundDsp(String operation, ObjectNode dspMessage, ObjectNode metadata) {
         InteropEnvelope envelope = new InteropEnvelope(
                 Direction.INBOUND,
@@ -90,6 +105,12 @@ public final class InteropPipeline {
         return complianceGateway.handle(envelope);
     }
 
+    /**
+     * 出境：国内 → DSP。{@code operation} 为国标操作码，例如 {@code catalogQuery}。
+     *
+     * @param tdpMessage 国内原始 JSON
+     * @return 国内形态响应；合规拒绝时 {@code status=1}
+     */
     public ObjectNode outboundTdp(String operation, ObjectNode tdpMessage, ObjectNode metadata) {
         InteropEnvelope envelope = new InteropEnvelope(
                 Direction.OUTBOUND,

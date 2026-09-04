@@ -8,6 +8,15 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+/**
+ * 一张双向语义码表（动作、运算符或约束名）。
+ *
+ * <p>JSON 里写 {@code tdp}/{@code dsp} 及别名；{@link #index()} 后建成小写索引。
+ * DSP 侧同时索引完整 IRI（{@code odrl:use}）与短名（{@code use}），兼容两种写法。
+ *
+ * <p>{@link #passThroughUnknown} 为真时未知码原样放行，便于灰度接入新码；
+ * 默认为假，未知码回落到 {@code defaultTdp}/{@code defaultDsp}。
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SemanticTable {
 
@@ -15,9 +24,16 @@ public class SemanticTable {
     private String defaultDsp = "";
     private boolean passThroughUnknown;
     private List<SemanticEntry> entries = new ArrayList<>();
+
+    /** 规范化后的国内码 → DSP 码。含 tdp 别名。 */
     private final Map<String, String> tdpToDsp = new LinkedHashMap<>();
+
+    /** 规范化后的 DSP 码 / 短名 / 别名 → 国内码。 */
     private final Map<String, String> dspToTdp = new LinkedHashMap<>();
 
+    /**
+     * 根据 entries 重建索引。merge overlay 后必须再调一次。
+     */
     public void index() {
         tdpToDsp.clear();
         dspToTdp.clear();
@@ -39,6 +55,9 @@ public class SemanticTable {
         }
     }
 
+    /**
+     * 追加 overlay 条目并覆盖默认值。后写入的同码会覆盖先前索引（后加载优先）。
+     */
     public void merge(SemanticTable overlay) {
         if (overlay == null) {
             return;
@@ -70,6 +89,7 @@ public class SemanticTable {
         }
         String mapped = dspToTdp.get(normalize(dspCode));
         if (mapped == null) {
+            // 再试一次短名，应对索引时未拆前缀、运行时却带前缀的情况
             mapped = dspToTdp.get(normalize(shortName(dspCode)));
         }
         if (mapped != null) {
@@ -122,11 +142,15 @@ public class SemanticTable {
         return value.trim().toLowerCase(Locale.ROOT);
     }
 
+    /** 取冒号后最后一段，{@code odrl:lteq} → {@code lteq}。 */
     private static String shortName(String value) {
         int index = value.lastIndexOf(':');
         return index >= 0 ? value.substring(index + 1) : value;
     }
 
+    /**
+     * 一条码表记录。别名用于历史国标用词或 DSP 多种 IRI 写法。
+     */
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class SemanticEntry {
         private String tdp;

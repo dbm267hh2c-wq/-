@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.tdp.dsp.gateway.json.Jsons;
-import com.tdp.dsp.gateway.model.common.Participant;
 import com.tdp.dsp.gateway.model.dsp.DspMessages;
 
 import java.util.List;
@@ -13,7 +12,10 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 内存模拟的 IDS 连接器，便于本地联调与测试。
+ * 内存模拟的 IDS 连接器，预置欧盟港口吞吐数据集，供出境目录 / 详情 / 协商联调。
+ *
+ * <p>按 {@code connectorUrl} 分目录；未知 URL 返回 CatalogError 404。
+ * 协商与传输不落真实状态机，仅回稳定的 providerPid，便于断言。
  */
 public class InMemoryIdsConnectorClient implements IdsConnectorClient {
 

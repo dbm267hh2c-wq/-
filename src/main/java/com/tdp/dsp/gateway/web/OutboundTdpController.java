@@ -15,6 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * 出境 HTTP 入口：国内平台按国标路径调用本网关，再转成 DSP 发往 IDS。
+ *
+ * <p>先按 {@link TdpOperation#schemaFile()} 做字段契约校验，不合格直接 HTTP 400，
+ * 不进入合规关口，避免无效报文污染审计。无 Schema 文件的操作（协商/履行/终止）跳过该步。
+ *
+ * <p>{@code X-IDS-Participant} 指定境外对端；缺省时桥接层回落到已注册的非 {@code tdp} 参与方。
+ * 国内报文 {@code status=1}（含合规拒绝）映射为 HTTP 403。
+ */
 @RestController
 @RequestMapping("/tdp")
 public class OutboundTdpController {
@@ -25,6 +34,7 @@ public class OutboundTdpController {
         this.pipeline = pipeline;
     }
 
+    /** 目录查询 → {@code CatalogRequestMessage}。 */
     @PostMapping("/catalogQuery")
     public ResponseEntity<JsonNode> catalogQuery(
             @RequestBody ObjectNode body,
@@ -35,6 +45,7 @@ public class OutboundTdpController {
         return outbound(TdpOperation.CATALOG_QUERY, body, request, idsParticipant, destinationCountry);
     }
 
+    /** 产品详情 → {@code DatasetRequestMessage}。 */
     @PostMapping("/productDetail")
     public ResponseEntity<JsonNode> productDetail(
             @RequestBody ObjectNode body,
@@ -45,6 +56,7 @@ public class OutboundTdpController {
         return outbound(TdpOperation.PRODUCT_DETAIL, body, request, idsParticipant, destinationCountry);
     }
 
+    /** 合约发起 → {@code ContractRequestMessage}。 */
     @PostMapping("/contractCreate")
     public ResponseEntity<JsonNode> contractCreate(
             @RequestBody ObjectNode body,
@@ -55,6 +67,7 @@ public class OutboundTdpController {
         return outbound(TdpOperation.CONTRACT_CREATE, body, request, idsParticipant, destinationCountry);
     }
 
+    /** 合约协商 → 同样走 {@code ContractRequestMessage}（DSP 侧协商态由协商过程消息表达）。 */
     @PostMapping("/contractNegotiate")
     public ResponseEntity<JsonNode> contractNegotiate(
             @RequestBody ObjectNode body,
@@ -65,6 +78,7 @@ public class OutboundTdpController {
         return outbound(TdpOperation.CONTRACT_NEGOTIATE, body, request, idsParticipant, destinationCountry);
     }
 
+    /** 合约履行 / 数据交付 → {@code TransferRequestMessage}。 */
     @PostMapping("/contractExecution")
     public ResponseEntity<JsonNode> contractExecution(
             @RequestBody ObjectNode body,
@@ -75,6 +89,7 @@ public class OutboundTdpController {
         return outbound(TdpOperation.CONTRACT_EXECUTION, body, request, idsParticipant, destinationCountry);
     }
 
+    /** 合约终止 → {@code ContractNegotiationTerminationMessage}。 */
     @PostMapping("/contractTerminate")
     public ResponseEntity<JsonNode> contractTerminate(
             @RequestBody ObjectNode body,
@@ -85,6 +100,10 @@ public class OutboundTdpController {
         return outbound(TdpOperation.CONTRACT_TERMINATE, body, request, idsParticipant, destinationCountry);
     }
 
+    /**
+     * Schema 失败返回 {@code SCHEMA_INVALID}；通过后进入合规关口。
+     * 合规拒绝的国内形态是 {@code status=1}，与平台业务失败共用该字段，HTTP 层统一按 403 处理。
+     */
     private ResponseEntity<JsonNode> outbound(
             TdpOperation operation,
             ObjectNode body,

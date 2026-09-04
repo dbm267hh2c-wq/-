@@ -14,7 +14,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 启动时加载字段契约与语义码表。业务实例值不在此，只加载「怎么转」。
+ * 启动时加载「怎么转」：字段契约与语义码表。不缓存业务实例值。
+ *
+ * <p>加载顺序：
+ * <ol>
+ *   <li>classpath {@code mappings/semantic-codes.json}、{@code field-mappings.json}</li>
+ *   <li>可选 classpath {@code mappings/semantic-overlay.json}</li>
+ *   <li>外部目录（构造参数 / {@code tdp.dsp.mapping.dir} / {@code TDP_DSP_MAPPING_DIR}）
+ *       中的 {@code semantic-overlay.json}、{@code field-mappings.json}</li>
+ * </ol>
+ * 后加载覆盖先加载，便于现场加「联合建模」等码而不改发版包。
  */
 public class MappingRegistry {
 
@@ -35,6 +44,9 @@ public class MappingRegistry {
         return fromClasspath(null);
     }
 
+    /**
+     * @param mappingDir 外部覆盖目录，可空
+     */
     public static MappingRegistry fromClasspath(String mappingDir) {
         SemanticCodesDocument semantics = readSemantic(SEMANTIC_RESOURCE);
         FieldMappingsDocument fields = readFields(FIELD_RESOURCE);
@@ -54,6 +66,9 @@ public class MappingRegistry {
         semantics.merge(overlay);
     }
 
+    /**
+     * 合并目录内覆盖文件。字段绑定按集合名 merge 列表（追加），模板按名整体替换。
+     */
     public void mergeFromDirectory(Path directory) {
         Path semanticOverlay = directory.resolve("semantic-overlay.json");
         if (Files.isRegularFile(semanticOverlay)) {
@@ -91,6 +106,9 @@ public class MappingRegistry {
         return semantics.getConstraints();
     }
 
+    /**
+     * 返回模板深拷贝，避免一次转换污染后续请求的骨架。
+     */
     public ObjectNode template(String name) {
         JsonNode node = fields.getTemplates().get(name);
         if (node == null || node.isNull()) {
@@ -111,6 +129,11 @@ public class MappingRegistry {
         return apply(bindingSet, source, target, false);
     }
 
+    /**
+     * 按命名绑定集合逐条拷贝。{@code codec} 会把叶子（或数组元素）送进对应码表。
+     *
+     * @param tdpToDsp {@code true} 用国内码查 DSP；{@code false} 反向
+     */
     public ObjectNode apply(String bindingSet, JsonNode source, ObjectNode target, boolean tdpToDsp) {
         ObjectNode result = target == null ? Jsons.object() : target;
         for (FieldBinding binding : bindings(bindingSet)) {
@@ -150,6 +173,7 @@ public class MappingRegistry {
         return constraints().toTdp(dsp);
     }
 
+    /** 管理接口 {@code GET /mappings} 的只读快照，含条目本身便于对照 overlay。 */
     public ObjectNode snapshot() {
         Map<String, Object> view = new LinkedHashMap<>();
         view.put("actions", tableView(actions()));
@@ -160,6 +184,9 @@ public class MappingRegistry {
         return Jsons.MAPPER.valueToTree(view);
     }
 
+    /**
+     * 按 codec 名称选表。数组则逐元素转码，用于策略里多个 action 的情况。
+     */
     private JsonNode encode(String codec, JsonNode value, boolean tdpToDsp) {
         if (codec == null || codec.isBlank()) {
             return value;

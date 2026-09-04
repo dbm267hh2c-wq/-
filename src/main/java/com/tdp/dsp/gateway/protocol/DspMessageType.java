@@ -5,7 +5,13 @@ import com.tdp.dsp.gateway.json.Jsons;
 import java.util.Arrays;
 
 /**
- * DSP 消息类型。标识来自 Dataspace Protocol，用枚举固定。
+ * Dataspace Protocol 消息类型。
+ *
+ * <p>{@code typeName} 对应 JSON-LD {@code @type} 的短名（去掉 {@code dspace:} 前缀后比较）。
+ * {@code dspPath} 是规范路径，{@code gatewayPath} 是本网关入境前缀 {@code /dsp} 之后的映射。
+ *
+ * <p>目录 / 协商 / 传输的请求与过程对象都列在此，协议转换层用请求类型选国内操作，
+ * 用过程对象（Catalog、ContractNegotiation 等）构造回包。
  */
 public enum DspMessageType {
     CATALOG_REQUEST("CatalogRequestMessage", "/catalog/request", "/dsp/catalog/request"),
@@ -30,6 +36,7 @@ public enum DspMessageType {
         this.gatewayPath = gatewayPath;
     }
 
+    /** JSON-LD {@code @type} 短名，入境流水线 {@code operation} 使用此值。 */
     public String typeName() {
         return typeName;
     }
@@ -42,6 +49,9 @@ public enum DspMessageType {
         return gatewayPath;
     }
 
+    /**
+     * 接受完整 IRI（{@code dspace:CatalogRequestMessage}）或短名 / 枚举名。
+     */
     public static DspMessageType fromTypeName(String value) {
         String shortName = Jsons.shortName(value);
         return Arrays.stream(values())

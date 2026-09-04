@@ -9,10 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 按 JSON Schema 的 required / type / minLength 做入站校验。完整 Draft 2020 交给后续扩展。
+ * 出境国内报文的轻量 JSON Schema 校验。
+ *
+ * <p>只覆盖当前契约用到的子集：{@code type}、{@code required}、{@code minLength}、
+ * {@code enum}、{@code minimum}、{@code minItems}、以及 {@code properties}/{@code items} 递归。
+ * 完整 Draft 2020-12（$ref、oneOf、format 等）留给后续接入专业校验库。
+ *
+ * <p>Schema 文件放在 classpath {@code schema/}。{@code schemaFile} 为空则视为该操作不校验。
  */
 public class ContractSchemaValidator {
 
+    /**
+     * @return 违反项列表；空列表表示通过。路径用 JSON Pointer 风格的 {@code $.field}
+     */
     public List<String> validate(String schemaFile, JsonNode payload) {
         if (schemaFile == null || schemaFile.isBlank()) {
             return List.of();
@@ -102,6 +111,7 @@ public class ContractSchemaValidator {
             }
             JsonNode properties = schema.get("properties");
             if (properties != null && properties.isObject()) {
+                // 只校验 Schema 声明过的字段；额外字段放行，避免国标扩展字段被误杀
                 properties.fields().forEachRemaining(entry -> {
                     if (payload.has(entry.getKey())) {
                         validateNode(entry.getValue(), payload.get(entry.getKey()), path + "." + entry.getKey(), errors);

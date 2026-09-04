@@ -14,6 +14,11 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 内存模拟的国内可信数据空间服务平台。
+ *
+ * <p>预置两款产品：交通流量（一般数据，可出境演示）与电力负荷（重要数据，用于合规拦截演示）。
+ * 合约状态机简化为：发起 → 协商 / 签署成功 → 履行中 → 终止。
+ *
+ * <p>合约编号按国标风格拼接（类型 + 主体 + 时间 + 流水），仅用于联调可读，非正式发号器。
  */
 public class InMemoryTdpPlatformClient implements TdpPlatformClient {
 
@@ -199,6 +204,9 @@ public class InMemoryTdpPlatformClient implements TdpPlatformClient {
         return Jsons.stringList(keywords).stream().anyMatch(item -> item.contains(keyword));
     }
 
+    /**
+     * 演示用合约编号：固定前缀 + 主体位 + 时间戳 + 流水。非正式国标发号实现。
+     */
     private String newContractId() {
         String time = Instant.now().toString().replaceAll("[^0-9]", "");
         if (time.length() > 14) {

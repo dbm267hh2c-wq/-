@@ -19,7 +19,16 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * ③ 桥接层：桥接国内可信数据空间服务平台与国际数据空间（IDS）生态系统。
+ * ③ 桥接层：国内可信数据空间服务平台 ↔ 国际数据空间（IDS）连接器。
+ *
+ * <p>职责：
+ * <ul>
+ *   <li>维护参与方双边身份目录（实体 ID / 连接器 ID / IDS DID）</li>
+ *   <li>按方向调用协议转换，再转发到对应客户端</li>
+ *   <li>把对端响应转回调用方协议</li>
+ * </ul>
+ *
+ * <p>本层不做法规判断；合规关口通过后才会 {@link #dispatch}。
  */
 public class BridgeLayer {
 
@@ -41,6 +50,7 @@ public class BridgeLayer {
         this.idsConnectorClient = idsConnectorClient;
         this.protocolConverter = protocolConverter;
         this.messageAdapter = messageAdapter;
+        // 本侧连接器必须在目录里，入境转换时要填 issuer / participant
         register(tdpPlatformClient.localParticipant());
     }
 
@@ -69,6 +79,7 @@ public class BridgeLayer {
         return dispatchOutbound(envelope);
     }
 
+    /** 入境：DSP 报文 → 国内请求 → TDP 客户端 → DSP 响应。 */
     private ObjectNode dispatchInbound(InteropEnvelope envelope) {
         Participant local = tdpPlatformClient.localParticipant();
         ObjectNode context = contextOf(local, envelope);
@@ -78,6 +89,10 @@ public class BridgeLayer {
         return toDspResponse(dspType, tdpResponse, context, tdpRequest);
     }
 
+    /**
+     * 出境：国内报文 → DSP 请求 → 解析对端 IDS → 连接器客户端 → 国内响应。
+     * callback 默认本侧连接器 {@code /callback}，供 IDS 后续异步通知（当前内存客户端不回调）。
+     */
     private ObjectNode dispatchOutbound(InteropEnvelope envelope) {
         Participant remote = resolveRemote(envelope);
         ObjectNode context = contextOf(tdpPlatformClient.localParticipant(), envelope);
@@ -108,6 +123,9 @@ public class BridgeLayer {
         };
     }
 
+    /**
+     * 把国内平台结果折回 DSP。产品详情找不到时返回 CatalogError，而不是空 Dataset。
+     */
     private ObjectNode toDspResponse(String dspType, ObjectNode tdpResponse, ObjectNode context, ObjectNode tdpRequest) {
         return switch (DspMessageType.fromTypeName(dspType)) {
             case CATALOG_REQUEST -> protocolConverter.tdpCatalogToDsp(
@@ -144,6 +162,7 @@ public class BridgeLayer {
         };
     }
 
+    /** 把 IDS 响应折回国内形态。CatalogError 映射为 {@code status=1}。 */
     private ObjectNode toTdpResponse(String tdpOperation, ObjectNode dspResponse) {
         return switch (TdpOperation.fromCode(tdpOperation)) {
             case CATALOG_QUERY -> protocolConverter.dspCatalogToTdp(dspResponse);
@@ -175,6 +194,9 @@ public class BridgeLayer {
         };
     }
 
+    /**
+     * 出境对端解析顺序：请求头 IDS DID → 报文体国内实体 ID → 目录里第一个非 tdp 空间参与方。
+     */
     private Participant resolveRemote(InteropEnvelope envelope) {
         String idsId = Jsons.text(envelope.metadata(), "idsParticipantId");
         if (idsId != null) {
@@ -194,6 +216,10 @@ public class BridgeLayer {
                 .orElseThrow(() -> new IllegalStateException("未配置境外 IDS 参与方"));
     }
 
+    /**
+     * 以本侧参与方为底，叠加入境报文里的 consumerPid / callback，以及 HTTP metadata。
+     * metadata 后写，因此请求头可覆盖同名上下文键。
+     */
     private ObjectNode contextOf(Participant local, InteropEnvelope envelope) {
         ObjectNode context = Jsons.object();
         context.put("tdpEntityId", local.tdpEntityId());

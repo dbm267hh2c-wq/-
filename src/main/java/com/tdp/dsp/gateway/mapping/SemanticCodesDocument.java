@@ -7,6 +7,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * {@code semantic-codes.json} / overlay 的根文档。
+ *
+ * <p>三张独立码表：动作（授权使用 ↔ odrl:use）、运算符（11 ↔ odrl:lteq）、
+ * 约束名（空间范围 ↔ odrl:spatial）。业务实例值不在此文件。
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SemanticCodesDocument {
 
@@ -47,12 +53,14 @@ public class SemanticCodesDocument {
         this.constraints = constraints == null ? new SemanticTable() : constraints;
     }
 
+    /** 三张表分别建索引，启动或 merge 后调用。 */
     public void index() {
         actions.index();
         operators.index();
         constraints.index();
     }
 
+    /** overlay 按表合并；{@code null} overlay 视为无覆盖。 */
     public void merge(SemanticCodesDocument overlay) {
         if (overlay == null) {
             return;
@@ -63,6 +71,12 @@ public class SemanticCodesDocument {
     }
 }
 
+/**
+ * {@code field-mappings.json} 根文档：输出骨架模板 + 命名绑定集合。
+ *
+ * <p>{@code templates} 是转换前的目标骨架（如 dataset / offer），绑定只填叶子。
+ * {@code bindings} 的 key 由适配层按场景点名，例如 {@code productToDataset}。
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 class FieldMappingsDocument {
 

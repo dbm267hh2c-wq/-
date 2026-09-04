@@ -16,7 +16,14 @@ import java.util.Locale;
 import java.util.UUID;
 
 /**
- * ① 协议转换层：将国内可信数据空间内部协议转换为国际数据空间协议（DSP）。
+ * ① 协议转换层：国内操作 ↔ DSP 消息类型，并组装完整报文骨架。
+ *
+ * <p>本层决定「这是哪一种对话」（目录 / 协商 / 传输），字段语义交给 {@link MessageAdapter}。
+ * 一对多关系写在 switch 里：例如国内「合约发起」与「合约协商」都对应 DSP
+ * {@code ContractRequestMessage}；入境 {@code TransferRequest} 与 {@code TransferStart}
+ * 都落到国内履行。
+ *
+ * <p>入境创建合约时补国内必填的合约名、时效、平台签署模式，因为 DSP 请求没有对等字段。
  */
 public class ProtocolConverter {
 
@@ -30,6 +37,7 @@ public class ProtocolConverter {
         return toDspType(TdpOperation.fromCode(tdpOperation)).typeName();
     }
 
+    /** 国内操作 → DSP 请求/过程类型（出境调用 IDS 时用）。 */
     public DspMessageType toDspType(TdpOperation operation) {
         return switch (operation) {
             case CATALOG_QUERY -> DspMessageType.CATALOG_REQUEST;
@@ -44,6 +52,10 @@ public class ProtocolConverter {
         return toTdpOperation(DspMessageType.fromTypeName(dspType)).code();
     }
 
+    /**
+     * DSP 类型 → 国内操作（入境调用 TDP 时用）。
+     * Catalog / Dataset / ContractNegotiation 等过程对象不是请求，转换时会抛错。
+     */
     public TdpOperation toTdpOperation(DspMessageType type) {
         return switch (type) {
             case CATALOG_REQUEST -> TdpOperation.CATALOG_QUERY;
@@ -72,6 +84,10 @@ public class ProtocolConverter {
         return tdpToDsp(TdpOperation.fromCode(tdpOperation), tdpPayload, context);
     }
 
+    /**
+     * 国内请求体 + 桥接上下文 → DSP 请求。
+     * {@code context} 提供 callback、consumerPid 等 DSP 控制面字段。
+     */
     public ObjectNode tdpToDsp(TdpOperation operation, JsonNode tdpPayload, ObjectNode context) {
         return switch (operation) {
             case CATALOG_QUERY -> toCatalogRequest(tdpPayload);
@@ -87,6 +103,9 @@ public class ProtocolConverter {
         };
     }
 
+    /**
+     * DSP 请求 + 本侧身份上下文 → 国内请求体。
+     */
     public ObjectNode dspToTdp(JsonNode dspMessage, ObjectNode context) {
         DspMessageType type = DspMessageType.fromTypeName(Jsons.typeName(dspMessage));
         return switch (type) {
@@ -112,6 +131,7 @@ public class ProtocolConverter {
         };
     }
 
+    /** 国内目录查询结果 → DCAT Catalog，产品列表逐条适配为 Dataset。 */
     public ObjectNode tdpCatalogToDsp(JsonNode tdpCatalog, String participantId, String connectorUrl) {
         ArrayNode datasets = Jsons.array();
         JsonNode products = Jsons.get(tdpCatalog, "products");
@@ -142,6 +162,9 @@ public class ProtocolConverter {
         return response;
     }
 
+    /**
+     * 国内 {@code creationFlag}/{@code negotiationStatus}：{@code 0} 或空视为协商已受理。
+     */
     public ObjectNode tdpContractResultToDsp(JsonNode tdpResult, String consumerPid, String datasetId) {
         String contractId = Jsons.textOrEmpty(tdpResult, "contractId");
         String flag = Jsons.textOrEmpty(tdpResult, "creationFlag", "negotiationStatus");
@@ -177,6 +200,7 @@ public class ProtocolConverter {
         );
         String consumerPid = Jsons.textOrEmpty(context, "consumerPid");
         if (consumerPid.isBlank()) {
+            // DSP 要求消费者进程 ID；国内报文没有对等字段时由网关签发
             consumerPid = "urn:uuid:" + UUID.randomUUID();
         }
         String callback = Jsons.textOrEmpty(tdpPayload, "callbackAddress");
@@ -201,6 +225,9 @@ public class ProtocolConverter {
         );
     }
 
+    /**
+     * 入境合约请求：补国内 Schema 所需的名称、时效、平台签署。有效期默认 30 天。
+     */
     private ObjectNode toContractCreate(JsonNode dspMessage, ObjectNode context) {
         JsonNode offer = Jsons.get(dspMessage, "odrl:offer", "offer");
         ObjectNode strategy = adapter.offerToStrategy(offer == null ? Jsons.object() : offer);
@@ -256,6 +283,7 @@ public class ProtocolConverter {
         return execution;
     }
 
+    /** DSP {@code dspace:reason} 可能是语言标签对象数组，取第一条文本或 {@code @value}。 */
     private static String firstReason(JsonNode message) {
         JsonNode reasons = Jsons.get(message, "dspace:reason", "reason");
         if (reasons == null || reasons.isEmpty()) {
@@ -268,6 +296,9 @@ public class ProtocolConverter {
         return Jsons.textOrEmpty(first, "@value");
     }
 
+    /**
+     * 粗判是否为 DSP JSON-LD，供调试或后续自动路由；正式入境仍以路径绑定的枚举为准。
+     */
     public boolean isDspMessage(JsonNode payload) {
         if (payload == null || !payload.has("@type")) {
             return false;

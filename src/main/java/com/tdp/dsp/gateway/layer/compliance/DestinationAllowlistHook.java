@@ -8,7 +8,13 @@ import java.util.Locale;
 import java.util.Set;
 
 /**
- * 预留扩展：目的国/目的数据空间白名单。空白名单表示尚未启用。
+ * 目的国 / 目的数据空间白名单（预留实现）。
+ *
+ * <p>名单为空表示「尚未启用」，全部放行，避免未配置时误伤联调。
+ * 启用后读 metadata 的 {@code destinationCountry} 或 {@code idsParticipantId}，
+ * 做大小写不敏感的包含匹配（允许配置 {@code EU} 匹配 {@code did:web:...eu...}）。
+ *
+ * <p>未带头且无法解析目的地时放行：由桥接层再决定能否找到注册对端。
  */
 public class DestinationAllowlistHook implements ComplianceHook {
 

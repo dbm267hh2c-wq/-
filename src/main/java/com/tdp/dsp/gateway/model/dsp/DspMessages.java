@@ -10,13 +10,19 @@ import static com.tdp.dsp.gateway.json.Jsons.object;
 import static com.tdp.dsp.gateway.json.Jsons.put;
 
 /**
- * DSP JSON-LD 消息构造（紧凑形态）。
+ * DSP JSON-LD 消息工厂（紧凑形态：带 {@code dspace:}/{@code odrl:}/{@code dcat:} 前缀）。
+ *
+ * <p>只负责骨架与必填控制面字段；业务叶子由适配层填入。
+ * 所有报文共享 {@link ProtocolConstants#DSP_CONTEXT}。
  */
 public final class DspMessages {
 
     private DspMessages() {
     }
 
+    /**
+     * 无前缀的 type 会自动补 {@code dspace:}；已含冒号的（如 {@code dcat:Catalog}）保持原样。
+     */
     public static ObjectNode base(String type) {
         ObjectNode payload = object();
         payload.put("@context", ProtocolConstants.DSP_CONTEXT);
@@ -42,6 +48,9 @@ public final class DspMessages {
         return payload;
     }
 
+    /**
+     * 目录/合规错误。{@code dspace:reason} 使用语言标签对象数组，符合 DSP 多语言习惯。
+     */
     public static ObjectNode catalogError(String code, String reason) {
         ObjectNode payload = base("dspace:CatalogError");
         payload.put("dspace:code", code);
