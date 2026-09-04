@@ -32,11 +32,18 @@ public class MappingRegistry {
     }
 
     public static MappingRegistry fromClasspath() {
+        return fromClasspath(null);
+    }
+
+    public static MappingRegistry fromClasspath(String mappingDir) {
         SemanticCodesDocument semantics = readSemantic(SEMANTIC_RESOURCE);
         FieldMappingsDocument fields = readFields(FIELD_RESOURCE);
         MappingRegistry registry = new MappingRegistry(semantics, fields);
         registry.mergeSemantic(readOptionalSemantic(OVERLAY_RESOURCE));
-        String extra = System.getProperty("tdp.dsp.mapping.dir", System.getenv("TDP_DSP_MAPPING_DIR"));
+        String extra = mappingDir;
+        if (extra == null || extra.isBlank()) {
+            extra = System.getProperty("tdp.dsp.mapping.dir", System.getenv("TDP_DSP_MAPPING_DIR"));
+        }
         if (extra != null && !extra.isBlank()) {
             registry.mergeFromDirectory(Path.of(extra));
         }

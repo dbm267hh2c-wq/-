@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tdp-dsp-gateway
+  jackson:
+    serialization:
+      indent-output: true
+
+tdp:
+  dsp:
+    mapping-dir: ${TDP_DSP_MAPPING_DIR:}
+    destination-allowlist: []
+    local:
+      tdp-entity-id: "91310000MA1FL0XXXX"
+      tdp-connector-id: "CN-TDP-CONNECTOR-001"
+      tdp-connector-name: "国内可信数据空间接入连接器"
+      ids-participant-id: "did:web:tdp.example.cn:provider"
+      ids-connector-url: "https://tdp.example.cn/connector"
+      region: "CN"
+      dataspace: "tdp"
+    overseas:
+      tdp-entity-id: "EU-IDS-PROVIDER-001"
+      tdp-connector-id: "EU-IDS-CONNECTOR-001"
+      tdp-connector-name: "IDS Connector EU"
+      ids-participant-id: "did:web:ids.example.eu:provider"
+      ids-connector-url: "https://ids.example.eu/connector"
+      region: "EU"
+      dataspace: "ids"
