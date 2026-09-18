@@ -1,5 +1,10 @@
 target/
 .idea/
+docker/logstash/output/*
+!docker/logstash/output/.gitkeep
+docker/logstash/logs-in/*
+!docker/logstash/logs-in/.gitkeep
+docker/logstash/.env
 *.iml
 *.class
 .classpath

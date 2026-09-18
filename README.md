@@ -53,3 +53,14 @@ export TDP_DSP_MAPPING_DIR=/etc/tdp-dsp/mappings
 管理：`GET /health`、`/audit`、`/bridge/participants`、`/compliance/extensions`、`/mappings`
 
 出境不符合 Schema 时返回 HTTP 400（`SCHEMA_INVALID`）。重要数据出境由合规关口返回 HTTP 403。
+
+## Logstash（Docker）
+
+独立 Logstash 8.17 容器，默认不启动 Elasticsearch。安装与验证见 [`docker/logstash/README.md`](docker/logstash/README.md)。
+
+```bash
+cd docker/logstash
+docker compose up -d
+curl -s http://127.0.0.1:9600
+./scripts/send-test-event.sh
+```
