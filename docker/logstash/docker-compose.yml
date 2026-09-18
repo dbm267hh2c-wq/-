@@ -1,0 +1,36 @@
+name: tdp-dsp-logstash
+
+services:
+  logstash:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        LOGSTASH_VERSION: ${LOGSTASH_VERSION:-8.17.0}
+    image: tdp-dsp-logstash:${LOGSTASH_VERSION:-8.17.0}
+    container_name: tdp-dsp-logstash
+    hostname: logstash
+    restart: unless-stopped
+    environment:
+      LS_JAVA_OPTS: ${LS_JAVA_OPTS:--Xms512m -Xmx512m}
+    ports:
+      - "5044:5044"
+      - "8081:8081"
+      - "50000:50000"
+      - "9600:9600"
+    volumes:
+      - ./pipeline:/usr/share/logstash/pipeline:ro
+      - ./config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - ./config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
+      - ./logs-in:/usr/share/logstash/logs-in:ro
+      - ./output:/usr/share/logstash/output
+      - logstash-data:/usr/share/logstash/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://127.0.0.1:9600 >/dev/null"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 90s
+
+volumes:
+  logstash-data:

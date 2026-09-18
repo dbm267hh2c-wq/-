@@ -1,0 +1,7 @@
+output
+logs-in
+scripts
+README.md
+.env
+.env.example
+docker-compose.yml
