@@ -16,8 +16,20 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN set -eux; \
-    groupadd --system --gid 1000 logstash; \
-    useradd --system --uid 1000 --gid 1000 --home-dir /usr/share/logstash --shell /usr/sbin/nologin logstash; \
+    if ! getent group logstash >/dev/null; then \
+      if getent group 1000 >/dev/null; then \
+        groupmod --new-name logstash "$(getent group 1000 | cut -d: -f1)"; \
+      else \
+        groupadd --system --gid 1000 logstash; \
+      fi; \
+    fi; \
+    if ! id -u logstash >/dev/null 2>&1; then \
+      if id -u 1000 >/dev/null 2>&1; then \
+        usermod --login logstash --home /usr/share/logstash --shell /usr/sbin/nologin "$(id -nu 1000)"; \
+      else \
+        useradd --system --uid 1000 --gid logstash --home-dir /usr/share/logstash --shell /usr/sbin/nologin logstash; \
+      fi; \
+    fi; \
     case "${TARGETARCH}" in \
       amd64) arch=x86_64 ;; \
       arm64) arch=aarch64 ;; \
