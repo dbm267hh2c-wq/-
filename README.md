@@ -56,11 +56,12 @@ export TDP_DSP_MAPPING_DIR=/etc/tdp-dsp/mappings
 
 ## Logstash（Docker）
 
-独立 Logstash 8.17 容器，默认不启动 Elasticsearch。安装与验证见 [`docker/logstash/README.md`](docker/logstash/README.md)。
+在 Ubuntu 容器内安装 Logstash 8.17，默认不启动 Elasticsearch。步骤见 [`docker/logstash/README.md`](docker/logstash/README.md)。
 
 ```bash
 cd docker/logstash
-docker compose up -d
+docker compose up -d --build
 curl -s http://127.0.0.1:9600
+docker exec tdp-dsp-logstash logstash --version
 ./scripts/send-test-event.sh
 ```

@@ -2,7 +2,12 @@ name: tdp-dsp-logstash
 
 services:
   logstash:
-    image: ${LOGSTASH_IMAGE:-docker.elastic.co/logstash/logstash:8.17.0}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        LOGSTASH_VERSION: ${LOGSTASH_VERSION:-8.17.0}
+    image: tdp-dsp-logstash:${LOGSTASH_VERSION:-8.17.0}
     container_name: tdp-dsp-logstash
     hostname: logstash
     restart: unless-stopped
