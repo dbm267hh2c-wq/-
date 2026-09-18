@@ -2,7 +2,9 @@
 
 适用场景：对方业务机安装 Filebeat，采集本地日志，通过 **TCP 5044** 推送到我方 Logstash。我方 Logstash 清洗后写入 Kafka。
 
-本文可直接转发给对方运维。对方机器 **只装 Filebeat**，不要再装 Logstash / Elasticsearch / Kibana。
+本文只覆盖 **日志采集**。主机、应用端口、数据库、应用间调用链路见 [对方环境监控与调用链路对接方案.md](./对方环境监控与调用链路对接方案.md)。
+
+本文可直接转发给对方运维。日志对接时对方机器 **只装 Filebeat**，不要再装 Logstash / Elasticsearch / Kibana。
 
 ---
 
