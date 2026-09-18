@@ -62,6 +62,6 @@ export TDP_DSP_MAPPING_DIR=/etc/tdp-dsp/mappings
 cd docker/logstash
 docker compose up -d --build
 curl -s http://127.0.0.1:9600
-docker exec tdp-dsp-logstash logstash --version
+docker run --rm tdp-dsp-logstash:8.17.0 logstash -V
 ./scripts/send-test-event.sh
 ```

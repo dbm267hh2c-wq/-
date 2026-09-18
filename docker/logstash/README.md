@@ -41,7 +41,7 @@ docker compose ps
 
 ```bash
 curl -s http://127.0.0.1:9600
-docker exec tdp-dsp-logstash logstash --version
+docker run --rm tdp-dsp-logstash:8.17.0 logstash -V
 ```
 
 发送测试事件：

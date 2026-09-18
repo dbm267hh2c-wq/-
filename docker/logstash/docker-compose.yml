@@ -21,6 +21,7 @@ services:
     volumes:
       - ./pipeline:/usr/share/logstash/pipeline:ro
       - ./config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - ./config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
       - ./logs-in:/usr/share/logstash/logs-in:ro
       - ./output:/usr/share/logstash/output
       - logstash-data:/usr/share/logstash/data

@@ -45,6 +45,7 @@ RUN set -eux; \
 
 COPY --chown=logstash:logstash pipeline/ /usr/share/logstash/pipeline/
 COPY --chown=logstash:logstash config/logstash.yml /usr/share/logstash/config/logstash.yml
+COPY --chown=logstash:logstash config/pipelines.yml /usr/share/logstash/config/pipelines.yml
 
 USER logstash
 WORKDIR /usr/share/logstash
