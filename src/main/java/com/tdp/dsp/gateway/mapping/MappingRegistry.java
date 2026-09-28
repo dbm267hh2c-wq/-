@@ -7,6 +7,7 @@ import com.tdp.dsp.gateway.json.Jsons;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.LinkedHashMap;
@@ -96,6 +97,27 @@ public class MappingRegistry {
         return fields.getBindings().getOrDefault(name, List.of());
     }
 
+    public Map<String, JsonNode> fieldTemplates() {
+        return fields.getTemplates();
+    }
+
+    public Map<String, List<FieldBinding>> fieldBindings() {
+        return fields.getBindings();
+    }
+
+    /** 启动诊断：将 field-mappings.json 中的 templates / bindings 两个 map 打印到标准输出。 */
+    public void printFieldMaps() {
+        try {
+            var writer = Jsons.MAPPER.writerWithDefaultPrettyPrinter();
+            System.out.println("===== 字段模板 map (templates) =====");
+            System.out.println(writer.writeValueAsString(fields.getTemplates()));
+            System.out.println("===== 字段绑定 map (bindings) =====");
+            System.out.println(writer.writeValueAsString(fields.getBindings()));
+        } catch (IOException ex) {
+            throw new UncheckedIOException("无法序列化字段映射", ex);
+        }
+    }
+
     public ObjectNode applyTdpToDsp(String bindingSet, JsonNode source, ObjectNode target) {
         return apply(bindingSet, source, target, true);
     }
@@ -148,8 +170,9 @@ public class MappingRegistry {
         view.put("actions", tableView(actions()));
         view.put("operators", tableView(operators()));
         view.put("constraints", tableView(constraints()));
+        view.put("templates", fields.getTemplates());
+        view.put("bindings", fields.getBindings());
         view.put("bindingSets", fields.getBindings().keySet());
-        view.put("templates", fields.getTemplates().keySet());
         return Jsons.MAPPER.valueToTree(view);
     }
 

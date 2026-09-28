@@ -45,6 +45,8 @@ class GatewayHttpServerTest {
         JsonNode mappings = get("/mappings");
         assertTrue(mappings.get("actions").get("size").asInt() >= 7);
         assertTrue(mappings.get("bindingSets").toString().contains("productToDataset"));
+        assertTrue(mappings.get("bindings").get("productToDataset").isArray());
+        assertTrue(mappings.get("templates").get("dataset").has("@type"));
     }
 
     @Test

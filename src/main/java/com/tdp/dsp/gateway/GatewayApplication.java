@@ -11,6 +11,7 @@ public final class GatewayApplication {
     public static void main(String[] args) throws Exception {
         int port = args.length > 0 ? Integer.parseInt(args[0]) : 8080;
         InteropPipeline pipeline = InteropPipeline.createDefault();
+        pipeline.mappingRegistry().printFieldMaps();
         GatewayHttpServer server = new GatewayHttpServer(pipeline, port);
         server.start();
         System.out.println("TDP-DSP 互联互通网关已启动: http://127.0.0.1:" + port);
